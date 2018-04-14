@@ -1,0 +1,9 @@
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\bin\Debug\Vista.exe
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\bin\Debug\Vista.pdb
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.Login.resources
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.exe
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.pdb
+C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.Menu_Principal.resources
