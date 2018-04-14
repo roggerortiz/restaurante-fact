@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Controlador;
+using Modelo;
 
 namespace Vista
 {
@@ -42,16 +44,32 @@ namespace Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            // Se comprueba que los campos no esten vacíos
             if (txtUsuario.Text == "" || txtClave.Text == "")
             {
+                // Si están vacíos se lanza un mensaje de advertencia
                 MessageBox.Show("Hay campos no llenados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                MessageBox.Show("BIENVENIDO AL SISTEMA DE FACTURACIÓN", "RESTAURANTE .....", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                Menu_Principal mp = new Menu_Principal();
-                mp.Show();
+                // Si no estan vacíos, se procede a realizar el login
+                UsuarioController uc = new UsuarioController();
+                Usuario u = uc.login(txtUsuario.Text, txtClave.Text);
+
+                // Se verifica si los datos ingresados coinciden con los registrados en la BD
+                if (u.ID != null && u.ID > 0)
+                {
+                    // Si los datos son correctos, se lanza el Menu Principal
+                    MessageBox.Show("BIENVENIDO AL SISTEMA DE FACTURACIÓN", "RESTAURANTE .....", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    MenuPrincipal mp = new MenuPrincipal();
+                    mp.Show();
+                }
+                else
+                {
+                    // Si los datos no son correctos se lanza un mensaje de advertencia
+                    MessageBox.Show("Usuario o Clave No Válidos", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
         }
     }

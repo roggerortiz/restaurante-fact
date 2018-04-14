@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Controlador
 {
-    class Producto
+    class ComprobanteController
     {
     }
 }

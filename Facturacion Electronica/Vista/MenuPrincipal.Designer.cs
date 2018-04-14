@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class Menu_Principal
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,17 @@
         {
             this.SuspendLayout();
             // 
-            // Menu_Principal
+            // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 352);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Menu_Principal";
+            this.Name = "MenuPrincipal";
             this.Text = ".: RESTAURANTE :.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.ResumeLayout(false);
 
         }

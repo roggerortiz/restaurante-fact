@@ -7,3 +7,16 @@ C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.Ge
 C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.exe
 C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.pdb
 C:\Users\LUCHITO\Desktop\Facturacion Electronica\Vista\obj\Debug\Vista.Menu_Principal.resources
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.exe
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.pdb
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Vista.exe
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Vista.pdb
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Controlador.dll
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Modelo.dll
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Controlador.pdb
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\bin\Debug\Modelo.pdb
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.Login.resources
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.MenuPrincipal.resources
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.Properties.Resources.resources
+D:\facturacion\FacturacionElectronica\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache

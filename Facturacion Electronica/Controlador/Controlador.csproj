@@ -39,17 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Comprobante.cs" />
-    <Compile Include="Comprobante_Detalle.cs" />
-    <Compile Include="Configuracion.cs" />
-    <Compile Include="Logs.cs" />
-    <Compile Include="Mesa.cs" />
-    <Compile Include="Producto.cs" />
+    <Compile Include="CategoriaController.cs" />
+    <Compile Include="ClienteController.cs" />
+    <Compile Include="ComprobanteController.cs" />
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="ConfiguracionController.cs" />
+    <Compile Include="LogController.cs" />
+    <Compile Include="MesaController.cs" />
+    <Compile Include="ProductoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sunat.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="EnvioController.cs" />
+    <Compile Include="UsuarioController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{4f0ab80d-1a04-41dc-8937-3a61d59c2c0e}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

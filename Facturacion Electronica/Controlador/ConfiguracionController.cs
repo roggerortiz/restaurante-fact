@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Controlador
 {
-    class Mesa
+    class ConfiguracionController
     {
     }
 }

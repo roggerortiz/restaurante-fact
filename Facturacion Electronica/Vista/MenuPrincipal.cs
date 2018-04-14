@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class Menu_Principal : Form
+    public partial class MenuPrincipal : Form
     {
-        public Menu_Principal()
+        public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
