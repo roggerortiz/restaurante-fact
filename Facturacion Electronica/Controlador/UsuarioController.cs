@@ -49,10 +49,7 @@ namespace Controlador
             }
             finally
             {
-                if (this.conexionBD.abierta())
-                {
-                    this.conexionBD.cerrar();
-                }
+                this.conexionBD.cerrar();
             }
 
             return u;

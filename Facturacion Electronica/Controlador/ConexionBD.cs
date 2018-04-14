@@ -37,17 +37,15 @@ namespace Controlador
         {
             try
             {
-                this.conexion.Close();
+                if (this.conexion.State == ConnectionState.Open)
+                {
+                    this.conexion.Close();
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al Cerrar la Conexión con la Base de Datos: " + ex.Message);
             }
-        }
-
-        public Boolean abierta()
-        {
-            return (this.conexion.State == ConnectionState.Open);
         }
     }
 }
