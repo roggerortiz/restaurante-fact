@@ -9,7 +9,8 @@ namespace Controlador
 {
     public class ConexionBD
     {
-        private String cadena = "Data Source=DESKTOP-MN3GC25\\SQLEXPRESS;Initial Catalog=facturacion;Integrated Security=True";
+        //private String cadena = "Data Source=DESKTOP-MN3GC25\\SQLEXPRESS;Initial Catalog=facturacion;Integrated Security=True";
+        private String cadena = "Server=.; integrated security=true; DataBase=facturacion";
         private SqlConnection conexion = new SqlConnection();
 
         public SqlConnection Conexion
