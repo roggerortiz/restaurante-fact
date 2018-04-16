@@ -93,13 +93,13 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
@@ -123,6 +123,7 @@
             this.Text = ".: RESTAURANTE :.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

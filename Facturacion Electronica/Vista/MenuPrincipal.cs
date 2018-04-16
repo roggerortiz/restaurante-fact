@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using InitialDLL;
 
 namespace Vista
 {
@@ -14,6 +15,11 @@ namespace Vista
         public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            CInitial initial = new CInitial(Application.StartupPath);
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
