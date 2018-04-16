@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprobantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +56,8 @@
             // mantenedoresToolStripMenuItem
             // 
             this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem,
-            this.comprobantesToolStripMenuItem});
+            this.mnuProductos,
+            this.mnuComprobantes});
             this.mantenedoresToolStripMenuItem.Image = global::Vista.Properties.Resources.mantenedores;
             this.mantenedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
@@ -65,17 +65,18 @@
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
             this.mantenedoresToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // productosToolStripMenuItem
+            // mnuProductos
             // 
-            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.productosToolStripMenuItem.Text = "Productos";
+            this.mnuProductos.Name = "mnuProductos";
+            this.mnuProductos.Size = new System.Drawing.Size(153, 22);
+            this.mnuProductos.Text = "Productos";
+            this.mnuProductos.Click += new System.EventHandler(this.mnuProductos_Click);
             // 
-            // comprobantesToolStripMenuItem
+            // mnuComprobantes
             // 
-            this.comprobantesToolStripMenuItem.Name = "comprobantesToolStripMenuItem";
-            this.comprobantesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.comprobantesToolStripMenuItem.Text = "Comprobantes";
+            this.mnuComprobantes.Name = "mnuComprobantes";
+            this.mnuComprobantes.Size = new System.Drawing.Size(153, 22);
+            this.mnuComprobantes.Text = "Comprobantes";
             // 
             // sistemaToolStripMenuItem
             // 
@@ -92,13 +93,13 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
@@ -116,9 +117,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 352);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = ".: RESTAURANTE :.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -133,8 +133,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprobantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuProductos;
+        private System.Windows.Forms.ToolStripMenuItem mnuComprobantes;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;

@@ -20,5 +20,12 @@ namespace Vista
         {
             Application.Exit();
         }
+
+        private void mnuProductos_Click(object sender, EventArgs e)
+        {
+            Productos frm = new Productos();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

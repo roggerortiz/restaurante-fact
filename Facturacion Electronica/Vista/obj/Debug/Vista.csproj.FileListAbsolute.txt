@@ -33,3 +33,4 @@ D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Login.r
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.MenuPrincipal.resources
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Properties.Resources.resources
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
+D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Productos.resources
