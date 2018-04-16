@@ -30,7 +30,6 @@ D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Vista.exe.con
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Vista.exe
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Vista.pdb
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Controlador.dll
-D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\InitialDLL.dll
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Modelo.dll
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Controlador.pdb
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Modelo.pdb
