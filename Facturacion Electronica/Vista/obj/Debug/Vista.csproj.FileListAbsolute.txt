@@ -35,7 +35,6 @@ D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Controlador.p
 D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Modelo.pdb
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.exe
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.pdb
-D:\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\InitialDLL.dll
 D:\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.BuscarCategoria.resources
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\bin\Debug\Vista.exe.config
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.exe
@@ -54,3 +53,4 @@ D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vis
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Properties.Resources.resources
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Mesas.resources
+D:\FACTURACION\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Mesas.resources

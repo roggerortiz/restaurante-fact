@@ -11,7 +11,7 @@ namespace Controlador
 {
     public class Controller
     {
-        public MySqlConnection conexion = new MySqlConnection();
+        private MySqlConnection conexion = new MySqlConnection();
 
         public Controller()
         {
@@ -21,12 +21,11 @@ namespace Controlador
         protected MySqlConnection Conexion
         {
             get { return conexion; }
-            set { conexion = value; }
         }
 
         private String CadenaConexion()
         {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder(); //constructor de cadena de conexion
 
             try
             {

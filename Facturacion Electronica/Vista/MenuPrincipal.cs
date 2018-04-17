@@ -26,6 +26,7 @@ namespace Vista
         private void mnuProductos_Click(object sender, EventArgs e)
         {
             Productos frm = new Productos();
+            frm.WindowState = FormWindowState.Normal;
             frm.MdiParent = this;
             frm.Show();
         }
@@ -33,12 +34,18 @@ namespace Vista
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             CInitial initial = new CInitial(Application.StartupPath);
+            Mesas frm = new Mesas();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Mesas frm = new Mesas();
             frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+            frm.MdiParent = this;
             frm.Show();
         }
     }

@@ -3,6 +3,5 @@
   <Server>127.0.0.1</Server>
   <Database>facturacion</Database>
   <UserID>root</UserID>
-  <Password></Password>
-  <IntegratedSecurity>true</IntegratedSecurity>
+  <Password>admin</Password>
 </Conexion>
