@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
 using Modelo;
-using System.Data;
 
 namespace Controlador
 {
@@ -16,8 +16,7 @@ namespace Controlador
 
             try
             {
-                SqlCommand command = new SqlCommand("SELECT productos.*, categorias.nombre FROM productos INNER JOIN categorias on categorias.id = productos.categoria_id ORDER BY categorias.nombre ASC, productos.nombre ASC", this.Conexion);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT productos.*, categorias.nombre FROM productos INNER JOIN categorias on categorias.id = productos.categoria_id ORDER BY categorias.nombre ASC, productos.nombre ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)
@@ -40,7 +39,7 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                SqlCommand command = new SqlCommand("INSERT INTO productos(nombre, precio_costo, precio_venta, categoria_id) VALUES(@nombre, @precioCosto, @precioVenta, @categoriaId)", this.Conexion);
+                MySqlCommand command = new MySqlCommand("INSERT INTO productos(nombre, precio_costo, precio_venta, categoria_id) VALUES(@nombre, @precioCosto, @precioVenta, @categoriaId)", this.Conexion);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
                 command.Parameters.AddWithValue("@precioCosto", producto.PrecioCosto);
                 command.Parameters.AddWithValue("@precioVenta", producto.PrecioVenta);
@@ -68,7 +67,7 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                SqlCommand command = new SqlCommand("UPDATE productos SET nombre = @nombre, precio_costo = @precioCosto, precio_venta = @precioVenta, categoria_id = @categoriaId WHERE id = @id", this.Conexion);
+                MySqlCommand command = new MySqlCommand("UPDATE productos SET nombre = @nombre, precio_costo = @precioCosto, precio_venta = @precioVenta, categoria_id = @categoriaId WHERE id = @id", this.Conexion);
                 command.Parameters.AddWithValue("@id", producto.ID);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
                 command.Parameters.AddWithValue("@precioCosto", producto.PrecioCosto);
@@ -97,7 +96,7 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                SqlCommand command = new SqlCommand("DELETE FROM productos WHERE id = @id", this.Conexion);
+                MySqlCommand command = new MySqlCommand("DELETE FROM productos WHERE id = @id", this.Conexion);
                 command.Parameters.AddWithValue("@id", id);
 
                 result = (command.ExecuteNonQuery() > 0);

@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using MySql.Data.MySqlClient;
 
 namespace Controlador
 {
     public class Controller
     {
-        public SqlConnection conexion = new SqlConnection();
+        public MySqlConnection conexion = new MySqlConnection();
 
         public Controller()
         {
             this.conexion.ConnectionString = this.CadenaConexion();
         }
 
-        protected SqlConnection Conexion
+        protected MySqlConnection Conexion
         {
             get { return conexion; }
             set { conexion = value; }
@@ -26,7 +26,7 @@ namespace Controlador
 
         private String CadenaConexion()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
 
             try
             {
@@ -35,20 +35,17 @@ namespace Controlador
 
                 XmlNodeList nodeList;
                 
-                nodeList = xml.GetElementsByTagName("DataSource");
-                if(nodeList.Count > 0) builder.DataSource = nodeList[0].InnerText;
+                nodeList = xml.GetElementsByTagName("Server");
+                if(nodeList.Count > 0) builder.Server = nodeList[0].InnerText;
                 
-                nodeList = xml.GetElementsByTagName("InitialCatalog");
-                if(nodeList.Count > 0) builder.InitialCatalog = nodeList[0].InnerText;
+                nodeList = xml.GetElementsByTagName("Database");
+                if (nodeList.Count > 0) builder.Database = nodeList[0].InnerText;
                 
                 nodeList = xml.GetElementsByTagName("UserID");
                 if(nodeList.Count > 0) builder.UserID = nodeList[0].InnerText;
                 
                 nodeList = xml.GetElementsByTagName("Password");
                 if(nodeList.Count > 0) builder.Password = nodeList[0].InnerText;
-
-                nodeList = xml.GetElementsByTagName("IntegratedSecurity");
-                if (nodeList.Count > 0) builder.IntegratedSecurity = Convert.ToBoolean(nodeList[0].InnerText);
             }
             catch (Exception ex)
             {

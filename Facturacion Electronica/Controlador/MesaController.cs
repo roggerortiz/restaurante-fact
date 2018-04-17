@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Modelo;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace Controlador
@@ -17,8 +17,10 @@ namespace Controlador
             try
             {
                 this.AbrirConexion();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT mesas.* FROM mesas ORDER BY mesas.numero ASC", this.Conexion);
-                adapter.Fill(dt);
+
+                MySqlCommand command = new MySqlCommand("SELECT mesas.* FROM mesas ORDER BY mesas.numero ASC", this.Conexion);
+                MySqlDataReader reader = command.ExecuteReader();
+                dt.Load(reader);
             }
             catch (Exception ex)
             {

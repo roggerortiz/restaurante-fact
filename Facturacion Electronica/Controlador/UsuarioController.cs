@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
 using Modelo;
 
 namespace Controlador
@@ -18,11 +18,11 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                SqlCommand command = new SqlCommand("SELECT usuarios.* FROM usuarios WHERE usuario = @usuario AND clave = @clave", this.Conexion);
+                MySqlCommand command = new MySqlCommand("SELECT usuarios.* FROM usuarios WHERE usuario = @usuario AND clave = @clave", this.Conexion);
                 command.Parameters.AddWithValue("@usuario", usuario);
                 command.Parameters.AddWithValue("@clave", clave);
 
-                SqlDataReader reader = command.ExecuteReader();
+                MySqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
                 {

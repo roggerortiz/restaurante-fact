@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
-using System.Data;
+using MySql.Data.MySqlClient;
 using Modelo;
 
 namespace Controlador
@@ -16,11 +16,7 @@ namespace Controlador
 
             try
             {
-                this.AbrirConexion();
-
-                SqlCommand command = new SqlCommand("SELECT categorias.* FROM categorias ORDER BY categorias.nombre ASC", this.Conexion);
-                
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT categorias.* FROM categorias ORDER BY categorias.nombre ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)

@@ -75,9 +75,6 @@ namespace Vista
             MesaController mc = new MesaController();
             DataTable dt = mc.Listar();
 
-            FlowLayoutPanel panel = new FlowLayoutPanel();
-            panel.Dock = DockStyle.Fill;
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 String numero = dt.Rows[i][1].ToString();
@@ -92,10 +89,8 @@ namespace Vista
                 btn.Width = 100;
                 btn.Height = 100;
 
-                panel.Controls.Add(btn);
+                panelMesas.Controls.Add(btn);
             }
-
-            this.Controls.Add(panel);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Conexion>
-  <DataSource>DESKTOP-MN3GC25\SQLEXPRESS</DataSource>
-  <InitialCatalog>facturacion</InitialCatalog>
+  <Server>127.0.0.1</Server>
+  <Database>facturacion</Database>
+  <UserID>root</UserID>
+  <Password></Password>
   <IntegratedSecurity>true</IntegratedSecurity>
 </Conexion>
