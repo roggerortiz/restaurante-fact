@@ -44,7 +44,6 @@
     <Compile Include="ComprobanteController.cs" />
     <Compile Include="ConfiguracionController.cs" />
     <Compile Include="Controller.cs" />
-    <Compile Include="LogController.cs" />
     <Compile Include="MesaController.cs" />
     <Compile Include="ProductoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

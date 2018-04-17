@@ -43,7 +43,6 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Comprobante.cs" />
     <Compile Include="ComprobanteProducto.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="Mesa.cs" />
     <Compile Include="Modelo.cs" />
     <Compile Include="Producto.cs" />
