@@ -16,7 +16,10 @@ namespace Controlador
 
             try
             {
+                this.AbrirConexion();
+
                 SqlCommand command = new SqlCommand("SELECT categorias.* FROM categorias ORDER BY categorias.nombre ASC", this.Conexion);
+                
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
             }

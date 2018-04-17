@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using InitialDLL;
+using Controlador;
 
 namespace Vista
 {
@@ -32,6 +33,13 @@ namespace Vista
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             CInitial initial = new CInitial(Application.StartupPath);
+        }
+
+        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mesas frm = new Mesas();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }

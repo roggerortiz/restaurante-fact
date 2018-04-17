@@ -53,3 +53,4 @@ D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vis
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Productos.resources
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Properties.Resources.resources
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.Mesas.resources

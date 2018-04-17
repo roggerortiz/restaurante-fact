@@ -30,16 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLogs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,12 +71,24 @@
             this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
             this.mantenedoresToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // menuCategorias
+            // 
+            this.menuCategorias.Name = "menuCategorias";
+            this.menuCategorias.Size = new System.Drawing.Size(153, 22);
+            this.menuCategorias.Text = "Categorías";
+            // 
             // mnuProductos
             // 
             this.mnuProductos.Name = "mnuProductos";
             this.mnuProductos.Size = new System.Drawing.Size(153, 22);
             this.mnuProductos.Text = "Productos";
             this.mnuProductos.Click += new System.EventHandler(this.mnuProductos_Click);
+            // 
+            // mnuClientes
+            // 
+            this.mnuClientes.Name = "mnuClientes";
+            this.mnuClientes.Size = new System.Drawing.Size(153, 22);
+            this.mnuClientes.Text = "Clientes";
             // 
             // mnuComprobantes
             // 
@@ -101,13 +113,25 @@
             // mnuConfiguracion
             // 
             this.mnuConfiguracion.Name = "mnuConfiguracion";
-            this.mnuConfiguracion.Size = new System.Drawing.Size(152, 22);
+            this.mnuConfiguracion.Size = new System.Drawing.Size(150, 22);
             this.mnuConfiguracion.Text = "Configuración";
+            // 
+            // mnuLogs
+            // 
+            this.mnuLogs.Name = "mnuLogs";
+            this.mnuLogs.Size = new System.Drawing.Size(150, 22);
+            this.mnuLogs.Text = "Logs";
+            // 
+            // mnuMesas
+            // 
+            this.mnuMesas.Name = "mnuMesas";
+            this.mnuMesas.Size = new System.Drawing.Size(150, 22);
+            this.mnuMesas.Text = "Mesas";
             // 
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(150, 22);
             this.mnuUsuarios.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
@@ -118,30 +142,7 @@
             this.mesasToolStripMenuItem.Size = new System.Drawing.Size(88, 89);
             this.mesasToolStripMenuItem.Text = "Mesas";
             this.mesasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // menuCategorias
-            // 
-            this.menuCategorias.Name = "menuCategorias";
-            this.menuCategorias.Size = new System.Drawing.Size(153, 22);
-            this.menuCategorias.Text = "Categorías";
-            // 
-            // mnuClientes
-            // 
-            this.mnuClientes.Name = "mnuClientes";
-            this.mnuClientes.Size = new System.Drawing.Size(153, 22);
-            this.mnuClientes.Text = "Clientes";
-            // 
-            // mnuLogs
-            // 
-            this.mnuLogs.Name = "mnuLogs";
-            this.mnuLogs.Size = new System.Drawing.Size(152, 22);
-            this.mnuLogs.Text = "Logs";
-            // 
-            // mnuMesas
-            // 
-            this.mnuMesas.Name = "mnuMesas";
-            this.mnuMesas.Size = new System.Drawing.Size(152, 22);
-            this.mnuMesas.Text = "Mesas";
+            this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 

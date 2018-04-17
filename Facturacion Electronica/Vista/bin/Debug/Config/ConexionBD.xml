@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Conexion>
+  <DataSource>DESKTOP-MN3GC25\SQLEXPRESS</DataSource>
+  <InitialCatalog>facturacion</InitialCatalog>
+  <IntegratedSecurity>true</IntegratedSecurity>
+</Conexion>

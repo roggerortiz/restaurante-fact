@@ -34,4 +34,5 @@
   </CSVScanInterval>
   <XMLDirTimeout>5</XMLDirTimeout>
   <StationMode>0</StationMode>
+  <Mesas>50</Mesas>
 </Settings>
