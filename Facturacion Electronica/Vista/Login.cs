@@ -44,6 +44,27 @@ namespace Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            ingresar();
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                ingresar();
+            }
+        }
+
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                ingresar();
+            }
+        }
+
+        private void ingresar()
+        {
             // Se comprueba que los campos no esten vacíos
             if (txtUsuario.Text == "" || txtClave.Text == "")
             {
@@ -54,10 +75,10 @@ namespace Vista
             {
                 // Si no estan vacíos, se procede a realizar el login
                 UsuarioController uc = new UsuarioController();
-                Usuario u = uc.login(txtUsuario.Text, txtClave.Text);
+                Usuario u = uc.Login(txtUsuario.Text, txtClave.Text);
 
                 // Se verifica si los datos ingresados coinciden con los registrados en la BD
-                if (u.ID != null && u.ID > 0)
+                if (u.ID > 0)
                 {
                     // Si los datos son correctos, se lanza el Menu Principal
                     MessageBox.Show("BIENVENIDO AL SISTEMA DE FACTURACIÓN", "RESTAURANTE .....", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -5,16 +5,9 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Categoria
+    public class Categoria : Modelo
     {
-        private Int32 id;
         private String nombre;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String Nombre
         {

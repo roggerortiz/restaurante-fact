@@ -5,19 +5,12 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Producto
+    public class Producto : Modelo
     {
-        private Int32 id;
         private String nombre;
         private Decimal precioCosto;
         private Decimal precioVenta;
         private Int32 categoriaId;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String Nombre
         {

@@ -5,19 +5,12 @@ using System.Text;
 
 namespace Modelo
 {
-    public class ComprobanteProducto
+    public class ComprobanteProducto : Modelo
     {
-        private Int32 id;
         private Int32 cantidad;
         private Decimal subtotal;
         private Int32 comprobanteId;
         private Int32 productoId;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public Int32 Cantidad
         {

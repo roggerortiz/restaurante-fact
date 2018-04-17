@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Usuario
+    public class Usuario : Modelo
     {
-        private Int32 id;
         private String dni;
         private String nombres;
         private String apellidos;
@@ -16,12 +15,6 @@ namespace Modelo
         private String nombUsu;
         private String clave;
         private Int32 estado;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String DNI
         {

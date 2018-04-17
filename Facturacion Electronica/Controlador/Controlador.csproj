@@ -42,8 +42,8 @@
     <Compile Include="CategoriaController.cs" />
     <Compile Include="ClienteController.cs" />
     <Compile Include="ComprobanteController.cs" />
-    <Compile Include="ConexionBD.cs" />
     <Compile Include="ConfiguracionController.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="LogController.cs" />
     <Compile Include="MesaController.cs" />
     <Compile Include="ProductoController.cs" />

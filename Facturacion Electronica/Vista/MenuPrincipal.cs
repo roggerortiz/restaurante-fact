@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using InitialDLL;
 
 namespace Vista
 {
@@ -26,6 +27,11 @@ namespace Vista
             Productos frm = new Productos();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            CInitial initial = new CInitial(Application.StartupPath);
         }
     }
 }

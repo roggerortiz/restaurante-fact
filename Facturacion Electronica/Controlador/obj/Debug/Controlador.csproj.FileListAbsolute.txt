@@ -14,3 +14,11 @@ D:\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Modelo.
 D:\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.csprojResolveAssemblyReference.cache
 D:\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.dll
 D:\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Controlador.dll.config
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Controlador.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Controlador.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Debug\Modelo.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.csprojResolveAssemblyReference.cache
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Debug\Controlador.pdb

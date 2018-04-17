@@ -5,17 +5,10 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Log
+    public class Log : Modelo
     {
-        private Int32 id;
         private String descripcion;
         private DateTime fecha;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String Descripcion
         {

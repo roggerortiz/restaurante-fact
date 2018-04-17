@@ -5,19 +5,12 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Envio
+    public class Envio : Modelo
     {
-        private Int32 id;
         private String codigo;
         private String respuesta;
         private DateTime fecha;
         private Int32 comprobanteId;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String Codigo
         {

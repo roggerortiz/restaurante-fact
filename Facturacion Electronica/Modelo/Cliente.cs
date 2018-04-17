@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Cliente
+    public class Cliente : Modelo
     {
-        private Int32 id;
         private String ruc;
         private String razonSocial;
         private String dni;
@@ -16,12 +15,6 @@ namespace Modelo
         private String direccion;
         private String telefono;
         private String correo;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String RUC
         {

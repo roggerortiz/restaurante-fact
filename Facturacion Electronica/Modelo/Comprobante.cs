@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Comprobante
+    public class Comprobante : Modelo
     {
-        private Int32 id;
         private String tipo;
         private String serie;
         private String numero;
@@ -18,12 +17,6 @@ namespace Modelo
         private Decimal total;
         private Int32 usuarioId;
         private Int32 clienteId;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public String Tipo
         {

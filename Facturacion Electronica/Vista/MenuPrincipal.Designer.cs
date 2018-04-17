@@ -33,9 +33,13 @@
             this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLogs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +60,9 @@
             // mantenedoresToolStripMenuItem
             // 
             this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCategorias,
             this.mnuProductos,
+            this.mnuClientes,
             this.mnuComprobantes});
             this.mantenedoresToolStripMenuItem.Image = global::Vista.Properties.Resources.mantenedores;
             this.mantenedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -81,8 +87,10 @@
             // sistemaToolStripMenuItem
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraciónToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.mnuConfiguracion,
+            this.mnuLogs,
+            this.mnuMesas,
+            this.mnuUsuarios});
             this.sistemaToolStripMenuItem.Image = global::Vista.Properties.Resources.sistema;
             this.sistemaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
@@ -90,17 +98,17 @@
             this.sistemaToolStripMenuItem.Text = "Sistema";
             this.sistemaToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // configuraciónToolStripMenuItem
+            // mnuConfiguracion
             // 
-            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.mnuConfiguracion.Name = "mnuConfiguracion";
+            this.mnuConfiguracion.Size = new System.Drawing.Size(152, 22);
+            this.mnuConfiguracion.Text = "Configuración";
             // 
-            // usuariosToolStripMenuItem
+            // mnuUsuarios
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.mnuUsuarios.Name = "mnuUsuarios";
+            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnuUsuarios.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
             // 
@@ -110,6 +118,30 @@
             this.mesasToolStripMenuItem.Size = new System.Drawing.Size(88, 89);
             this.mesasToolStripMenuItem.Text = "Mesas";
             this.mesasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // menuCategorias
+            // 
+            this.menuCategorias.Name = "menuCategorias";
+            this.menuCategorias.Size = new System.Drawing.Size(153, 22);
+            this.menuCategorias.Text = "Categorías";
+            // 
+            // mnuClientes
+            // 
+            this.mnuClientes.Name = "mnuClientes";
+            this.mnuClientes.Size = new System.Drawing.Size(153, 22);
+            this.mnuClientes.Text = "Clientes";
+            // 
+            // mnuLogs
+            // 
+            this.mnuLogs.Name = "mnuLogs";
+            this.mnuLogs.Size = new System.Drawing.Size(152, 22);
+            this.mnuLogs.Text = "Logs";
+            // 
+            // mnuMesas
+            // 
+            this.mnuMesas.Name = "mnuMesas";
+            this.mnuMesas.Size = new System.Drawing.Size(152, 22);
+            this.mnuMesas.Text = "Mesas";
             // 
             // MenuPrincipal
             // 
@@ -123,6 +155,7 @@
             this.Text = ".: RESTAURANTE :.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -136,9 +169,13 @@
         private System.Windows.Forms.ToolStripMenuItem mnuProductos;
         private System.Windows.Forms.ToolStripMenuItem mnuComprobantes;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuConfiguracion;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
         private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuCategorias;
+        private System.Windows.Forms.ToolStripMenuItem mnuClientes;
+        private System.Windows.Forms.ToolStripMenuItem mnuLogs;
+        private System.Windows.Forms.ToolStripMenuItem mnuMesas;
     }
 }

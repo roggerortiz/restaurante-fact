@@ -8,21 +8,19 @@ using Modelo;
 
 namespace Controlador
 {
-    public class UsuarioController
+    public class UsuarioController : Controller
     {
-        private ConexionBD conexionBD = new ConexionBD();
-
-        public Usuario login(String usuario, String clave)
+        public Usuario Login(String usuario, String clave)
         {
             Usuario u = new Usuario();
 
             try
             {
-                SqlCommand command = new SqlCommand("SELECT usuarios.* FROM usuarios WHERE usuario = '" + usuario + "' AND clave = '" + clave + "'", this.conexionBD.Conexion);
+                this.AbrirConexion();
 
-                this.conexionBD.abrir();
-
-                command.CommandType = CommandType.Text;
+                SqlCommand command = new SqlCommand("SELECT usuarios.* FROM usuarios WHERE usuario = @usuario AND clave = @clave", this.Conexion);
+                command.Parameters.AddWithValue("@usuario", usuario);
+                command.Parameters.AddWithValue("@clave", clave);
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -49,7 +47,7 @@ namespace Controlador
             }
             finally
             {
-                this.conexionBD.cerrar();
+                this.CerrarConexion();
             }
 
             return u;

@@ -1,40 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
 namespace Controlador
 {
-    public class ConexionBD
+    public class Controller
     {
-        //private String cadena = "Data Source=DESKTOP-MN3GC25\\SQLEXPRESS;Initial Catalog=facturacion;Integrated Security=True";
-        private String cadena = "Server=.; integrated security=true; DataBase=facturacion";
+        private String cadena = "Data Source=DESKTOP-MN3GC25\\SQLEXPRESS;Initial Catalog=facturacion;Integrated Security=True";
+        //private String cadena = "Server=.; integrated security=true; DataBase=facturacion";
         private SqlConnection conexion = new SqlConnection();
 
-        public SqlConnection Conexion
-        {
-            get { return conexion; }
-        }
-
-        public ConexionBD ()
+        public Controller()
         {
             this.conexion.ConnectionString = this.cadena;
         }
 
-        public void abrir()
+        protected SqlConnection Conexion
+        {
+            get { return conexion; }
+            set { conexion = value; }
+        }
+
+        public void AbrirConexion()
         {
             try
             {
-                this.conexion.Open();
+                if (this.conexion.State != ConnectionState.Open)
+                {
+                    this.conexion.Open();
+                }
             } catch (Exception ex)
             {
                 Console.WriteLine("Error al Abrir la Conexión con la Base de Datos: " + ex.Message);
             }
         }
 
-        public void cerrar()
+        public void CerrarConexion()
         {
             try
             {

@@ -5,17 +5,10 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Mesa
+    public class Mesa : Modelo
     {
-        private Int32 id;
         private Int32 numero;
         private String estado;
-
-        public Int32 ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         public Int32 Numero
         {
