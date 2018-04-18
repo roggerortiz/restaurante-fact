@@ -3,5 +3,5 @@
   <Server>127.0.0.1</Server>
   <Database>facturacion</Database>
   <UserID>root</UserID>
-  <Password>admin</Password>
+  <Password></Password>
 </Conexion>

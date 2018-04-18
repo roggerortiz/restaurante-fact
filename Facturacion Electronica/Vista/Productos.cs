@@ -101,21 +101,23 @@ namespace Vista
         {
             ProductoController pc = new ProductoController();
 
-            DataTable dt = pc.Listar();
+            dgvProductos.DataSource = pc.Listar();
+            dgvProductos.Columns[0].Visible = false;
+            dgvProductos.Columns[0].HeaderText = "ID";
+            dgvProductos.Columns[1].HeaderText = "Nombre";
+            dgvProductos.Columns[2].HeaderText = "Precio Costo";
+            dgvProductos.Columns[3].HeaderText = "Precio Venta";
+            dgvProductos.Columns[4].Visible = false;
+            dgvProductos.Columns[4].HeaderText = "CategoriaID";
+            dgvProductos.Columns[5].HeaderText = "Categoria";
 
-            if (dt.Rows.Count > 0)
+            if (dgvProductos.RowCount > 0)
             {
-                dgvProductos.DataSource = pc.Listar();
-                dgvProductos.Columns[0].Visible = false;
-                dgvProductos.Columns[0].HeaderText = "ID";
-                dgvProductos.Columns[1].HeaderText = "Nombre";
-                dgvProductos.Columns[2].HeaderText = "Precio Costo";
-                dgvProductos.Columns[3].HeaderText = "Precio Venta";
-                dgvProductos.Columns[4].Visible = false;
-                dgvProductos.Columns[4].HeaderText = "CategoriaID";
-                dgvProductos.Columns[5].HeaderText = "Categoria";
-
                 SeleccionarProducto(0);
+            }
+            else
+            {
+                LimpiarSeleccion();
             }
         }
 
@@ -127,6 +129,16 @@ namespace Vista
             txtPrecioVenta.Text = dgvProductos.Rows[index].Cells[3].Value.ToString();
             txtCategoriaID.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
             txtCategoria.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
+        }
+
+        private void LimpiarSeleccion()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtPrecioCosto.Text = "";
+            txtPrecioVenta.Text = "";
+            txtCategoriaID.Text = "";
+            txtCategoria.Text = "";
         }
 
         private void RegistrarProducto()

@@ -13,6 +13,9 @@ namespace Vista
 {
     public partial class MenuPrincipal : Form
     {
+        Productos frmProductos = new Productos();
+        Mesas frmMesas = new Mesas();
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -23,30 +26,38 @@ namespace Vista
             Application.Exit();
         }
 
-        private void mnuProductos_Click(object sender, EventArgs e)
-        {
-            Productos frm = new Productos();
-            frm.WindowState = FormWindowState.Normal;
-            frm.MdiParent = this;
-            frm.Show();
-        }
-
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             CInitial initial = new CInitial(Application.StartupPath);
-            Mesas frm = new Mesas();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            frmMesas.WindowState = FormWindowState.Normal;
+            frmMesas.MdiParent = this;
+            frmMesas.Show();
+        }
+
+        private void mnuProductos_Click(object sender, EventArgs e)
+        {
+            if (frmProductos == null || frmProductos.IsDisposed)
+            {
+                frmProductos = new Productos();
+            }
+
+            frmProductos.WindowState = FormWindowState.Normal;
+            frmProductos.MdiParent = this;
+            frmProductos.Activate();
+            frmProductos.Show();
         }
 
         private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Mesas frm = new Mesas();
-            frm.WindowState = FormWindowState.Maximized;
-            //frm.Show();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frmMesas == null || frmMesas.IsDisposed)
+            {
+                frmMesas = new Mesas();
+            }
+
+            frmMesas.WindowState = FormWindowState.Normal;
+            frmMesas.MdiParent = this;
+            frmMesas.Activate();
+            frmMesas.Show();
         }
     }
 }

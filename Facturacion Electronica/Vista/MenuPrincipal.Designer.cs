@@ -35,8 +35,6 @@
             this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLogs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,8 +97,6 @@
             // sistemaToolStripMenuItem
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuConfiguracion,
-            this.mnuLogs,
             this.mnuMesas,
             this.mnuUsuarios});
             this.sistemaToolStripMenuItem.Image = global::Vista.Properties.Resources.sistema;
@@ -110,28 +106,16 @@
             this.sistemaToolStripMenuItem.Text = "Sistema";
             this.sistemaToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // mnuConfiguracion
-            // 
-            this.mnuConfiguracion.Name = "mnuConfiguracion";
-            this.mnuConfiguracion.Size = new System.Drawing.Size(150, 22);
-            this.mnuConfiguracion.Text = "Configuración";
-            // 
-            // mnuLogs
-            // 
-            this.mnuLogs.Name = "mnuLogs";
-            this.mnuLogs.Size = new System.Drawing.Size(150, 22);
-            this.mnuLogs.Text = "Logs";
-            // 
             // mnuMesas
             // 
             this.mnuMesas.Name = "mnuMesas";
-            this.mnuMesas.Size = new System.Drawing.Size(150, 22);
+            this.mnuMesas.Size = new System.Drawing.Size(152, 22);
             this.mnuMesas.Text = "Mesas";
             // 
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(150, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
             this.mnuUsuarios.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
@@ -170,13 +154,11 @@
         private System.Windows.Forms.ToolStripMenuItem mnuProductos;
         private System.Windows.Forms.ToolStripMenuItem mnuComprobantes;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
         private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuCategorias;
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
-        private System.Windows.Forms.ToolStripMenuItem mnuLogs;
         private System.Windows.Forms.ToolStripMenuItem mnuMesas;
     }
 }
