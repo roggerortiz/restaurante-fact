@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class Productos
+    partial class frmProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -251,7 +251,7 @@
             this.MaximizeBox = false;
             this.Name = "Productos";
             this.Text = ".: PRODUCTOS :.";
-            this.Load += new System.EventHandler(this.Productos_Load);
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.groupBoxProducto.ResumeLayout(false);
             this.groupBoxProducto.PerformLayout();

@@ -50,52 +50,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuscarCategoria.cs">
+    <Compile Include="frmBuscarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarCategoria.Designer.cs">
-      <DependentUpon>BuscarCategoria.cs</DependentUpon>
+    <Compile Include="frmBuscarCategoria.Designer.cs">
+      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mesas.cs">
+    <Compile Include="frmDetalleMesa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mesas.Designer.cs">
-      <DependentUpon>Mesas.cs</DependentUpon>
+    <Compile Include="frmDetalleMesa.Designer.cs">
+      <DependentUpon>frmDetalleMesa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmNumeroMesas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmNumeroMesas.Designer.cs">
+      <DependentUpon>frmNumeroMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="frmMesas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <Compile Include="frmMesas.Designer.cs">
+      <DependentUpon>frmMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos.Designer.cs">
-      <DependentUpon>Productos.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BuscarCategoria.resx">
-      <DependentUpon>BuscarCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarCategoria.resx">
+      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mesas.resx">
-      <DependentUpon>Mesas.cs</DependentUpon>
+    <EmbeddedResource Include="frmDetalleMesa.resx">
+      <DependentUpon>frmDetalleMesa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmNumeroMesas.resx">
+      <DependentUpon>frmNumeroMesas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmMesas.resx">
+      <DependentUpon>frmMesas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos.resx">
-      <DependentUpon>Productos.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

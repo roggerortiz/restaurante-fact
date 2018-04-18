@@ -11,9 +11,9 @@ using Modelo;
 
 namespace Vista
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -83,7 +83,7 @@ namespace Vista
                     // Si los datos son correctos, se lanza el Menu Principal
                     MessageBox.Show("BIENVENIDO AL SISTEMA DE FACTURACIÓN", "RESTAURANTE .....", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    MenuPrincipal mp = new MenuPrincipal();
+                    frmMenuPrincipal mp = new frmMenuPrincipal();
                     mp.Show();
                 }
                 else

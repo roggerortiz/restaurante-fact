@@ -15,6 +15,8 @@ namespace Modelo
         private Decimal subtotal;
         private Decimal igv;
         private Decimal total;
+        private Int32 mesa;
+        private String estado;
         private Int32 usuarioId;
         private Int32 clienteId;
 
@@ -64,6 +66,18 @@ namespace Modelo
         {
             get { return total; }
             set { total = value; }
+        }
+
+        public Int32 Mesa
+        {
+            get { return mesa; }
+            set { mesa = value; }
+        }
+
+        public String Estado
+        {
+            get { return estado; }
+            set { estado = value; }
         }
 
         public Int32 UsuarioID

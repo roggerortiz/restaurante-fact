@@ -12,16 +12,16 @@ using Modelo;
 
 namespace Vista
 {
-    public partial class BuscarCategoria : Form
+    public partial class frmBuscarCategoria : Form
     {
         public Categoria categoria = new Categoria();
 
-        public BuscarCategoria()
+        public frmBuscarCategoria()
         {
             InitializeComponent();
         }
 
-        private void BuscarCategoria_Load(object sender, EventArgs e)
+        private void frmBuscarCategoria_Load(object sender, EventArgs e)
         {
             CategoriaController cc = new CategoriaController();
 

@@ -11,19 +11,19 @@ using Controlador;
 
 namespace Vista
 {
-    public partial class Productos : Form
+    public partial class frmProductos : Form
     {
         private Boolean crear = false;
         private Boolean editar = false;
 
-        public Productos()
+        public frmProductos()
         {
             InitializeComponent();
         }
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
-            BuscarCategoria frm = new BuscarCategoria();
+            frmBuscarCategoria frm = new frmBuscarCategoria();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -49,7 +49,7 @@ namespace Vista
             }
         }
 
-        private void Productos_Load(object sender, EventArgs e)
+        private void frmProductos_Load(object sender, EventArgs e)
         {
             ListarProductos();
         }

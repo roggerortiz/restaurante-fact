@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class Mesas
+    partial class frmDetalleMesa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMesas = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // panelMesas
-            // 
-            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMesas.Location = new System.Drawing.Point(0, 0);
-            this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(852, 409);
-            this.panelMesas.TabIndex = 0;
-            // 
-            // Mesas
+            // frmDetalleMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 409);
-            this.Controls.Add(this.panelMesas);
-            this.Name = "Mesas";
-            this.Text = "Mesas";
-            this.Load += new System.EventHandler(this.Mesas_Load);
+            this.ClientSize = new System.Drawing.Size(818, 444);
+            this.Name = "frmDetalleMesa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MESA";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel panelMesas;
-
-
-
-
-
-
     }
 }

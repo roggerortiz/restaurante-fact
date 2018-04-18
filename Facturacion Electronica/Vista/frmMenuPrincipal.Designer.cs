@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class MenuPrincipal
+    partial class frmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNumeroMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -97,7 +97,7 @@
             // sistemaToolStripMenuItem
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMesas,
+            this.mnuNumeroMesas,
             this.mnuUsuarios});
             this.sistemaToolStripMenuItem.Image = global::Vista.Properties.Resources.sistema;
             this.sistemaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -106,11 +106,12 @@
             this.sistemaToolStripMenuItem.Text = "Sistema";
             this.sistemaToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // mnuMesas
+            // mnuNumeroMesas
             // 
-            this.mnuMesas.Name = "mnuMesas";
-            this.mnuMesas.Size = new System.Drawing.Size(152, 22);
-            this.mnuMesas.Text = "Mesas";
+            this.mnuNumeroMesas.Name = "mnuNumeroMesas";
+            this.mnuNumeroMesas.Size = new System.Drawing.Size(152, 22);
+            this.mnuNumeroMesas.Text = "Mesas";
+            this.mnuNumeroMesas.Click += new System.EventHandler(this.mnuNumeroMesas_Click);
             // 
             // mnuUsuarios
             // 
@@ -128,7 +129,7 @@
             this.mesasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
-            // MenuPrincipal
+            // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,11 +137,11 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MenuPrincipal";
+            this.Name = "frmMenuPrincipal";
             this.Text = ".: RESTAURANTE :.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
-            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -159,6 +160,6 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuCategorias;
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
-        private System.Windows.Forms.ToolStripMenuItem mnuMesas;
+        private System.Windows.Forms.ToolStripMenuItem mnuNumeroMesas;
     }
 }

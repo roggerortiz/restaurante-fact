@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class BuscarCategoria
+    partial class frmBuscarCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             this.Name = "BuscarCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BUSCAR CATEGORÍA";
-            this.Load += new System.EventHandler(this.BuscarCategoria_Load);
+            this.Load += new System.EventHandler(this.frmBuscarCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
 

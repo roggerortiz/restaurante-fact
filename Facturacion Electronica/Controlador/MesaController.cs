@@ -16,11 +16,8 @@ namespace Controlador
 
             try
             {
-                this.AbrirConexion();
-
-                MySqlCommand command = new MySqlCommand("SELECT mesas.* FROM mesas ORDER BY mesas.numero ASC", this.Conexion);
-                MySqlDataReader reader = command.ExecuteReader();
-                dt.Load(reader);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT mesas.* FROM mesas ORDER BY mesas.numero ASC", this.Conexion);
+                adapter.Fill(dt);
             }
             catch (Exception ex)
             {
@@ -32,6 +29,146 @@ namespace Controlador
             }
 
             return dt;
+        }
+
+        public Int32 Cantidad()
+        {
+            Int32 cantidad = 0;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(mesas.id) FROM mesas", this.Conexion);
+                cantidad = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return cantidad;
+        }
+
+        public Int32 Libres()
+        {
+            Int32 libres = 0;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(mesas.id) FROM mesas WHERE mesas.estado = 'Libre'", this.Conexion);
+                libres = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return libres;
+        }
+
+        public Int32 Ocupadas()
+        {
+            Int32 ocupadas = 0;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(mesas.id) FROM mesas WHERE mesas.estado = 'Ocupada'", this.Conexion);
+                ocupadas = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return ocupadas;
+        }
+
+        public Int32 Reservadas()
+        {
+            Int32 reservadas = 0;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(mesas.id) FROM mesas WHERE mesas.estado = 'Reservada'", this.Conexion);
+                reservadas = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return reservadas;
+        }
+
+        public Boolean Registrar(Mesa mesa)
+        {
+            Boolean result = false;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("INSERT INTO mesas(numero) VALUES(@numero)", this.Conexion);
+                command.Parameters.AddWithValue("@numero", mesa.Numero);
+                result = (command.ExecuteNonQuery() > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return result;
+        }
+
+        public Boolean EliminarVarias(Int32 numero)
+        {
+            Boolean result = false;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("DELETE FROM mesas WHERE numero >= @numero", this.Conexion);
+                command.Parameters.AddWithValue("@numero", numero);
+                result = (command.ExecuteNonQuery() > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return result;
         }
     }
 }
