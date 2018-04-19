@@ -54,17 +54,16 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.AllowUserToOrderColumns = true;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvProductos.Location = new System.Drawing.Point(0, 174);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 174);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(462, 218);
+            this.dgvProductos.Size = new System.Drawing.Size(438, 206);
             this.dgvProductos.TabIndex = 2;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -95,7 +94,7 @@
             this.groupBoxProducto.Size = new System.Drawing.Size(438, 127);
             this.groupBoxProducto.TabIndex = 1;
             this.groupBoxProducto.TabStop = false;
-            this.groupBoxProducto.Text = "Producto";
+            this.groupBoxProducto.Text = "Datos";
             // 
             // btnBuscarCategoria
             // 
@@ -235,7 +234,7 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // Productos
+            // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,7 +248,7 @@
             this.Controls.Add(this.groupBoxProducto);
             this.Controls.Add(this.dgvProductos);
             this.MaximizeBox = false;
-            this.Name = "Productos";
+            this.Name = "frmProductos";
             this.Text = ".: PRODUCTOS :.";
             this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

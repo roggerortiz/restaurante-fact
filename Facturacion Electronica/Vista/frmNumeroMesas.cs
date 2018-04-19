@@ -53,6 +53,8 @@ namespace Vista
             txtNumero.Text = cantidad.ToString();
 
             MessageBox.Show("Cantidad de Mesas Actualizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.DialogResult = DialogResult.OK;
         }
 
         private void frmNumeroMesas_Load(object sender, EventArgs e)

@@ -126,7 +126,7 @@
             this.linkVer.Location = new System.Drawing.Point(299, 94);
             this.linkVer.Name = "linkVer";
             this.linkVer.Size = new System.Drawing.Size(28, 18);
-            this.linkVer.TabIndex = 7;
+            this.linkVer.TabIndex = 3;
             this.linkVer.TabStop = true;
             this.linkVer.Text = "ver";
             this.linkVer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.linkVer_MouseDown);
@@ -138,7 +138,7 @@
             this.btnSalir.Location = new System.Drawing.Point(202, 132);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(79, 36);
-            this.btnSalir.TabIndex = 6;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -152,7 +152,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(45, 132);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(104, 36);
-            this.btnIngresar.TabIndex = 1;
+            this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "&Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -186,7 +186,7 @@
             this.txtClave.Location = new System.Drawing.Point(132, 86);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(161, 26);
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 2;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtClave.UseSystemPasswordChar = true;
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
@@ -201,7 +201,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(132, 41);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(161, 26);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
@@ -223,7 +223,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
-            // Login
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,7 +232,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Login";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".: RESTAURANTE :.";
             this.groupBox1.ResumeLayout(false);

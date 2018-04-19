@@ -68,12 +68,6 @@
     <Compile Include="frmNumeroMesas.Designer.cs">
       <DependentUpon>frmNumeroMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMesas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMesas.Designer.cs">
-      <DependentUpon>frmMesas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,9 +97,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNumeroMesas.resx">
       <DependentUpon>frmNumeroMesas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMesas.resx">
-      <DependentUpon>frmMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

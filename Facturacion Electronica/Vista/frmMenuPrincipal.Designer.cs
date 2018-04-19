@@ -38,6 +38,7 @@
             this.mnuNumeroMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMesas = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,14 +110,14 @@
             // mnuNumeroMesas
             // 
             this.mnuNumeroMesas.Name = "mnuNumeroMesas";
-            this.mnuNumeroMesas.Size = new System.Drawing.Size(152, 22);
+            this.mnuNumeroMesas.Size = new System.Drawing.Size(119, 22);
             this.mnuNumeroMesas.Text = "Mesas";
             this.mnuNumeroMesas.Click += new System.EventHandler(this.mnuNumeroMesas_Click);
             // 
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(119, 22);
             this.mnuUsuarios.Text = "Usuarios";
             // 
             // mesasToolStripMenuItem
@@ -129,11 +130,20 @@
             this.mesasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
+            // panelMesas
+            // 
+            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMesas.Location = new System.Drawing.Point(101, 0);
+            this.panelMesas.Name = "panelMesas";
+            this.panelMesas.Size = new System.Drawing.Size(556, 352);
+            this.panelMesas.TabIndex = 2;
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 352);
+            this.Controls.Add(this.panelMesas);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -161,5 +171,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuCategorias;
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
         private System.Windows.Forms.ToolStripMenuItem mnuNumeroMesas;
+        private System.Windows.Forms.Panel panelMesas;
     }
 }

@@ -54,6 +54,32 @@ namespace Controlador
             return cantidad;
         }
 
+        public Boolean Actualizar(Int32 numero, String estado)
+        {
+            Boolean result = false;
+
+            try
+            {
+                this.AbrirConexion();
+
+                MySqlCommand command = new MySqlCommand("UPDATE mesas SET estado = @estado WHERE numero = @numero", this.Conexion);
+                command.Parameters.AddWithValue("@numero", numero);
+                command.Parameters.AddWithValue("@estado", estado);
+
+                result = (command.ExecuteNonQuery() > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Actualizar Mesa: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return result;
+        }
+
         public Int32 Libres()
         {
             Int32 libres = 0;

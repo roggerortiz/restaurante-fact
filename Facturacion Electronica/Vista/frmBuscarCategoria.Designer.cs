@@ -44,13 +44,14 @@
             this.dgvCategorias.Location = new System.Drawing.Point(0, 0);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
+            this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorias.Size = new System.Drawing.Size(369, 230);
             this.dgvCategorias.TabIndex = 0;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             this.dgvCategorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvCategorias_KeyPress);
             // 
-            // BuscarCategoria
+            // frmBuscarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -58,8 +59,8 @@
             this.ClientSize = new System.Drawing.Size(369, 230);
             this.Controls.Add(this.dgvCategorias);
             this.MaximizeBox = false;
-            this.Name = "BuscarCategoria";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Name = "frmBuscarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR CATEGORÍA";
             this.Load += new System.EventHandler(this.frmBuscarCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();

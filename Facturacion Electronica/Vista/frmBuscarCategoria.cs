@@ -28,7 +28,8 @@ namespace Vista
             dgvCategorias.DataSource = cc.Listar();
             dgvCategorias.Columns[0].Visible = false;
             dgvCategorias.Columns[0].HeaderText = "ID";
-            dgvCategorias.Columns[1].HeaderText = "Nombre";
+            dgvCategorias.Columns[1].HeaderText = "CATEGORÍAS";
+            dgvCategorias.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)

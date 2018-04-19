@@ -77,6 +77,7 @@ namespace Vista
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
+            dgvProductos.Enabled = false;
             crear = true;
             editar = false;
         }
@@ -93,6 +94,7 @@ namespace Vista
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
+            dgvProductos.Enabled = false;
             crear = false;
             editar = true;
         }
@@ -101,6 +103,7 @@ namespace Vista
         {
             ProductoController pc = new ProductoController();
 
+            dgvProductos.Enabled = true;
             dgvProductos.DataSource = pc.Listar();
             dgvProductos.Columns[0].Visible = false;
             dgvProductos.Columns[0].HeaderText = "ID";
@@ -123,12 +126,15 @@ namespace Vista
 
         private void SeleccionarProducto(Int32 index)
         {
-            txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
-            txtNombre.Text = dgvProductos.Rows[index].Cells[1].Value.ToString();
-            txtPrecioCosto.Text = dgvProductos.Rows[index].Cells[2].Value.ToString();
-            txtPrecioVenta.Text = dgvProductos.Rows[index].Cells[3].Value.ToString();
-            txtCategoriaID.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
-            txtCategoria.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
+            if (!crear && !editar)
+            {
+                txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
+                txtNombre.Text = dgvProductos.Rows[index].Cells[1].Value.ToString();
+                txtPrecioCosto.Text = dgvProductos.Rows[index].Cells[2].Value.ToString();
+                txtPrecioVenta.Text = dgvProductos.Rows[index].Cells[3].Value.ToString();
+                txtCategoriaID.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
+                txtCategoria.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
+            }
         }
 
         private void LimpiarSeleccion()
@@ -163,6 +169,8 @@ namespace Vista
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
+                crear = false;
+                editar = false;
                 ListarProductos();
             }
             else
@@ -194,6 +202,8 @@ namespace Vista
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
+                crear = false;
+                editar = false;
                 ListarProductos();
             }
             else

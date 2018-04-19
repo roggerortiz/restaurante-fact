@@ -19,7 +19,7 @@ namespace Modelo
         private String estado;
         private Int32 usuarioId;
         private Int32 clienteId;
-        private List<ComprobanteProducto> detalles = new List<ComprobanteProducto>();
+        private List<Detalle> detalles = new List<Detalle>();
 
         public String Tipo
         {
@@ -93,7 +93,7 @@ namespace Modelo
             set { clienteId = value; }
         }
 
-        public List<ComprobanteProducto> Detalles
+        public List<Detalle> Detalles
         {
             get { return detalles; }
             set { detalles = value; }
