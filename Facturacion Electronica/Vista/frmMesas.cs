@@ -56,7 +56,7 @@ namespace Vista
             }
 
             // Agregar 1 fila al inicio que funcione como margen superior;
-            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
 
             // Agregar 10 filas para las mesas
             for (Int32 i = 0; i < filas; i++)
@@ -65,62 +65,65 @@ namespace Vista
             }
 
             // Agregar 1 fila al final que funcione como margen inferior;
-            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 10));
 
             // Agregar un label a la fila del inicio
-            panel.Controls.Add(new Label() { Dock = DockStyle.Bottom}, 0, 0);
+            panel.Controls.Add(new Label() { Dock = DockStyle.Fill }, 0, 0);
 
             // Agregar un Boton para cada mesa en cada celda de la tabla
-            Int32 total = (columnas * filas), celdaX = 0, celdaY = 1;
-
-            for (Int32 i = 0; i < total; i++)
+            if (mesas > 0)
             {
-                // Obtener datos de la mesa
-                Int32 numero = Convert.ToInt32(dt.Rows[i][1].ToString());
-                String estado = dt.Rows[i][2].ToString();
-                String color = (estado == "Libre") ? "#28a745" : ((estado == "Reservada") ? "#bd2130" : "#e0a800");
+                Int32 total = (columnas * filas), celdaX = 0, celdaY = 1;
 
-                // Crear un nuevo boton
-                Button btn = new Button();
-                btn.BackColor = ColorTranslator.FromHtml(color);
-                btn.Text = String.Format("{0:00}", numero);
-                btn.Font = new Font("Arial", 20F);
-                btn.Margin = new Padding(10);
-                btn.FlatAppearance.BorderSize = 0;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.Dock = DockStyle.Fill;
-                btn.Click += new EventHandler((sender1, e1) => btnMesa_Click(sender1, e1, numero));
-
-                // Agregar el boton a la celda de la tabla
-                panel.Controls.Add(btn, celdaX, celdaY);
-
-                celdaX++;
-
-                if (celdaX == 11)
+                for (Int32 i = 0; i < total; i++)
                 {
-                    celdaX = 0;
-                    celdaY++;
+                    // Obtener datos de la mesa
+                    Int32 numero = Convert.ToInt32(dt.Rows[i][1].ToString());
+                    String estado = dt.Rows[i][2].ToString();
+                    String color = (estado == "Libre") ? "#28a745" : ((estado == "Reservada") ? "#bd2130" : "#e0a800");
+
+                    // Crear un nuevo boton
+                    Button btn = new Button();
+                    btn.BackColor = ColorTranslator.FromHtml(color);
+                    btn.Text = String.Format("{0:00}", numero);
+                    btn.Font = new Font("Arial", 20F);
+                    btn.Margin = new Padding(10);
+                    btn.FlatAppearance.BorderSize = 0;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.Dock = DockStyle.Fill;
+                    btn.Click += new EventHandler((sender1, e1) => btnMesa_Click(sender1, e1, numero));
+
+                    // Agregar el boton a la celda de la tabla
+                    panel.Controls.Add(btn, celdaX, celdaY);
+
+                    celdaX++;
+
+                    if (celdaX == 11)
+                    {
+                        celdaX = 0;
+                        celdaY++;
+                    }
                 }
             }
 
             // Agregar un label a la fila del final
-            panel.Controls.Add(new Label() { Dock = DockStyle.Bottom }, 9, 11);
+            panel.Controls.Add(new Label() { Dock = DockStyle.Fill }, 0, 10);
         }
 
         private void MostrarDatos()
         {
-            lblTitLibres.BackColor = ColorTranslator.FromHtml("#28a745");
-            lblTitLibres.ForeColor = ColorTranslator.FromHtml("#ffffff");
-            lblTitOcupadas.BackColor = ColorTranslator.FromHtml("#bd2130");
-            lblTitOcupadas.ForeColor = ColorTranslator.FromHtml("#ffffff");
-            lblTitReservadas.BackColor = ColorTranslator.FromHtml("#e0a800");
-            lblTitReservadas.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            lblLibres.BackColor = ColorTranslator.FromHtml("#28a745");
+            lblLibres.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            lblOcupadas.BackColor = ColorTranslator.FromHtml("#bd2130");
+            lblOcupadas.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            lblReservadas.BackColor = ColorTranslator.FromHtml("#e0a800");
+            lblReservadas.ForeColor = ColorTranslator.FromHtml("#ffffff");
 
             MesaController mc = new MesaController();
 
-            lblLibres.Text = String.Format("{0:00}", mc.Libres());
-            lblOcupadas.Text = String.Format("{0:00}", mc.Ocupadas());
-            lblReservadas.Text = String.Format("{0:00}", mc.Reservadas());
+            lblLibres.Text = String.Format("LIBRES: {0:00}", mc.Libres());
+            lblOcupadas.Text = String.Format("OCUPADAS: {0:00}", mc.Ocupadas());
+            lblReservadas.Text = String.Format("RESERVADAS: {0:00}", mc.Reservadas());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

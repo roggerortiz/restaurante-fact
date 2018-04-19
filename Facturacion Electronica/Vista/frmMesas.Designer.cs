@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblTitLibres = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblLibres = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTitOcupadas = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblOcupadas = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTitReservadas = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblReservadas = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblLibres = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblOcupadas = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblReservadas = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCerrar = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
@@ -52,13 +49,10 @@
             this.statusStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.lblTitLibres,
             this.lblLibres,
             this.toolStripStatusLabel3,
-            this.lblTitOcupadas,
             this.lblOcupadas,
             this.toolStripStatusLabel4,
-            this.lblTitReservadas,
             this.lblReservadas});
             this.statusStrip1.Location = new System.Drawing.Point(0, 374);
             this.statusStrip1.Name = "statusStrip1";
@@ -66,60 +60,47 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // lblTitLibres
+            // toolStripStatusLabel1
             // 
-            this.lblTitLibres.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTitLibres.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.lblTitLibres.Name = "lblTitLibres";
-            this.lblTitLibres.Size = new System.Drawing.Size(61, 19);
-            this.lblTitLibres.Text = "LIBRES: ";
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(13, 30);
+            this.toolStripStatusLabel1.Text = "  ";
             // 
             // lblLibres
             // 
             this.lblLibres.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblLibres.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.lblLibres.Name = "lblLibres";
-            this.lblLibres.Size = new System.Drawing.Size(25, 19);
-            this.lblLibres.Text = "00";
+            this.lblLibres.Size = new System.Drawing.Size(77, 19);
+            this.lblLibres.Text = "LIBRES: 00";
             // 
-            // lblTitOcupadas
+            // toolStripStatusLabel3
             // 
-            this.lblTitOcupadas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTitOcupadas.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.lblTitOcupadas.Name = "lblTitOcupadas";
-            this.lblTitOcupadas.Size = new System.Drawing.Size(93, 19);
-            this.lblTitOcupadas.Text = "OCUPADAS: ";
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 30);
+            this.toolStripStatusLabel3.Text = " ";
             // 
             // lblOcupadas
             // 
             this.lblOcupadas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblOcupadas.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.lblOcupadas.Name = "lblOcupadas";
-            this.lblOcupadas.Size = new System.Drawing.Size(25, 19);
-            this.lblOcupadas.Text = "00";
+            this.lblOcupadas.Size = new System.Drawing.Size(109, 19);
+            this.lblOcupadas.Text = "OCUPADAS: 00";
             // 
-            // lblTitReservadas
+            // toolStripStatusLabel4
             // 
-            this.lblTitReservadas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTitReservadas.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.lblTitReservadas.Name = "lblTitReservadas";
-            this.lblTitReservadas.Size = new System.Drawing.Size(103, 19);
-            this.lblTitReservadas.Text = "RESERVADAS: ";
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(10, 30);
+            this.toolStripStatusLabel4.Text = " ";
             // 
             // lblReservadas
             // 
             this.lblReservadas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblReservadas.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.lblReservadas.Name = "lblReservadas";
-            this.lblReservadas.Size = new System.Drawing.Size(25, 19);
-            this.lblReservadas.Text = "00";
-            this.lblReservadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(13, 30);
-            this.toolStripStatusLabel1.Text = "  ";
+            this.lblReservadas.Size = new System.Drawing.Size(119, 19);
+            this.lblReservadas.Text = "RESERVADAS: 00";
             // 
             // statusStrip2
             // 
@@ -142,22 +123,10 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(230, 30);
             this.toolStripStatusLabel2.Text = "MESAS DISPONIBLES";
             // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 30);
-            this.toolStripStatusLabel3.Text = " ";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(10, 30);
-            this.toolStripStatusLabel4.Text = " ";
-            // 
             // toolStripStatusLabel5
             // 
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(552, 30);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(521, 30);
             this.toolStripStatusLabel5.Spring = true;
             this.toolStripStatusLabel5.Text = " ";
             // 
@@ -196,11 +165,8 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblTitLibres;
         private System.Windows.Forms.ToolStripStatusLabel lblLibres;
-        private System.Windows.Forms.ToolStripStatusLabel lblTitOcupadas;
         private System.Windows.Forms.ToolStripStatusLabel lblOcupadas;
-        private System.Windows.Forms.ToolStripStatusLabel lblTitReservadas;
         private System.Windows.Forms.ToolStripStatusLabel lblReservadas;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip statusStrip2;

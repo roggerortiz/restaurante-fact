@@ -19,6 +19,7 @@ namespace Modelo
         private String estado;
         private Int32 usuarioId;
         private Int32 clienteId;
+        private List<ComprobanteProducto> detalles = new List<ComprobanteProducto>();
 
         public String Tipo
         {
@@ -90,6 +91,12 @@ namespace Modelo
         {
             get { return clienteId; }
             set { clienteId = value; }
+        }
+
+        public List<ComprobanteProducto> Detalles
+        {
+            get { return detalles; }
+            set { detalles = value; }
         }
     }
 }
