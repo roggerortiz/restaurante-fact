@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gnIniciarSesion = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.imgIngresar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -42,40 +42,42 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.gbLogin = new System.Windows.Forms.GroupBox();
+            this.gnIniciarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIngresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gbLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gnIniciarSesion
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gnIniciarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Controls.Add(this.imgIngresar);
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.linkVer);
-            this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.btnIngresar);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtClave);
-            this.groupBox1.Controls.Add(this.txtUsuario);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox1.Location = new System.Drawing.Point(24, 34);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 175);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "INICIAR SESIÓN:";
+            this.gnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.gnIniciarSesion.Controls.Add(this.pictureBox4);
+            this.gnIniciarSesion.Controls.Add(this.imgIngresar);
+            this.gnIniciarSesion.Controls.Add(this.pictureBox3);
+            this.gnIniciarSesion.Controls.Add(this.pictureBox2);
+            this.gnIniciarSesion.Controls.Add(this.linkVer);
+            this.gnIniciarSesion.Controls.Add(this.btnSalir);
+            this.gnIniciarSesion.Controls.Add(this.btnIngresar);
+            this.gnIniciarSesion.Controls.Add(this.label4);
+            this.gnIniciarSesion.Controls.Add(this.label3);
+            this.gnIniciarSesion.Controls.Add(this.txtClave);
+            this.gnIniciarSesion.Controls.Add(this.txtUsuario);
+            this.gnIniciarSesion.Controls.Add(this.label2);
+            this.gnIniciarSesion.Controls.Add(this.label1);
+            this.gnIniciarSesion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gnIniciarSesion.ForeColor = System.Drawing.Color.Navy;
+            this.gnIniciarSesion.Location = new System.Drawing.Point(17, 38);
+            this.gnIniciarSesion.Name = "gnIniciarSesion";
+            this.gnIniciarSesion.Size = new System.Drawing.Size(339, 178);
+            this.gnIniciarSesion.TabIndex = 1;
+            this.gnIniciarSesion.TabStop = false;
+            this.gnIniciarSesion.Text = "INICIAR SESIÓN:";
             // 
             // pictureBox4
             // 
@@ -223,31 +225,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
+            // gbLogin
+            // 
+            this.gbLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.gbLogin.Controls.Add(this.gnIniciarSesion);
+            this.gbLogin.Location = new System.Drawing.Point(5, 4);
+            this.gbLogin.Name = "gbLogin";
+            this.gbLogin.Size = new System.Drawing.Size(372, 229);
+            this.gbLogin.TabIndex = 12;
+            this.gbLogin.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 241);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(383, 238);
+            this.Controls.Add(this.gbLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".: RESTAURANTE :.";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gnIniciarSesion.ResumeLayout(false);
+            this.gnIniciarSesion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gbLogin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gnIniciarSesion;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkVer;
@@ -261,6 +275,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgIngresar;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.GroupBox gbLogin;
     }
 }
 

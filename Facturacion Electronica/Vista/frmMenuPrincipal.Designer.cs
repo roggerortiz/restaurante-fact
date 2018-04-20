@@ -145,6 +145,7 @@
             this.ClientSize = new System.Drawing.Size(657, 352);
             this.Controls.Add(this.panelMesas);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenuPrincipal";

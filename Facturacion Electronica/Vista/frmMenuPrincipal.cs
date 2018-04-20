@@ -85,6 +85,7 @@ namespace Vista
             detaMesa.mesa = String.Format("{0:00}", numero);
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
+            detaMesa.gbDetalleMesa.Text = "MESA " + numero;
             detaMesa.ShowDialog();
         }
 
