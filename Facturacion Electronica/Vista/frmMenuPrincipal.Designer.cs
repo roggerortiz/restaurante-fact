@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panelMesas = new System.Windows.Forms.Panel();
             this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +39,7 @@
             this.mnuNumeroMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelMesas = new System.Windows.Forms.Panel();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,12 +50,21 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantenedoresToolStripMenuItem,
             this.sistemaToolStripMenuItem,
-            this.mesasToolStripMenuItem});
+            this.mesasToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(101, 352);
+            this.menuStrip1.Size = new System.Drawing.Size(101, 390);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // panelMesas
+            // 
+            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMesas.Location = new System.Drawing.Point(101, 0);
+            this.panelMesas.Name = "panelMesas";
+            this.panelMesas.Size = new System.Drawing.Size(556, 390);
+            this.panelMesas.TabIndex = 2;
             // 
             // mantenedoresToolStripMenuItem
             // 
@@ -130,19 +140,21 @@
             this.mesasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
-            // panelMesas
+            // salirToolStripMenuItem
             // 
-            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMesas.Location = new System.Drawing.Point(101, 0);
-            this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(556, 352);
-            this.panelMesas.TabIndex = 2;
+            this.salirToolStripMenuItem.Image = global::Vista.Properties.Resources.salir;
+            this.salirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 89);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 352);
+            this.ClientSize = new System.Drawing.Size(657, 390);
             this.Controls.Add(this.panelMesas);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -173,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
         private System.Windows.Forms.ToolStripMenuItem mnuNumeroMesas;
         private System.Windows.Forms.Panel panelMesas;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

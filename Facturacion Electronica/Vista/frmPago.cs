@@ -71,5 +71,30 @@ namespace Vista
         {
             MostrarComprobante();
         }
+
+        private void cboTipoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTipoPago_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            switch (cboTipoPago.Text)
+            {
+                case "Efectivo":
+                    txtPago.Enabled = true;
+                    break;
+                default:
+                    txtPago.Enabled = false;
+                    txtPago.Text = txtTotal.Text;
+                    txtVuelto.Text = "0.00";
+                    break;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

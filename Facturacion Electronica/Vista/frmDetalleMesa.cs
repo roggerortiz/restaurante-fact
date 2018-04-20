@@ -364,7 +364,7 @@ namespace Vista
             foreach (DataRow detalle in detalles.Rows)
             {
                 Detalle deta = new Detalle();
-                String numero = detalle["Nro"].ToString();
+                String numero = detalle[0].ToString();
                 deta.Posicion = Convert.ToInt32(detalle[0]);
                 deta.Descripcion = detalle[1].ToString();
                 deta.Cantidad = Convert.ToInt32(detalle[2]);

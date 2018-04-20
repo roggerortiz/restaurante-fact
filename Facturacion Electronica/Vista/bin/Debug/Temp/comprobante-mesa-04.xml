@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Detalles>
+  <Detalle>
+    <Posicion>1</Posicion>
+    <Descripcion>Gallina c/ Arroz</Descripcion>
+    <Cantidad>1</Cantidad>
+    <PrecioUnitario>15.00</PrecioUnitario>
+    <PrecioNeto>15.00</PrecioNeto>
+    <ProductoID>1</ProductoID>
+  </Detalle>
+</Detalles>

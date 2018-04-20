@@ -85,7 +85,7 @@ namespace Vista
             detaMesa.mesa = String.Format("{0:00}", numero);
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
-            detaMesa.gbDetalleMesa.Text = "MESA " + numero;
+            detaMesa.gbDetalleMesa.Text = String.Format("MESA {0:00}", numero);
             detaMesa.ShowDialog();
         }
 
@@ -162,6 +162,11 @@ namespace Vista
 
             ProductoController pc = new ProductoController();
             productos = pc.Listar();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
