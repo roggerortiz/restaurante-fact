@@ -8,8 +8,7 @@ namespace Modelo
     public class Producto : Modelo
     {
         private String nombre;
-        private Decimal precioCosto;
-        private Decimal precioVenta;
+        private Decimal precioUnitario;
         private Int32 categoriaId;
 
         public String Nombre
@@ -18,16 +17,10 @@ namespace Modelo
             set { nombre = value; }
         }
 
-        public Decimal PrecioCosto
+        public Decimal PrecioUnitario
         {
-            get { return precioCosto; }
-            set { precioCosto = value; }
-        }
-
-        public Decimal PrecioVenta
-        {
-            get { return precioVenta; }
-            set { precioVenta = value; }
+            get { return precioUnitario; }
+            set { precioUnitario = value; }
         }
 
         public Int32 CategoriaID

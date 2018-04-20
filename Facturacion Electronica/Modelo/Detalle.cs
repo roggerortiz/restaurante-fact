@@ -7,24 +7,24 @@ namespace Modelo
 {
     public class Detalle : Modelo
     {
-        private Int32 numero;
-        private String nombre;
+        private Int32 posicion;
+        private String descripcion;
         private Int32 cantidad;
-        private Decimal precio;
-        private Decimal subtotal;
+        private Decimal precioUnitario;
+        private Decimal precioNeto;
         private Int32 comprobanteId;
         private Int32 productoId;
 
-        public Int32 Numero
+        public Int32 Posicion
         {
-            get { return numero; }
-            set { numero = value; }
+            get { return posicion; }
+            set { posicion = value; }
         }
 
-        public String Nombre
+        public String Descripcion
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return descripcion; }
+            set { descripcion = value; }
         }
 
         public Int32 Cantidad
@@ -33,16 +33,16 @@ namespace Modelo
             set { cantidad = value; }
         }
 
-        public Decimal Precio
+        public Decimal PrecioUnitario
         {
-            get { return precio; }
-            set { precio = value; }
+            get { return precioUnitario; }
+            set { precioUnitario = value; }
         }
 
-        public Decimal Subtotal
+        public Decimal PrecioNeto
         {
-            get { return subtotal; }
-            set { subtotal = value; }
+            get { return precioNeto; }
+            set { precioNeto = value; }
         }
 
         public Int32 ComprobanteID

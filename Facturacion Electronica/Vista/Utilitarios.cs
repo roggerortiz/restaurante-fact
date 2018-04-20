@@ -15,13 +15,12 @@ namespace Vista
         public DataTable ObtenerDetallesXML(String mesa)
         {
             DataTable detalles = new DataTable();
-            detalles.Columns.Add("ID");
-            detalles.Columns.Add("ProductoID");
-            detalles.Columns.Add("Nro");
-            detalles.Columns.Add("Nombre");
-            detalles.Columns.Add("Cantidad");
-            detalles.Columns.Add("Precio");
-            detalles.Columns.Add("Subtotal");
+            detalles.Columns.Add("posicion");
+            detalles.Columns.Add("descripcion");
+            detalles.Columns.Add("cantidad");
+            detalles.Columns.Add("precio_unitario");
+            detalles.Columns.Add("precio_neto");
+            detalles.Columns.Add("producto_id");
 
             String comprobante = "Temp/comprobante-mesa-" + mesa + ".xml";
 
@@ -38,22 +37,22 @@ namespace Vista
                     XmlNodeList nodoItem;
 
                     nodoItem = nodoDetalle.GetElementsByTagName("ProductoID");
-                    detalle["ProductoID"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    detalle["producto_id"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
-                    nodoItem = nodoDetalle.GetElementsByTagName("Numero");
-                    detalle["Nro"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    nodoItem = nodoDetalle.GetElementsByTagName("Posicion");
+                    detalle["posicion"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
-                    nodoItem = nodoDetalle.GetElementsByTagName("Nombre");
-                    detalle["Nombre"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    nodoItem = nodoDetalle.GetElementsByTagName("Descripcion");
+                    detalle["descripcion"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
                     nodoItem = nodoDetalle.GetElementsByTagName("Cantidad");
-                    detalle["Cantidad"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    detalle["cantidad"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
-                    nodoItem = nodoDetalle.GetElementsByTagName("Precio");
-                    detalle["Precio"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    nodoItem = nodoDetalle.GetElementsByTagName("PrecioUnitario");
+                    detalle["precio_unitario"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
-                    nodoItem = nodoDetalle.GetElementsByTagName("Subtotal");
-                    detalle["Subtotal"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
+                    nodoItem = nodoDetalle.GetElementsByTagName("PrecioNeto");
+                    detalle["precio_neto"] = (nodoItem.Count > 0) ? nodoItem[0].InnerText : "";
 
                     detalles.Rows.Add(detalle);
                 }
@@ -62,51 +61,38 @@ namespace Vista
             return detalles;
         }
 
-        public void GuardarComprobanteXML(Comprobante comprobante)
+        public void GuardarDetallesXML(String mesa, List<Detalle> detalles)
         {
-            XmlTextWriter writer = new XmlTextWriter("Temp/comprobante-mesa-" + String.Format("{0:00}", comprobante.Mesa) + ".xml", Encoding.UTF8);
-            writer.Formatting = Formatting.Indented;
-
-            writer.WriteStartDocument();
-
-            writer.WriteStartElement("Comprobante");
-
-            writer.WriteElementString("Tipo", comprobante.Tipo);
-            writer.WriteElementString("Serie", comprobante.Serie);
-            writer.WriteElementString("Numero", comprobante.Numero);
-            writer.WriteElementString("Fecha", comprobante.Fecha.ToShortDateString());
-            writer.WriteElementString("Subtotal", comprobante.Subtotal.ToString());
-            writer.WriteElementString("IGV", comprobante.IGV.ToString());
-            writer.WriteElementString("Total", comprobante.Total.ToString());
-            writer.WriteElementString("Mesa", comprobante.Mesa.ToString());
-            writer.WriteElementString("ClienteID", comprobante.ClienteID.ToString());
-            writer.WriteElementString("UsuarioID", comprobante.UsuarioID.ToString());
-
-            if (comprobante.Detalles.Count > 0)
+            if (detalles.Count > 0)
             {
+                XmlTextWriter writer = new XmlTextWriter("Temp/comprobante-mesa-" + String.Format("{0:00}", mesa) + ".xml", Encoding.UTF8);
+                writer.Formatting = Formatting.Indented;
+
+                writer.WriteStartDocument();
+
                 writer.WriteStartElement("Detalles");
 
-                foreach (Detalle detalle in comprobante.Detalles)
+                foreach (Detalle detalle in detalles)
                 {
                     writer.WriteStartElement("Detalle");
-                    writer.WriteElementString("Numero", detalle.Numero.ToString());
-                    writer.WriteElementString("Nombre", detalle.Nombre);
+
+                    writer.WriteElementString("Posicion", detalle.Posicion.ToString());
+                    writer.WriteElementString("Descripcion", detalle.Descripcion);
                     writer.WriteElementString("Cantidad", detalle.Cantidad.ToString());
-                    writer.WriteElementString("Precio", detalle.Precio.ToString());
-                    writer.WriteElementString("Subtotal", detalle.Subtotal.ToString());
+                    writer.WriteElementString("PrecioUnitario", detalle.PrecioUnitario.ToString());
+                    writer.WriteElementString("PrecioNeto", detalle.PrecioNeto.ToString());
                     writer.WriteElementString("ProductoID", detalle.ProductoID.ToString());
+
                     writer.WriteEndElement();
                 }
 
                 writer.WriteEndElement();
+
+                writer.WriteEndDocument();
+
+                writer.Flush();
+                writer.Close();
             }
-
-            writer.WriteEndElement();
-
-            writer.WriteEndDocument();
-
-            writer.Flush();
-            writer.Close();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Controlador
 
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT productos.*, categorias.nombre FROM productos INNER JOIN categorias on categorias.id = productos.categoria_id ORDER BY categorias.nombre ASC, productos.nombre ASC", this.Conexion);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT productos.*, categorias.nombre as categoria FROM productos INNER JOIN categorias on categorias.id = productos.categoria_id ORDER BY categorias.nombre ASC, productos.nombre ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)
@@ -39,10 +39,9 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                MySqlCommand command = new MySqlCommand("INSERT INTO productos(nombre, precio_costo, precio_venta, categoria_id) VALUES(@nombre, @precioCosto, @precioVenta, @categoriaId)", this.Conexion);
+                MySqlCommand command = new MySqlCommand("INSERT INTO productos(nombre, precio_unitario, categoria_id) VALUES(@nombre, @precioUnitario, @categoriaId)", this.Conexion);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
-                command.Parameters.AddWithValue("@precioCosto", producto.PrecioCosto);
-                command.Parameters.AddWithValue("@precioVenta", producto.PrecioVenta);
+                command.Parameters.AddWithValue("@precioUnitario", producto.PrecioUnitario);
                 command.Parameters.AddWithValue("@categoriaId", producto.CategoriaID);
 
                 result = (command.ExecuteNonQuery() > 0);
@@ -67,11 +66,10 @@ namespace Controlador
             {
                 this.AbrirConexion();
 
-                MySqlCommand command = new MySqlCommand("UPDATE productos SET nombre = @nombre, precio_costo = @precioCosto, precio_venta = @precioVenta, categoria_id = @categoriaId WHERE id = @id", this.Conexion);
+                MySqlCommand command = new MySqlCommand("UPDATE productos SET nombre = @nombre, precio_unitario = @precioUnitario, categoria_id = @categoriaId WHERE id = @id", this.Conexion);
                 command.Parameters.AddWithValue("@id", producto.ID);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
-                command.Parameters.AddWithValue("@precioCosto", producto.PrecioCosto);
-                command.Parameters.AddWithValue("@precioVenta", producto.PrecioVenta);
+                command.Parameters.AddWithValue("@precioUnitario", producto.PrecioUnitario);
                 command.Parameters.AddWithValue("@categoriaId", producto.CategoriaID);
 
                 result = (command.ExecuteNonQuery() > 0);

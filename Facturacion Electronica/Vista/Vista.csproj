@@ -56,6 +56,12 @@
     <Compile Include="frmBuscarCategoria.Designer.cs">
       <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComprobante.Designer.cs">
+      <DependentUpon>frmComprobante.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetalleMesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPago.Designer.cs">
+      <DependentUpon>frmPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,9 @@
     <EmbeddedResource Include="frmBuscarCategoria.resx">
       <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmComprobante.resx">
+      <DependentUpon>frmComprobante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDetalleMesa.resx">
       <DependentUpon>frmDetalleMesa.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPago.resx">
+      <DependentUpon>frmPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

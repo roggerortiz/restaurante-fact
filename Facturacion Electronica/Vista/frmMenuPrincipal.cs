@@ -85,12 +85,7 @@ namespace Vista
             detaMesa.mesa = String.Format("{0:00}", numero);
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
-
-            if (detaMesa.ShowDialog() == DialogResult.OK)
-            {
-                String nombre = String.Format("btnMesa{0:00}", numero);
-                panelMesas.Controls.Find(nombre, true)[0].BackColor = ColorTranslator.FromHtml("#e0a800");
-            }
+            detaMesa.ShowDialog();
         }
 
         private void ListarMesas()

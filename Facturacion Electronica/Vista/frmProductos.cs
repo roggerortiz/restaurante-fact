@@ -62,12 +62,10 @@ namespace Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = false;
-            txtPrecioCosto.ReadOnly = false;
-            txtPrecioVenta.ReadOnly = false;
+            txtPrecioUnitario.ReadOnly = false;
             txtID.Text = "";
             txtNombre.Text = "";
-            txtPrecioCosto.Text = "";
-            txtPrecioVenta.Text = "";
+            txtPrecioUnitario.Text = "";
             txtCategoriaID.Text = "";
             txtCategoria.Text = "";
             txtNombre.Focus();
@@ -85,8 +83,7 @@ namespace Vista
         private void btnEditar_Click(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = false;
-            txtPrecioCosto.ReadOnly = false;
-            txtPrecioVenta.ReadOnly = false;
+            txtPrecioUnitario.ReadOnly = false;
             txtNombre.Focus();
             btnBuscarCategoria.Enabled = true;
             btnNuevo.Enabled = false;
@@ -106,13 +103,13 @@ namespace Vista
             dgvProductos.Enabled = true;
             dgvProductos.DataSource = pc.Listar();
             dgvProductos.Columns[0].Visible = false;
-            dgvProductos.Columns[0].HeaderText = "ID";
-            dgvProductos.Columns[1].HeaderText = "Nombre";
-            dgvProductos.Columns[2].HeaderText = "Precio Costo";
-            dgvProductos.Columns[3].HeaderText = "Precio Venta";
-            dgvProductos.Columns[4].Visible = false;
-            dgvProductos.Columns[4].HeaderText = "CategoriaID";
-            dgvProductos.Columns[5].HeaderText = "Categoria";
+            dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[2].Visible = false;
+            dgvProductos.Columns[3].HeaderText = "Nombre";
+            dgvProductos.Columns[4].HeaderText = "Precio Unitario (S/.)";
+            dgvProductos.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[6].HeaderText = "Categoría";
 
             if (dgvProductos.RowCount > 0)
             {
@@ -130,8 +127,7 @@ namespace Vista
             {
                 txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
                 txtNombre.Text = dgvProductos.Rows[index].Cells[1].Value.ToString();
-                txtPrecioCosto.Text = dgvProductos.Rows[index].Cells[2].Value.ToString();
-                txtPrecioVenta.Text = dgvProductos.Rows[index].Cells[3].Value.ToString();
+                txtPrecioUnitario.Text = dgvProductos.Rows[index].Cells[2].Value.ToString();
                 txtCategoriaID.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
                 txtCategoria.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
             }
@@ -141,8 +137,7 @@ namespace Vista
         {
             txtID.Text = "";
             txtNombre.Text = "";
-            txtPrecioCosto.Text = "";
-            txtPrecioVenta.Text = "";
+            txtPrecioUnitario.Text = "";
             txtCategoriaID.Text = "";
             txtCategoria.Text = "";
         }
@@ -151,8 +146,7 @@ namespace Vista
         {
             Producto p = new Producto();
             p.Nombre = txtNombre.Text;
-            p.PrecioCosto = Convert.ToDecimal(txtPrecioCosto.Text);
-            p.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+            p.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
             p.CategoriaID = Convert.ToInt32(txtCategoriaID.Text);
 
             ProductoController pc = new ProductoController();
@@ -161,8 +155,7 @@ namespace Vista
             {
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNombre.ReadOnly = true;
-                txtPrecioCosto.ReadOnly = true;
-                txtPrecioVenta.ReadOnly = true;
+                txtPrecioUnitario.ReadOnly = true;
                 btnBuscarCategoria.Enabled = false;
                 btnNuevo.Enabled = true;
                 btnEditar.Enabled = true;
@@ -184,8 +177,7 @@ namespace Vista
             Producto p = new Producto();
             p.ID = Convert.ToInt32(txtID.Text);
             p.Nombre = txtNombre.Text;
-            p.PrecioCosto = Convert.ToDecimal(txtPrecioCosto.Text);
-            p.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+            p.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
             p.CategoriaID = Convert.ToInt32(txtCategoriaID.Text);
 
             ProductoController pc = new ProductoController();
@@ -194,8 +186,7 @@ namespace Vista
             {
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNombre.ReadOnly = true;
-                txtPrecioCosto.ReadOnly = true;
-                txtPrecioVenta.ReadOnly = true;
+                txtPrecioUnitario.ReadOnly = true;
                 btnBuscarCategoria.Enabled = false;
                 btnNuevo.Enabled = true;
                 btnEditar.Enabled = true;
@@ -217,8 +208,7 @@ namespace Vista
             SeleccionarProducto(dgvProductos.CurrentRow.Index);
 
             txtNombre.ReadOnly = true;
-            txtPrecioCosto.ReadOnly = true;
-            txtPrecioVenta.ReadOnly = true;
+            txtPrecioUnitario.ReadOnly = true;
             btnBuscarCategoria.Enabled = false;
             btnNuevo.Enabled = true;
             btnEditar.Enabled = true;
@@ -237,8 +227,7 @@ namespace Vista
             {
                 MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNombre.ReadOnly = true;
-                txtPrecioCosto.ReadOnly = true;
-                txtPrecioVenta.ReadOnly = true;
+                txtPrecioUnitario.ReadOnly = true;
                 btnBuscarCategoria.Enabled = false;
                 btnNuevo.Enabled = true;
                 btnEditar.Enabled = true;

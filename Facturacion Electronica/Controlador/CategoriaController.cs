@@ -16,7 +16,7 @@ namespace Controlador
 
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT categorias.* FROM categorias ORDER BY categorias.nombre ASC", this.Conexion);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT categorias.* FROM categorias ORDER BY categorias.id ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)

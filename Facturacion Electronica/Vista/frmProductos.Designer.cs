@@ -34,9 +34,7 @@
             this.btnBuscarCategoria = new System.Windows.Forms.Button();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.txtPrecioCosto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCategoriaID = new System.Windows.Forms.TextBox();
@@ -81,9 +79,7 @@
             this.groupBoxProducto.Controls.Add(this.btnBuscarCategoria);
             this.groupBoxProducto.Controls.Add(this.txtCategoria);
             this.groupBoxProducto.Controls.Add(this.label4);
-            this.groupBoxProducto.Controls.Add(this.txtPrecioVenta);
-            this.groupBoxProducto.Controls.Add(this.txtPrecioCosto);
-            this.groupBoxProducto.Controls.Add(this.label3);
+            this.groupBoxProducto.Controls.Add(this.txtPrecioUnitario);
             this.groupBoxProducto.Controls.Add(this.txtNombre);
             this.groupBoxProducto.Controls.Add(this.label2);
             this.groupBoxProducto.Controls.Add(this.label1);
@@ -94,7 +90,7 @@
             this.groupBoxProducto.Size = new System.Drawing.Size(438, 127);
             this.groupBoxProducto.TabIndex = 1;
             this.groupBoxProducto.TabStop = false;
-            this.groupBoxProducto.Text = "Datos";
+            this.groupBoxProducto.Text = "7";
             // 
             // btnBuscarCategoria
             // 
@@ -109,10 +105,10 @@
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(97, 95);
+            this.txtCategoria.Location = new System.Drawing.Point(106, 95);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
-            this.txtCategoria.Size = new System.Drawing.Size(229, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(220, 20);
             this.txtCategoria.TabIndex = 4;
             // 
             // label4
@@ -124,37 +120,20 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Categoría: ";
             // 
-            // txtPrecioVenta
+            // txtPrecioUnitario
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(295, 60);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.ReadOnly = true;
-            this.txtPrecioVenta.Size = new System.Drawing.Size(112, 20);
-            this.txtPrecioVenta.TabIndex = 3;
-            // 
-            // txtPrecioCosto
-            // 
-            this.txtPrecioCosto.Location = new System.Drawing.Point(97, 60);
-            this.txtPrecioCosto.Name = "txtPrecioCosto";
-            this.txtPrecioCosto.ReadOnly = true;
-            this.txtPrecioCosto.Size = new System.Drawing.Size(112, 20);
-            this.txtPrecioCosto.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(215, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Precio Venta: ";
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(106, 60);
+            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.ReadOnly = true;
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(111, 20);
+            this.txtPrecioUnitario.TabIndex = 2;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(97, 24);
+            this.txtNombre.Location = new System.Drawing.Point(106, 24);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(310, 20);
+            this.txtNombre.Size = new System.Drawing.Size(301, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // label2
@@ -162,24 +141,24 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Precio Costo:";
+            this.label2.Text = "Precio Unitario:";
             // 
             // txtCategoriaID
             // 
             this.txtCategoriaID.Enabled = false;
-            this.txtCategoriaID.Location = new System.Drawing.Point(97, 95);
+            this.txtCategoriaID.Location = new System.Drawing.Point(106, 95);
             this.txtCategoriaID.Name = "txtCategoriaID";
-            this.txtCategoriaID.Size = new System.Drawing.Size(112, 20);
+            this.txtCategoriaID.Size = new System.Drawing.Size(103, 20);
             this.txtCategoriaID.TabIndex = 10;
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(97, 24);
+            this.txtID.Location = new System.Drawing.Point(106, 24);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(112, 20);
+            this.txtID.Size = new System.Drawing.Size(103, 20);
             this.txtID.TabIndex = 11;
             // 
             // btnNuevo
@@ -266,9 +245,7 @@
         private System.Windows.Forms.Button btnBuscarCategoria;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrecioVenta;
-        private System.Windows.Forms.TextBox txtPrecioCosto;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCategoriaID;
