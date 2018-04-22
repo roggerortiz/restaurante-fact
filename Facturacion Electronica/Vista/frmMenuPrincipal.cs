@@ -18,10 +18,6 @@ namespace Vista
         // Lista de los detalles de las mesas
         Dictionary<string, DataTable> listaMesas = new Dictionary<string,DataTable>();
 
-        // Se listan los productos y categorias q se mostraran en el detalle de mesa
-        DataTable categorias = new DataTable();
-        DataTable productos = new DataTable();
-
         // Se instancian una sola vez, los formularios que seran llamados desde el Menu Principal.
         frmProductos frmProductos = new frmProductos();
         frmNumeroMesas frmNumeroMesas = new frmNumeroMesas();
@@ -35,9 +31,6 @@ namespace Vista
         {
             // Se Listan las mesas registradas.
             ListarMesas();
-
-            // Se listan las categorias y productos para el detalle de la mesa
-            ListarProductosYCategorias();
         }
 
         private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -90,6 +83,9 @@ namespace Vista
 
         private void btnMesa_Click(object sender, EventArgs e, Int32 numero)
         {
+            CategoriaController cc = new CategoriaController();
+            ProductoController pc = new ProductoController();
+
             frmDetalleMesa detaMesa = new frmDetalleMesa();
 
             // Se envia el numero de mesa
@@ -102,8 +98,8 @@ namespace Vista
             detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa] : TablaDetallesVacia();
 
             // Se envian las tablas categorias y productos
-            detaMesa.categorias = categorias;
-            detaMesa.productos = productos;
+            detaMesa.categorias = cc.Listar();
+            detaMesa.productos = pc.Listar();
 
             if (detaMesa.ShowDialog() == DialogResult.OK)
             {
@@ -176,15 +172,6 @@ namespace Vista
             {
                 panel.Controls.Add(new Label() { Dock = DockStyle.Fill }, 0, 4);
             }
-        }
-
-        private void ListarProductosYCategorias()
-        {
-            CategoriaController cc = new CategoriaController();
-            categorias = cc.Listar();
-
-            ProductoController pc = new ProductoController();
-            productos = pc.Listar();
         }
 
         private DataTable TablaDetallesVacia()
