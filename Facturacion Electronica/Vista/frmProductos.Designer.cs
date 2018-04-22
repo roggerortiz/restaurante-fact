@@ -61,7 +61,7 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(438, 206);
+            this.dgvProductos.Size = new System.Drawing.Size(438, 196);
             this.dgvProductos.TabIndex = 2;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -90,7 +90,7 @@
             this.groupBoxProducto.Size = new System.Drawing.Size(438, 127);
             this.groupBoxProducto.TabIndex = 1;
             this.groupBoxProducto.TabStop = false;
-            this.groupBoxProducto.Text = "7";
+            this.groupBoxProducto.Text = "Datos";
             // 
             // btnBuscarCategoria
             // 
@@ -218,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(462, 392);
+            this.ClientSize = new System.Drawing.Size(462, 382);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

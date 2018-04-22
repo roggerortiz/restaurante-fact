@@ -14,6 +14,11 @@ namespace Vista
     public partial class frmMenuPrincipal : Form
     {
         CInitial initial = new CInitial(Application.StartupPath);
+
+        // Lista de los detalles de las mesas
+        Dictionary<string, DataTable> listaMesas = new Dictionary<string,DataTable>();
+
+        // Se listan los productos y categorias q se mostraran en el detalle de mesa
         DataTable categorias = new DataTable();
         DataTable productos = new DataTable();
 
@@ -32,7 +37,7 @@ namespace Vista
             ListarMesas();
 
             // Se listan las categorias y productos para el detalle de la mesa
-            ListarProductosYCategoria();
+            ListarProductosYCategorias();
         }
 
         private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -55,7 +60,7 @@ namespace Vista
             frmProductos.Show();
         }
 
-        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMesas_Click(object sender, EventArgs e)
         {
             ListarMesas();
         }
@@ -78,15 +83,33 @@ namespace Vista
             }
         }
 
+        private void menuSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnMesa_Click(object sender, EventArgs e, Int32 numero)
         {
             frmDetalleMesa detaMesa = new frmDetalleMesa();
-            detaMesa.Text = String.Format("MESA {0:00}", numero);
+
+            // Se envia el numero de mesa
             detaMesa.mesa = String.Format("{0:00}", numero);
+
+            // Se cambia el titulo del groupBox principal del formulario
+            detaMesa.gbDetalleMesa.Text = String.Format("MESA {0:00}", numero);
+
+            // Se envia el detalle de la mesa seleccionada, si no tiene detalles se envia una tabla vacia
+            detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa] : TablaDetallesVacia();
+
+            // Se envian las tablas categorias y productos
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
-            detaMesa.gbDetalleMesa.Text = String.Format("MESA {0:00}", numero);
-            detaMesa.ShowDialog();
+
+            if (detaMesa.ShowDialog() == DialogResult.OK)
+            {
+                // Si el formulario detalle de mesa devuelve OK, se agrega al diccionario la mesa con sus detalles
+                listaMesas.Add(detaMesa.mesa, detaMesa.detalles);
+            }
         }
 
         private void ListarMesas()
@@ -155,7 +178,7 @@ namespace Vista
             }
         }
 
-        private void ListarProductosYCategoria()
+        private void ListarProductosYCategorias()
         {
             CategoriaController cc = new CategoriaController();
             categorias = cc.Listar();
@@ -164,9 +187,17 @@ namespace Vista
             productos = pc.Listar();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private DataTable TablaDetallesVacia()
         {
-            this.Close();
+            DataTable detalles = new DataTable();
+            detalles.Columns.Add("posicion");
+            detalles.Columns.Add("descripcion");
+            detalles.Columns.Add("cantidad");
+            detalles.Columns.Add("precio_unitario");
+            detalles.Columns.Add("precio_neto");
+            detalles.Columns.Add("producto_id");
+
+            return detalles;
         }
     }
 }

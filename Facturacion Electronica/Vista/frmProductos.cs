@@ -21,6 +21,17 @@ namespace Vista
             InitializeComponent();
         }
 
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            ListarProductos();
+            SeleccionarProducto(0);
+        }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SeleccionarProducto(e.RowIndex);
+        }
+
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
             frmBuscarCategoria frm = new frmBuscarCategoria();
@@ -49,51 +60,26 @@ namespace Vista
             }
         }
 
-        private void frmProductos_Load(object sender, EventArgs e)
-        {
-            ListarProductos();
-        }
-
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            SeleccionarProducto(e.RowIndex);
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            txtNombre.ReadOnly = false;
-            txtPrecioUnitario.ReadOnly = false;
-            txtID.Text = "";
-            txtNombre.Text = "";
-            txtPrecioUnitario.Text = "";
-            txtCategoriaID.Text = "";
-            txtCategoria.Text = "";
-            txtNombre.Focus();
-            btnBuscarCategoria.Enabled = true;
-            btnNuevo.Enabled = false;
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
-            dgvProductos.Enabled = false;
-            crear = true;
-            editar = false;
+            LimpiarForm();
+            HabilitarForm(true, true);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            txtNombre.ReadOnly = false;
-            txtPrecioUnitario.ReadOnly = false;
-            txtNombre.Focus();
-            btnBuscarCategoria.Enabled = true;
-            btnNuevo.Enabled = false;
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
-            dgvProductos.Enabled = false;
-            crear = false;
-            editar = true;
+            HabilitarForm(true, false);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarProducto();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            SeleccionarProducto();
+            HabilitarForm(false);
         }
 
         private void ListarProductos()
@@ -111,35 +97,60 @@ namespace Vista
             dgvProductos.Columns[5].Visible = false;
             dgvProductos.Columns[6].HeaderText = "Categoría";
 
+            SeleccionarProducto(0);
+        }
+
+        private void SeleccionarProducto(Int32 index = -1)
+        {
             if (dgvProductos.RowCount > 0)
             {
-                SeleccionarProducto(0);
+                if (index == -1)
+                {
+                    index = (dgvProductos.CurrentRow != null) ? dgvProductos.CurrentRow.Index : index;
+                }
+
+                txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
+                txtNombre.Text = dgvProductos.Rows[index].Cells[3].Value.ToString();
+                txtPrecioUnitario.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
+                txtCategoriaID.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
+                txtCategoria.Text = dgvProductos.Rows[index].Cells[6].Value.ToString();
             }
             else
             {
-                LimpiarSeleccion();
+                LimpiarForm();
             }
         }
 
-        private void SeleccionarProducto(Int32 index)
-        {
-            if (!crear && !editar)
-            {
-                txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
-                txtNombre.Text = dgvProductos.Rows[index].Cells[1].Value.ToString();
-                txtPrecioUnitario.Text = dgvProductos.Rows[index].Cells[2].Value.ToString();
-                txtCategoriaID.Text = dgvProductos.Rows[index].Cells[4].Value.ToString();
-                txtCategoria.Text = dgvProductos.Rows[index].Cells[5].Value.ToString();
-            }
-        }
-
-        private void LimpiarSeleccion()
+        private void LimpiarForm()
         {
             txtID.Text = "";
             txtNombre.Text = "";
             txtPrecioUnitario.Text = "";
             txtCategoriaID.Text = "";
             txtCategoria.Text = "";
+        }
+
+        private void HabilitarForm(Boolean habilitado, Boolean isCreacion = false)
+        {
+            if (!isCreacion && dgvProductos.CurrentRow == null)
+            {
+                MessageBox.Show("Porfavor, seleccione un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                txtNombre.ReadOnly = !habilitado;
+                txtPrecioUnitario.ReadOnly = !habilitado;
+                btnBuscarCategoria.Enabled = habilitado;
+                btnNuevo.Enabled = !habilitado;
+                btnEditar.Enabled = !habilitado;
+                btnEliminar.Enabled = !habilitado;
+                btnGuardar.Enabled = habilitado;
+                btnCancelar.Enabled = habilitado;
+                dgvProductos.Enabled = !habilitado;
+                crear = (habilitado && isCreacion);
+                editar = (habilitado && !isCreacion);
+                if (habilitado) txtNombre.Focus();
+            }
         }
 
         private void RegistrarProducto()
@@ -154,16 +165,7 @@ namespace Vista
             if (pc.Registrar(p))
             {
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNombre.ReadOnly = true;
-                txtPrecioUnitario.ReadOnly = true;
-                btnBuscarCategoria.Enabled = false;
-                btnNuevo.Enabled = true;
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                crear = false;
-                editar = false;
+                HabilitarForm(false);
                 ListarProductos();
             }
             else
@@ -185,16 +187,7 @@ namespace Vista
             if (pc.Actualizar(p))
             {
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNombre.ReadOnly = true;
-                txtPrecioUnitario.ReadOnly = true;
-                btnBuscarCategoria.Enabled = false;
-                btnNuevo.Enabled = true;
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                crear = false;
-                editar = false;
+                HabilitarForm(false);
                 ListarProductos();
             }
             else
@@ -203,42 +196,28 @@ namespace Vista
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void EliminarProducto()
         {
-            SeleccionarProducto(dgvProductos.CurrentRow.Index);
-
-            txtNombre.ReadOnly = true;
-            txtPrecioUnitario.ReadOnly = true;
-            btnBuscarCategoria.Enabled = false;
-            btnNuevo.Enabled = true;
-            btnEditar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            btnCancelar.Enabled = false;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Int32 id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
-
-            ProductoController pc = new ProductoController();
-
-            if (pc.Eliminar(id))
+            if (dgvProductos.CurrentRow != null)
             {
-                MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNombre.ReadOnly = true;
-                txtPrecioUnitario.ReadOnly = true;
-                btnBuscarCategoria.Enabled = false;
-                btnNuevo.Enabled = true;
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                ListarProductos();
+                Int32 id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
+
+                ProductoController pc = new ProductoController();
+
+                if (pc.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HabilitarForm(false);
+                    ListarProductos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Error al Eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Porfavor, seleccione un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

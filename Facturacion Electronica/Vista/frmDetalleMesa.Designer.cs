@@ -181,7 +181,7 @@
             this.gbDetalleMesa.Controls.Add(this.label8);
             this.gbDetalleMesa.Controls.Add(this.dgvDetalles);
             this.gbDetalleMesa.Controls.Add(this.txtTotal);
-            this.gbDetalleMesa.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDetalleMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDetalleMesa.Location = new System.Drawing.Point(2, 3);
             this.gbDetalleMesa.Name = "gbDetalleMesa";
             this.gbDetalleMesa.Size = new System.Drawing.Size(1043, 520);
