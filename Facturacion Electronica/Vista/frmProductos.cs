@@ -15,6 +15,7 @@ namespace Vista
     {
         private Boolean crear = false;
         private Boolean editar = false;
+        public Boolean cambios = false;
 
         public frmProductos()
         {
@@ -132,25 +133,18 @@ namespace Vista
 
         private void HabilitarForm(Boolean habilitado, Boolean isCreacion = false)
         {
-            if (!isCreacion && dgvProductos.CurrentRow == null)
-            {
-                MessageBox.Show("Porfavor, seleccione un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                txtNombre.ReadOnly = !habilitado;
-                txtPrecioUnitario.ReadOnly = !habilitado;
-                btnBuscarCategoria.Enabled = habilitado;
-                btnNuevo.Enabled = !habilitado;
-                btnEditar.Enabled = !habilitado;
-                btnEliminar.Enabled = !habilitado;
-                btnGuardar.Enabled = habilitado;
-                btnCancelar.Enabled = habilitado;
-                dgvProductos.Enabled = !habilitado;
-                crear = (habilitado && isCreacion);
-                editar = (habilitado && !isCreacion);
-                if (habilitado) txtNombre.Focus();
-            }
+            txtNombre.ReadOnly = !habilitado;
+            txtPrecioUnitario.ReadOnly = !habilitado;
+            btnBuscarCategoria.Enabled = habilitado;
+            btnNuevo.Enabled = !habilitado;
+            btnEditar.Enabled = !habilitado;
+            btnEliminar.Enabled = !habilitado;
+            btnGuardar.Enabled = habilitado;
+            btnCancelar.Enabled = habilitado;
+            dgvProductos.Enabled = !habilitado;
+            crear = (habilitado && isCreacion);
+            editar = (habilitado && !isCreacion);
+            if (habilitado) txtNombre.Focus();
         }
 
         private void RegistrarProducto()
@@ -167,6 +161,7 @@ namespace Vista
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarProductos();
+                cambios = true;
             }
             else
             {
@@ -189,6 +184,7 @@ namespace Vista
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarProductos();
+                cambios = true;
             }
             else
             {
@@ -209,6 +205,7 @@ namespace Vista
                     MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HabilitarForm(false);
                     ListarProductos();
+                    cambios = true;
                 }
                 else
                 {
