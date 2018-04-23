@@ -1,0 +1,8 @@
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Release\Controlador.dll.config
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Release\Controlador.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Release\Controlador.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Release\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Release\Modelo.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.csprojResolveAssemblyReference.cache
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.pdb

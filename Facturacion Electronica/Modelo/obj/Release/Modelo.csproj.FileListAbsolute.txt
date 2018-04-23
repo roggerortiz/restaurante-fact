@@ -1,0 +1,5 @@
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Release\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Release\Modelo.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\Modelo.csprojResolveAssemblyReference.cache
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\Modelo.pdb

@@ -1,1 +1,15 @@
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\bin\Release\Vista.exe.config
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.csprojResolveAssemblyReference.cache
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmBuscarCategoria.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmClientes.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmComprobante.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmDetalleMesa.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmNumeroMesas.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmLogin.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmMenuPrincipal.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmInicio.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmPago.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmProductos.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.frmUsuarios.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.Properties.Resources.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Release\Vista.csproj.GenerateResource.Cache
