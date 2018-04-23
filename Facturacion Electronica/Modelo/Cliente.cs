@@ -7,14 +7,21 @@ namespace Modelo
 {
     public class Cliente : Modelo
     {
-        private String ruc;
-        private String razonSocial;
-        private String dni;
-        private String nombres;
-        private String apellidos;
+        private Int32 persona;
+        private String ruc = null;
+        private String razonSocial = null;
+        private String dni = null;
+        private String nombres = null;
+        private String apellidos = null;
         private String direccion;
         private String telefono;
         private String correo;
+
+        public Int32 Persona
+        {
+            get { return persona; }
+            set { persona = value; }
+        }
 
         public String RUC
         {

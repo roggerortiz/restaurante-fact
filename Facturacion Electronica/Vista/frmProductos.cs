@@ -107,7 +107,7 @@ namespace Vista
             {
                 if (index == -1)
                 {
-                    index = (dgvProductos.CurrentRow != null) ? dgvProductos.CurrentRow.Index : index;
+                    index = (dgvProductos.CurrentRow != null) ? dgvProductos.CurrentRow.Index : 0;
                 }
 
                 txtID.Text = dgvProductos.Rows[index].Cells[0].Value.ToString();
@@ -145,6 +145,7 @@ namespace Vista
             crear = (habilitado && isCreacion);
             editar = (habilitado && !isCreacion);
             if (habilitado) txtNombre.Focus();
+            if (!habilitado) dgvProductos.Focus();
         }
 
         private void RegistrarProducto()

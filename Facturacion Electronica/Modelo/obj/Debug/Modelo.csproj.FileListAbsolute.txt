@@ -12,4 +12,3 @@ D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Mo
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Modelo.pdb
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.dll
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.pdb
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

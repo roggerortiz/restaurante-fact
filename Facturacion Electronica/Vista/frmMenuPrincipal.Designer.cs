@@ -98,6 +98,7 @@
             this.mnuClientes.Name = "mnuClientes";
             this.mnuClientes.Size = new System.Drawing.Size(153, 22);
             this.mnuClientes.Text = "Clientes";
+            this.mnuClientes.Click += new System.EventHandler(this.mnuClientes_Click);
             // 
             // mnuComprobantes
             // 
@@ -120,15 +121,16 @@
             // mnuNumeroMesas
             // 
             this.mnuNumeroMesas.Name = "mnuNumeroMesas";
-            this.mnuNumeroMesas.Size = new System.Drawing.Size(119, 22);
+            this.mnuNumeroMesas.Size = new System.Drawing.Size(152, 22);
             this.mnuNumeroMesas.Text = "Mesas";
             this.mnuNumeroMesas.Click += new System.EventHandler(this.mnuNumeroMesas_Click);
             // 
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(119, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
             this.mnuUsuarios.Text = "Usuarios";
+            this.mnuUsuarios.Click += new System.EventHandler(this.mnuUsuarios_Click);
             // 
             // mnuMesas
             // 
@@ -162,7 +164,6 @@
             this.MainMenuStrip = this.msIzquierda;
             this.Name = "frmMenuPrincipal";
             this.Text = ".: RESTAURANTE :.";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.msIzquierda.ResumeLayout(false);

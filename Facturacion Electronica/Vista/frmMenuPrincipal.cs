@@ -29,10 +29,6 @@ namespace Vista
         DataTable categorias = new DataTable();
         DataTable productos = new DataTable();
 
-        // Se instancian una sola vez, los formularios que seran llamados desde el Menu Principal.
-        frmProductos frmProductos = new frmProductos();
-        frmNumeroMesas frmNumeroMesas = new frmNumeroMesas();
-
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -56,33 +52,49 @@ namespace Vista
 
         private void mnuProductos_Click(object sender, EventArgs e)
         {
-            frmProductos = new frmProductos();
-            frmProductos.StartPosition = FormStartPosition.CenterScreen;
-            frmProductos.Activate();
-            frmProductos.ShowDialog();
+            frmProductos frm = new frmProductos();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
 
-            if (frmProductos.cambios)
+            if (frm.cambios)
             {
                 ListarCategoriasProductos();
                 ActualizarDetalles();
             }
         }
 
-        private void mnuMesas_Click(object sender, EventArgs e)
+        private void mnuClientes_Click(object sender, EventArgs e)
         {
-            ListarMesas();
+            frmClientes frm = new frmClientes();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void mnuNumeroMesas_Click(object sender, EventArgs e)
         {
-            frmNumeroMesas = new frmNumeroMesas();
-            frmNumeroMesas.StartPosition = FormStartPosition.CenterScreen;
-            frmProductos.Activate();
+            frmNumeroMesas frm = new frmNumeroMesas();
+            frm.StartPosition = FormStartPosition.CenterScreen;
 
-            if (frmNumeroMesas.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 ListarMesas();
             }
+        }
+
+        private void mnuUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
+
+        private void mnuMesas_Click(object sender, EventArgs e)
+        {
+            ListarMesas();
         }
 
         private void menuSalir_Click(object sender, EventArgs e)
