@@ -60,3 +60,4 @@ D:\FACTURACION\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.frmLogi
 D:\FACTURACION\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.frmMenuPrincipal.resources
 D:\FACTURACION\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.frmPago.resources
 D:\FACTURACION\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.frmProductos.resources
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Vista\obj\Debug\Vista.frmInicio.resources

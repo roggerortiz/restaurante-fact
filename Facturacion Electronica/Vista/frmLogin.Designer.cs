@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.gnIniciarSesion = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.imgIngresar = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.linkVer = new System.Windows.Forms.LinkLabel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbLogin = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.imgIngresar = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cboUsuarios = new System.Windows.Forms.ComboBox();
             this.gnIniciarSesion.SuspendLayout();
-            this.gbLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIngresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gbLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // gnIniciarSesion
@@ -57,6 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.gnIniciarSesion.Controls.Add(this.cboUsuarios);
             this.gnIniciarSesion.Controls.Add(this.pictureBox4);
             this.gnIniciarSesion.Controls.Add(this.imgIngresar);
             this.gnIniciarSesion.Controls.Add(this.pictureBox3);
@@ -67,7 +68,6 @@
             this.gnIniciarSesion.Controls.Add(this.label4);
             this.gnIniciarSesion.Controls.Add(this.label3);
             this.gnIniciarSesion.Controls.Add(this.txtClave);
-            this.gnIniciarSesion.Controls.Add(this.txtUsuario);
             this.gnIniciarSesion.Controls.Add(this.label2);
             this.gnIniciarSesion.Controls.Add(this.label1);
             this.gnIniciarSesion.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,6 +78,47 @@
             this.gnIniciarSesion.TabIndex = 1;
             this.gnIniciarSesion.TabStop = false;
             this.gnIniciarSesion.Text = "INICIAR SESIÓN:";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Vista.Properties.Resources.salir;
+            this.pictureBox4.Location = new System.Drawing.Point(205, 135);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(38, 39);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // imgIngresar
+            // 
+            this.imgIngresar.Image = global::Vista.Properties.Resources.ingresar1;
+            this.imgIngresar.Location = new System.Drawing.Point(34, 135);
+            this.imgIngresar.Name = "imgIngresar";
+            this.imgIngresar.Size = new System.Drawing.Size(41, 39);
+            this.imgIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgIngresar.TabIndex = 10;
+            this.imgIngresar.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Vista.Properties.Resources.clave;
+            this.pictureBox3.Location = new System.Drawing.Point(93, 82);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Vista.Properties.Resources.usuario;
+            this.pictureBox2.Location = new System.Drawing.Point(93, 37);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // linkVer
             // 
@@ -156,20 +197,6 @@
             this.txtClave.UseSystemPasswordChar = true;
             this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.Navy;
-            this.txtUsuario.Location = new System.Drawing.Point(126, 41);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(171, 26);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -200,46 +227,13 @@
             this.gbLogin.TabIndex = 12;
             this.gbLogin.TabStop = false;
             // 
-            // pictureBox4
+            // cboUsuarios
             // 
-            this.pictureBox4.Image = global::Vista.Properties.Resources.salir;
-            this.pictureBox4.Location = new System.Drawing.Point(205, 135);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 39);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // imgIngresar
-            // 
-            this.imgIngresar.Image = global::Vista.Properties.Resources.ingresar1;
-            this.imgIngresar.Location = new System.Drawing.Point(34, 135);
-            this.imgIngresar.Name = "imgIngresar";
-            this.imgIngresar.Size = new System.Drawing.Size(41, 39);
-            this.imgIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgIngresar.TabIndex = 10;
-            this.imgIngresar.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Vista.Properties.Resources.clave;
-            this.pictureBox3.Location = new System.Drawing.Point(93, 82);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Vista.Properties.Resources.usuario;
-            this.pictureBox2.Location = new System.Drawing.Point(93, 37);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.cboUsuarios.FormattingEnabled = true;
+            this.cboUsuarios.Location = new System.Drawing.Point(126, 39);
+            this.cboUsuarios.Name = "cboUsuarios";
+            this.cboUsuarios.Size = new System.Drawing.Size(171, 27);
+            this.cboUsuarios.TabIndex = 12;
             // 
             // frmLogin
             // 
@@ -254,13 +248,14 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".: RESTAURANTE :.";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.gnIniciarSesion.ResumeLayout(false);
             this.gnIniciarSesion.PerformLayout();
-            this.gbLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gbLogin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -276,12 +271,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgIngresar;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.GroupBox gbLogin;
+        private System.Windows.Forms.ComboBox cboUsuarios;
     }
 }
 

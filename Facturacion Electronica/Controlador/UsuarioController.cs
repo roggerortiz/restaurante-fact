@@ -10,6 +10,27 @@ namespace Controlador
 {
     public class UsuarioController : Controller
     {
+        public DataTable Listar()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.id, usuarios.usuario FROM usuarios ORDER BY usuarios.usuario ASC", this.Conexion);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Listar Usuarios: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return dt;
+        }
+
         public Usuario Login(String usuario, String clave)
         {
             Usuario u = new Usuario();
@@ -36,7 +57,8 @@ namespace Controlador
                     u.Telefono = reader.GetString(5);
                     u.NombUsu = reader.GetString(6);
                     u.Clave = reader.GetString(7);
-                    u.Estado = reader.GetInt32(8);
+                    u.Categoria = reader.GetInt32(8);
+                    u.Estado = reader.GetInt32(9);
                     
                     reader.Close();
                 }

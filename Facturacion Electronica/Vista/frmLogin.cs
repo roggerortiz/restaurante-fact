@@ -13,6 +13,9 @@ namespace Vista
 {
     public partial class frmLogin : Form
     {
+        public Usuario usuario = new Usuario();
+        public DataTable usuarios = new DataTable();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -66,7 +69,7 @@ namespace Vista
         private void ingresar()
         {
             // Se comprueba que los campos no esten vacíos
-            if (txtUsuario.Text == "" || txtClave.Text == "")
+            if (cboUsuarios.Text == "" || txtClave.Text == "")
             {
                 // Si están vacíos se lanza un mensaje de advertencia
                 MessageBox.Show("Hay campos no llenados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -75,16 +78,13 @@ namespace Vista
             {
                 // Si no estan vacíos, se procede a realizar el login
                 UsuarioController uc = new UsuarioController();
-                Usuario u = uc.Login(txtUsuario.Text, txtClave.Text);
+                usuario = uc.Login(cboUsuarios.Text, txtClave.Text);
 
                 // Se verifica si los datos ingresados coinciden con los registrados en la BD
-                if (u.ID > 0)
+                if (usuario.ID > 0)
                 {
                     // Si los datos son correctos, se lanza el Menu Principal
-                    MessageBox.Show("BIENVENIDO AL SISTEMA DE FACTURACIÓN", "RESTAURANTE .....", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    frmMenuPrincipal mp = new frmMenuPrincipal();
-                    mp.Show();
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
@@ -92,6 +92,13 @@ namespace Vista
                     MessageBox.Show("Usuario o Clave No Válidos", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            cboUsuarios.DataSource = usuarios;
+            cboUsuarios.DisplayMember = "usuario";
+            cboUsuarios.ValueMember = "id";
         }
     }
 }

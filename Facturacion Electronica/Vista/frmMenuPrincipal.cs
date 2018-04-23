@@ -8,15 +8,22 @@ using System.Text;
 using System.Windows.Forms;
 using InitialDLL;
 using Controlador;
+using Modelo;
 
 namespace Vista
 {
     public partial class frmMenuPrincipal : Form
     {
+        public Int32 categoria = 0;
+        public Usuario usuario = new Usuario();
+
         CInitial initial = new CInitial(Application.StartupPath);
 
         // Lista de los detalles de las mesas
-        Dictionary<string, DataTable> listaMesas = new Dictionary<string,DataTable>();
+        Dictionary<string, DataTable> listaMesas = new Dictionary<string, DataTable>();
+
+        // Panel de Mesas
+        TableLayoutPanel panelMesas = new TableLayoutPanel();
 
         // Lista de las categorias y productos
         DataTable categorias = new DataTable();
@@ -33,27 +40,23 @@ namespace Vista
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
+            mnuMantenedores.Visible = (categoria == 0);
+            mnuSistema.Visible = (categoria == 0);
+            mnuMesas.Visible = (categoria == 0);
+
+            // Se crea el panel de mesas
+            CrearPanelMesas();
+
             // Se Listan las mesas registradas.
             ListarMesas();
+
             // Se listan las categorias y productos
             ListarCategoriasProductos();
         }
 
-        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Se cierra toda la aplicación.
-            Application.Exit();
-        }
-
         private void mnuProductos_Click(object sender, EventArgs e)
         {
-            // Se verifica si la instancia del formulario es nulo o ha sido cerrado.
-            // Solo si es asi, se vuelve a instanciar.
-            if (frmProductos == null || frmProductos.IsDisposed)
-            {
-                frmProductos = new frmProductos();
-            }
-
+            frmProductos = new frmProductos();
             frmProductos.StartPosition = FormStartPosition.CenterScreen;
             frmProductos.Activate();
             frmProductos.ShowDialog();
@@ -72,13 +75,7 @@ namespace Vista
 
         private void mnuNumeroMesas_Click(object sender, EventArgs e)
         {
-            // Se verifica si la instancia del formulario es nulo o ha sido cerrado.
-            // Solo si es asi, se vuelve a instanciar.
-            if (frmNumeroMesas == null || frmNumeroMesas.IsDisposed)
-            {
-                frmNumeroMesas = new frmNumeroMesas();
-            }
-
+            frmNumeroMesas = new frmNumeroMesas();
             frmNumeroMesas.StartPosition = FormStartPosition.CenterScreen;
             frmProductos.Activate();
 
@@ -90,7 +87,7 @@ namespace Vista
 
         private void menuSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMesa_Click(object sender, EventArgs e, Int32 numero)
@@ -99,6 +96,9 @@ namespace Vista
 
             // Se envia el numero de mesa
             detaMesa.mesa = String.Format("{0:00}", numero);
+
+            // Se envia el usuario logueado
+            detaMesa.usuario = usuario;
 
             // Se cambia el titulo del groupBox principal del formulario
             detaMesa.gbDetalleMesa.Text = String.Format("MESA {0:00}", numero);
@@ -125,44 +125,48 @@ namespace Vista
             }
         }
 
-        private void ListarMesas()
+        private void CrearPanelMesas()
         {
-            panelMesas.Controls.Clear();
-
-            MesaController mc = new MesaController();
-            DataTable dt = mc.Listar();
-
-            Int32 mesas = dt.Rows.Count;
-            Int32 columnas = 10, filas = 5, columna = 0, fila = 0;
+            Int32 columnas = 10, filas = 5;
 
             // Crear Un Panel tipo Tabla
-            TableLayoutPanel panel = new TableLayoutPanel();
-            panel.ColumnCount = columnas;
-            panel.RowCount = mesas / columnas;
-            panel.Padding = new Padding(10);
-            panel.Dock = DockStyle.Fill;
+            panelMesas.ColumnCount = columnas;
+            panelMesas.RowCount = filas;
+            panelMesas.Padding = new Padding(10);
+
+            panelMesas.Dock = DockStyle.Fill;
 
             // Agregar el Panel como Control del Formulario
-            panelMesas.Controls.Add(panel);
+            panelPrincipal.Controls.Add(panelMesas);
 
             // Agregar 10 Columnas a la Tabla
             for (Int32 i = 0; i < columnas; i++)
             {
-                panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, (float)(100 / columnas)));
+                panelMesas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, (float)(100 / columnas)));
             }
 
             // Agregar 5 filas para las mesas
             for (Int32 i = 0; i < filas; i++)
             {
-                panel.RowStyles.Add(new RowStyle(SizeType.Percent, (float)(100 / filas)));
+                panelMesas.RowStyles.Add(new RowStyle(SizeType.Percent, (float)(100 / filas)));
             }
+        }
+
+        private void ListarMesas()
+        {
+            panelMesas.Controls.Clear();
+
+            MesaController mc = new MesaController();
+            DataTable mesas = mc.Listar();
+
+            Int32 total = mesas.Rows.Count, columna = 0, fila = 0;            
 
             // Agregar un Boton para cada mesa en cada celda de la tabla
-            for (Int32 i = 0; i < mesas; i++)
+            for (Int32 i = 0; i < total; i++)
             {
                 // Obtener datos de la mesa
-                Int32 numero = Convert.ToInt32(dt.Rows[i][1].ToString());
-                String estado = dt.Rows[i][2].ToString();
+                Int32 numero = Convert.ToInt32(mesas.Rows[i][1].ToString());
+                String estado = mesas.Rows[i][2].ToString();
                 String color = (estado == "Libre") ? "#28a745" : ((estado == "Reservada") ? "#bd2130" : "#e0a800");
 
                 // Crear un nuevo boton
@@ -178,16 +182,16 @@ namespace Vista
                 btn.Click += new EventHandler((sender1, e1) => btnMesa_Click(sender1, e1, numero));
 
                 // Agregar el boton a la celda de la tabla
-                panel.Controls.Add(btn, columna, fila);
+                panelMesas.Controls.Add(btn, columna, fila);
 
                 columna = (columna == 9) ? 0 : (columna + 1);
                 fila = (columna == 0) ? (fila + 1) : fila;
             }
 
             // Si no se completan las 5 filas se agrega un elemento a la fila final para forzar su existencia
-            if (mesas > 0 && mesas <= 40)
+            if (total > 0 && total <= 40)
             {
-                panel.Controls.Add(new Label() { Dock = DockStyle.Fill }, 0, 4);
+                panelMesas.Controls.Add(new Label() { Dock = DockStyle.Fill }, 0, 4);
             }
         }
 

@@ -14,6 +14,7 @@ namespace Modelo
         private String telefono;
         private String nombUsu;
         private String clave;
+        private Int32 categoria;
         private Int32 estado;
 
         public String DNI
@@ -56,6 +57,12 @@ namespace Modelo
         {
             get { return clave; }
             set { clave = value; }
+        }
+
+        public Int32 Categoria
+        {
+            get { return categoria; }
+            set { categoria = value; }
         }
 
         public Int32 Estado

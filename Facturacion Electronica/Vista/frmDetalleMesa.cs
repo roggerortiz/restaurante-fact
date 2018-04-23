@@ -15,6 +15,7 @@ namespace Vista
     public partial class frmDetalleMesa : Form
     {
         public String mesa;
+        public Int32 categoria = 1;
         public Usuario usuario = new Usuario();
         public DataTable categorias = new DataTable();
         public DataTable productos = new DataTable();
@@ -34,6 +35,10 @@ namespace Vista
             CrearPanelProductos();
             ListarCategorias();
             ListarDetalles();
+
+            gbUsuario.Text = (categoria == 0) ? "ADMINISTRADOR" : ((categoria == 1) ? "CAJERO" : "MOZO");
+            txtUsuario.Text = usuario.Apellidos + ", " + usuario.Nombres;
+            txtUsuario.Visible = true;
         }
 
         private void btnCategoria_Click(object sender, EventArgs e, Int32 categoriaId)
@@ -110,8 +115,10 @@ namespace Vista
                 else // Si la cantidad es 1 se elimina de la tabla detalle
                 {
                     detalles.Rows[indice].Delete();
+                    ReajustarPosiciones();
                 }
 
+                HabilitarGuardado();
                 CalcularTotal();
             }
         }
@@ -127,12 +134,7 @@ namespace Vista
                 // Se elimina la fila de la tabla detales
                 detalles.Rows[indice].Delete();
 
-                // Se reajustan las posiciones de los productos
-                for (Int32 i = 0; i < detalles.Rows.Count; i++)
-                {
-                    detalles.Rows[i][0] = (i + 1);
-                }
-
+                ReajustarPosiciones();
                 HabilitarGuardado();
                 CalcularTotal();
             }
@@ -237,6 +239,13 @@ namespace Vista
 
         private void ListarProductos(Int32 categoriaId)
         {
+            String categoria = categorias.AsEnumerable()
+                .Where(row => row["id"].ToString() == categoriaId.ToString())
+                .CopyToDataTable().Rows[0][1].ToString();
+
+            // Se modifica el titulo del groupBox de productos
+            gbProductos.Text = categoria.ToUpper();
+
             // Se limpian los controles agregados al panel de productos
             panelProductos.Controls.Clear();
 
@@ -261,13 +270,9 @@ namespace Vista
                     Int32 productoId = Convert.ToInt32(productosCat.Rows[i][0].ToString());
                     String nombre = productosCat.Rows[i][3].ToString();
                     String precio = productosCat.Rows[i][4].ToString();
-                    String categoria = productosCat.Rows[i][6].ToString();
 
                     // Si el nombre es muy grande se recorta la cadena a 20 caracteres
                     nombre = (nombre.Length > 20) ? nombre.Substring(0, 20) : nombre;
-
-                    // Se modifica el titulo del groupBox de productos
-                    gbProductos.Text = categoria.ToUpper();
 
                     // Se crea un nuevo objeto boton
                     Button btn = new Button();
@@ -401,6 +406,14 @@ namespace Vista
             txtTotal.Text = String.Format("{0:0.00}", total);
         }
 
+        private void ReajustarPosiciones()
+        {
+            for (Int32 i = 0; i < detalles.Rows.Count; i++)
+            {
+                detalles.Rows[i][0] = (i + 1);
+            }
+        }
+
         private void GuardarComprobante()
         {
             // Se muestra un mensaje y se devuelve un valor OK para agregar el detalle al diccionario (lista) de detalles de mesas
@@ -410,9 +423,8 @@ namespace Vista
 
         private void HabilitarGuardado()
         {
-            // Se habilitan los botones para guardar y pagar si tiene filas la tabla detalles
-            btnGuardar.Enabled = (detalles.Rows.Count > 0);
-            btnPagar.Enabled = (detalles.Rows.Count > 0);
+            // Se habilitan el boton para pagar si tiene filas la tabla detalles
+            btnPagar.Enabled = (categoria == 0 && detalles.Rows.Count > 0);
         }
     }    
 }

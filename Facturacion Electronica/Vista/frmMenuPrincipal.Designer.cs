@@ -28,49 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msIzquierda = new System.Windows.Forms.MenuStrip();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.mnuMantenedores = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuComprobantes = new System.Windows.Forms.ToolStripMenuItem();
-            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNumeroMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelMesas = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
+            this.msIzquierda.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // msIzquierda
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenedoresToolStripMenuItem,
-            this.sistemaToolStripMenuItem,
+            this.msIzquierda.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.msIzquierda.Dock = System.Windows.Forms.DockStyle.Left;
+            this.msIzquierda.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMantenedores,
+            this.mnuSistema,
             this.mnuMesas,
             this.mnuSalir});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(101, 390);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msIzquierda.Location = new System.Drawing.Point(0, 0);
+            this.msIzquierda.Name = "msIzquierda";
+            this.msIzquierda.Size = new System.Drawing.Size(101, 390);
+            this.msIzquierda.TabIndex = 0;
+            this.msIzquierda.Text = "menuStrip1";
             // 
-            // mantenedoresToolStripMenuItem
+            // panelPrincipal
             // 
-            this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Location = new System.Drawing.Point(101, 0);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(556, 390);
+            this.panelPrincipal.TabIndex = 2;
+            // 
+            // mnuMantenedores
+            // 
+            this.mnuMantenedores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCategorias,
             this.mnuProductos,
             this.mnuClientes,
             this.mnuComprobantes});
-            this.mantenedoresToolStripMenuItem.Image = global::Vista.Properties.Resources.mantenedores;
-            this.mantenedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
-            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(88, 89);
-            this.mantenedoresToolStripMenuItem.Text = "Mantenedores";
-            this.mantenedoresToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnuMantenedores.Image = global::Vista.Properties.Resources.mantenedores;
+            this.mnuMantenedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuMantenedores.Name = "mnuMantenedores";
+            this.mnuMantenedores.Size = new System.Drawing.Size(88, 89);
+            this.mnuMantenedores.Text = "Mantenedores";
+            this.mnuMantenedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // menuCategorias
             // 
@@ -97,17 +105,17 @@
             this.mnuComprobantes.Size = new System.Drawing.Size(153, 22);
             this.mnuComprobantes.Text = "Comprobantes";
             // 
-            // sistemaToolStripMenuItem
+            // mnuSistema
             // 
-            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSistema.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNumeroMesas,
             this.mnuUsuarios});
-            this.sistemaToolStripMenuItem.Image = global::Vista.Properties.Resources.sistema;
-            this.sistemaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(88, 89);
-            this.sistemaToolStripMenuItem.Text = "Sistema";
-            this.sistemaToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnuSistema.Image = global::Vista.Properties.Resources.sistema;
+            this.mnuSistema.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuSistema.Name = "mnuSistema";
+            this.mnuSistema.Size = new System.Drawing.Size(88, 89);
+            this.mnuSistema.Text = "Sistema";
+            this.mnuSistema.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // mnuNumeroMesas
             // 
@@ -142,31 +150,23 @@
             this.mnuSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mnuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
-            // panelMesas
-            // 
-            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMesas.Location = new System.Drawing.Point(101, 0);
-            this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(556, 390);
-            this.panelMesas.TabIndex = 2;
-            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 390);
-            this.Controls.Add(this.panelMesas);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelPrincipal);
+            this.Controls.Add(this.msIzquierda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.msIzquierda;
             this.Name = "frmMenuPrincipal";
             this.Text = ".: RESTAURANTE :.";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msIzquierda.ResumeLayout(false);
+            this.msIzquierda.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,17 +174,17 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msIzquierda;
         private System.Windows.Forms.ToolStripMenuItem mnuProductos;
         private System.Windows.Forms.ToolStripMenuItem mnuComprobantes;
-        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuSistema;
         private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
         private System.Windows.Forms.ToolStripMenuItem mnuMesas;
-        private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuMantenedores;
         private System.Windows.Forms.ToolStripMenuItem menuCategorias;
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
         private System.Windows.Forms.ToolStripMenuItem mnuNumeroMesas;
-        private System.Windows.Forms.Panel panelMesas;
+        private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
     }
 }
