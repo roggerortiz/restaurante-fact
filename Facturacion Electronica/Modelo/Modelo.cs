@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Modelo
 {
-    public class Modelo
+    public abstract class Modelo
     {
         private Int32 id;
 

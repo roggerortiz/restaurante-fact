@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings>
+  <UsePassword>0</UsePassword>
+  <RootFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</RootFolder>
+  <INIFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</INIFolder>
+  <Language>1</Language>
+  <UBLVersionID>2.0</UBLVersionID>
+  <CustomizationID>1.0</CustomizationID>
+  <LogLevel>1</LogLevel>
+  <CertificatePath>Ruta del Certificado de Firma Digital</CertificatePath>
+  <EmisorFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</EmisorFolder>
+  <DenomFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</DenomFolder>
+  <UbigeoFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</UbigeoFolder>
+  <UnidadesFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</UnidadesFolder>
+  <ClientsFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</ClientsFolder>
+  <ProductsFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</ProductsFolder>
+  <ErrorFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</ErrorFolder>
+  <ArchivoFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</ArchivoFolder>
+  <DBFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</DBFolder>
+  <AutoStartOS>0</AutoStartOS>
+  <AutoStartRun>0</AutoStartRun>
+  <IGV>1.18</IGV>
+  <ConsecutiveFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</ConsecutiveFolder>
+  <SUNATReplyFolder>D:\PRUEBAFACTURA\Facturacion Electronica\Vista\bin\Release</SUNATReplyFolder>
+  <UseConsecutive>0</UseConsecutive>
+  <ModoSUNAT>0</ModoSUNAT>
+  <SMTPAddress>SMTP Address</SMTPAddress>
+  <SMTPPortNumber>587</SMTPPortNumber>
+  <EnableSSL>0</EnableSSL>
+  <SMTPUsername>SMTP Username</SMTPUsername>
+  <SMTPPassword>SMTP Password</SMTPPassword>
+  <ProgFolder>Inspection Program Directory</ProgFolder>
+  <CSVScanInterval>
+  </CSVScanInterval>
+  <XMLDirTimeout>5</XMLDirTimeout>
+  <StationMode>0</StationMode>
+</Settings>

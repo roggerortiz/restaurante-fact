@@ -1,0 +1,12 @@
+22 de abril del 2018: Version 1.0.0.0
+	Cambios:
+	* Mantenedor Clientes: Listar, registrar, modificar y eliminar.
+	* Mantenedor Usuarios: Listar, registrar, modificar y eliminar.
+	* Diseño y mantenimiento del formInicio, login
+
+24 de abril del 2018: Version 1.0.0.1
+	Cambios:
+	* Cambio de diseño en frmInicio, frm Login, frmMenu_Principal.
+	* Agregue lineas de codigo referente a los logs segun el nivel.
+
+25 de abril del 2018: Version 1.0.0.2

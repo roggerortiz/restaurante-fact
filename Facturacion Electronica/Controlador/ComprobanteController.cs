@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
@@ -23,7 +26,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Listar Detalles de Comprobante: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "ListarDetalles:" + ex);
+
+                //Console.WriteLine("Error al Listar Detalles de Comprobante: " + ex.Message);
             }
             finally
             {

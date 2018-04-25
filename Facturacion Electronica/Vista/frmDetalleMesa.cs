@@ -15,7 +15,7 @@ namespace Vista
     public partial class frmDetalleMesa : Form
     {
         public String mesa;
-        public Int32 categoria = 1;
+        public Int32 categoria;
         public Usuario usuario = new Usuario();
         public DataTable categorias = new DataTable();
         public DataTable productos = new DataTable();
@@ -216,7 +216,7 @@ namespace Vista
                 btn.Name = String.Format("btnCategoria{0:00}", categoriaId);
                 btn.BackColor = ColorTranslator.FromHtml("#17a2b8");
                 btn.ForeColor = ColorTranslator.FromHtml("#ffffff");
-                btn.Font = new Font("Arial", 10F);
+                btn.Font = new Font("Arial", 14F);
                 btn.Margin = new Padding(1);
                 btn.FlatAppearance.BorderSize = 0;
                 btn.FlatStyle = FlatStyle.Flat;
@@ -280,7 +280,7 @@ namespace Vista
                     btn.Name = String.Format("btnProducto{0:00}", productoId);
                     btn.BackColor = ColorTranslator.FromHtml("#0062cc");
                     btn.ForeColor = ColorTranslator.FromHtml("#ffffff");
-                    btn.Font = new Font("Arial", 10F);
+                    btn.Font = new Font("Arial", 12F);
                     btn.Margin = new Padding(1);
                     btn.FlatAppearance.BorderSize = 0;
                     btn.FlatStyle = FlatStyle.Flat;

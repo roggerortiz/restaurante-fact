@@ -5,6 +5,9 @@ using System.Text;
 using Modelo;
 using MySql.Data.MySqlClient;
 using System.Data;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
@@ -21,7 +24,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Listar Mesas: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Mesas:" + ex);
+
+                //Console.WriteLine("Error al Listar Mesas: " + ex.Message);
             }
             finally
             {
@@ -44,7 +50,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Cantidad Mesas:" + ex);
+
+                //Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
             }
             finally
             {
@@ -70,7 +79,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Actualizar Mesa: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Actualizar Mesas:" + ex);
+
+                //Console.WriteLine("Error al Actualizar Mesa: " + ex.Message);
             }
             finally
             {
@@ -93,7 +105,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Mesas Libres:" + ex);
+
+                //Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
             }
             finally
             {
@@ -116,7 +131,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Mesas Ocupadas:" + ex);
+
+                //Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
             }
             finally
             {
@@ -139,7 +157,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Mesas Reservadas:" + ex);
+
+                //Console.WriteLine("Error al Obtener la Cantidad de Mesas: " + ex.Message);
             }
             finally
             {
@@ -163,7 +184,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Registrar Mesas:" + ex);
+
+                //Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
             }
             finally
             {
@@ -187,7 +211,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Eliminar Mesas:" + ex);
+
+                //Console.WriteLine("Error al Registrar Mesa: " + ex.Message);
             }
             finally
             {

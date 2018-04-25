@@ -6,3 +6,14 @@ D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\bin\Rel
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.csprojResolveAssemblyReference.cache
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.dll
 D:\proyectos\facturacion\facturacion\Facturacion Electronica\Controlador\obj\Release\Controlador.pdb
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ControladorDLL.dll.config
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ControladorDLL.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ControladorDLL.pdb
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\InitialDLL.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ISGStructures.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\LogDLL.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ModeloDLL.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\bin\Release\ModeloDLL.pdb
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\obj\Release\Controlador.csprojResolveAssemblyReference.cache
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\obj\Release\ControladorDLL.dll
+D:\PRUEBAFACTURA\Facturacion Electronica\Controlador\obj\Release\ControladorDLL.pdb

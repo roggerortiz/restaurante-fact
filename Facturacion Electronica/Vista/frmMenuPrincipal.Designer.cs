@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.msIzquierda = new System.Windows.Forms.MenuStrip();
-            this.panelPrincipal = new System.Windows.Forms.Panel();
             this.mnuMantenedores = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProductos = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,11 +39,17 @@
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMesas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.panelFonseca1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.msIzquierda.SuspendLayout();
+            this.panelFonseca1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // msIzquierda
             // 
+            this.msIzquierda.AutoSize = false;
             this.msIzquierda.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.msIzquierda.Dock = System.Windows.Forms.DockStyle.Left;
             this.msIzquierda.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -54,17 +59,9 @@
             this.mnuSalir});
             this.msIzquierda.Location = new System.Drawing.Point(0, 0);
             this.msIzquierda.Name = "msIzquierda";
-            this.msIzquierda.Size = new System.Drawing.Size(101, 390);
+            this.msIzquierda.Size = new System.Drawing.Size(101, 470);
             this.msIzquierda.TabIndex = 0;
             this.msIzquierda.Text = "menuStrip1";
-            // 
-            // panelPrincipal
-            // 
-            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Location = new System.Drawing.Point(101, 0);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(556, 390);
-            this.panelPrincipal.TabIndex = 2;
             // 
             // mnuMantenedores
             // 
@@ -121,14 +118,14 @@
             // mnuNumeroMesas
             // 
             this.mnuNumeroMesas.Name = "mnuNumeroMesas";
-            this.mnuNumeroMesas.Size = new System.Drawing.Size(152, 22);
+            this.mnuNumeroMesas.Size = new System.Drawing.Size(119, 22);
             this.mnuNumeroMesas.Text = "Mesas";
             this.mnuNumeroMesas.Click += new System.EventHandler(this.mnuNumeroMesas_Click);
             // 
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(119, 22);
             this.mnuUsuarios.Text = "Usuarios";
             this.mnuUsuarios.Click += new System.EventHandler(this.mnuUsuarios_Click);
             // 
@@ -148,15 +145,42 @@
             this.mnuSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuSalir.Name = "mnuSalir";
             this.mnuSalir.Size = new System.Drawing.Size(88, 89);
-            this.mnuSalir.Text = "Salir";
+            this.mnuSalir.Text = "Regresar";
             this.mnuSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mnuSalir.Click += new System.EventHandler(this.menuSalir_Click);
+            // 
+            // panelPrincipal
+            // 
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Location = new System.Drawing.Point(101, 0);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(556, 470);
+            this.panelPrincipal.TabIndex = 2;
+            // 
+            // panelFonseca1
+            // 
+            this.panelFonseca1.Controls.Add(this.pictureBox1);
+            this.panelFonseca1.Location = new System.Drawing.Point(0, 424);
+            this.panelFonseca1.Name = "panelFonseca1";
+            this.panelFonseca1.Size = new System.Drawing.Size(101, 43);
+            this.panelFonseca1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Vista.Properties.Resources.LogoFonseca;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(101, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 390);
+            this.ClientSize = new System.Drawing.Size(657, 470);
+            this.Controls.Add(this.panelFonseca1);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.msIzquierda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -168,8 +192,9 @@
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.msIzquierda.ResumeLayout(false);
             this.msIzquierda.PerformLayout();
+            this.panelFonseca1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -187,5 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuNumeroMesas;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
+        private System.Windows.Forms.Panel panelFonseca1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

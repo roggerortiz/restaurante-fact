@@ -17,10 +17,8 @@ namespace Vista
         public Int32 categoria = 0;
         public Usuario usuario = new Usuario();
 
-        CInitial initial = new CInitial(Application.StartupPath);
-
         // Lista de los detalles de las mesas
-        Dictionary<string, DataTable> listaMesas = new Dictionary<string, DataTable>();
+        public Dictionary<string, DataTable> listaMesas = new Dictionary<string, DataTable>();
 
         // Panel de Mesas
         TableLayoutPanel panelMesas = new TableLayoutPanel();
@@ -36,18 +34,24 @@ namespace Vista
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
+            int top = Convert.ToInt32(Math.Round(Convert.ToDecimal(this.Height - panelFonseca1.Height), 0));
+            panelFonseca1.Location = new Point(panelFonseca1.Location.X, top);
+
             mnuMantenedores.Visible = (categoria == 0);
             mnuSistema.Visible = (categoria == 0);
-            mnuMesas.Visible = (categoria == 0);
+            mnuMesas.Visible = (categoria != 0);
 
-            // Se crea el panel de mesas
-            CrearPanelMesas();
+            if (categoria != 0)
+            {
+                // Se crea el panel de mesas
+                CrearPanelMesas();
 
-            // Se Listan las mesas registradas.
-            ListarMesas();
+                // Se Listan las mesas registradas.
+                ListarMesas();
 
-            // Se listan las categorias y productos
-            ListarCategoriasProductos();
+                // Se listan las categorias y productos
+                ListarCategoriasProductos();
+            }
         }
 
         private void mnuProductos_Click(object sender, EventArgs e)
@@ -56,7 +60,7 @@ namespace Vista
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
 
-            if (frm.cambios)
+            if (frm.cambios && categoria != 0)
             {
                 ListarCategoriasProductos();
                 ActualizarDetalles();
@@ -75,7 +79,7 @@ namespace Vista
             frmNumeroMesas frm = new frmNumeroMesas();
             frm.StartPosition = FormStartPosition.CenterScreen;
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK && categoria != 0)
             {
                 ListarMesas();
             }
@@ -113,7 +117,7 @@ namespace Vista
             detaMesa.usuario = usuario;
 
             // Se cambia el titulo del groupBox principal del formulario
-            detaMesa.gbDetalleMesa.Text = String.Format("MESA {0:00}", numero);
+            detaMesa.lbMesa.Text = String.Format("MESA {0:00}", numero);
 
             // Se envia el detalle de la mesa seleccionada, si no tiene detalles se envia una tabla vacia
             detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa] : TablaDetallesVacia();
@@ -145,11 +149,11 @@ namespace Vista
             panelMesas.ColumnCount = columnas;
             panelMesas.RowCount = filas;
             panelMesas.Padding = new Padding(10);
-
             panelMesas.Dock = DockStyle.Fill;
 
             // Agregar el Panel como Control del Formulario
             panelPrincipal.Controls.Add(panelMesas);
+            panelPrincipal.Dock = DockStyle.Fill;
 
             // Agregar 10 Columnas a la Tabla
             for (Int32 i = 0; i < columnas; i++)

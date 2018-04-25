@@ -6,16 +6,28 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
-    public class Controller
+    public abstract class Controller
     {
-        private MySqlConnection conexion = new MySqlConnection();
+        private MySqlConnection conexion;
+        protected CInitial initial;
+        protected CDatabase database;
+        protected CLogDLL log;
 
         public Controller()
         {
-            this.conexion.ConnectionString = this.CadenaConexion();
+            initial = new CInitial();
+            database = new CDatabase();
+            log = new CLogDLL();
+            conexion = new MySqlConnection(this.CadenaConexion());
         }
 
         protected MySqlConnection Conexion
@@ -29,8 +41,12 @@ namespace Controlador
 
             try
             {
+               //String strMainFolder = String.Format("{0}/Config/ConexionBD.xml", m_ini.MainDirectory);
+
                 XmlDocument xml = new XmlDocument();
-                xml.Load("Config/ConexionBD.xml");
+                string sConn = "Config/ConexionBD.xml";
+              //  MessageBox.Show(strMainFolder);
+                xml.Load(sConn);
 
                 XmlNodeList nodeList;
                 
@@ -48,7 +64,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Obtener la Cadena de Conexión: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Controller:" + ex);
+
+                //Console.WriteLine("Error al Obtener la Cadena de Conexión: " + ex.Message);
             }
 
             return builder.ConnectionString;
@@ -64,7 +83,10 @@ namespace Controlador
                 }
             } catch (Exception ex)
             {
-                Console.WriteLine("Error al Abrir la Conexión con la Base de Datos: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Conexion a BD:" + ex);
+
+                //Console.WriteLine("Error al Abrir la Conexión con la Base de Datos: " + ex.Message);
             }
         }
 
@@ -79,7 +101,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Cerrar la Conexión con la Base de Datos: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Cerrar Conexion BD:" + ex);
+
+                //Console.WriteLine("Error al Cerrar la Conexión con la Base de Datos: " + ex.Message);
             }
         }
     }

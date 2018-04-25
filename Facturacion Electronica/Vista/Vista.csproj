@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vista</RootNamespace>
-    <AssemblyName>Vista</AssemblyName>
+    <AssemblyName>FactISG</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -35,8 +35,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InitialDLL">
-      <HintPath>..\..\..\..\contenido\programas\Sistemas\Facturacion Electronica\InitialDLL.dll</HintPath>
+    <Reference Include="InitialDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\FactISG\InitialDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="ISGStructures">
+      <HintPath>C:\FactISG\ISGStructures.dll</HintPath>
+    </Reference>
+    <Reference Include="LogDLL">
+      <HintPath>C:\FactISG\LogDLL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -206,7 +213,35 @@
   <ItemGroup>
     <None Include="Resources\mesas.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoFonseca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caldo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milanesa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bistec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tallarinsaltado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lomito.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\churrasco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoISG.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug xcopy /Y "$(ProjectDir)bin\Debug\FactISG.exe" "C:\FactISG\"
+if $(ConfigurationName) == Release xcopy /Y "$(ProjectDir)bin\Release\FactISG.exe" "C:\FactISG\"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

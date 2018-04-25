@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using Modelo;
+using System.Windows.Forms;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
@@ -21,7 +25,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Listar Usuarios: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Usuarios:" + ex);
+
+                //Console.WriteLine("Error al Listar Usuarios: " + ex.Message);
             }
             finally
             {
@@ -53,7 +60,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Registrar Usuario: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Registrar Usuarios:" + ex);
+                
+                //Console.WriteLine("Error al Registrar Usuario: " + ex.Message);
             }
             finally
             {
@@ -86,7 +96,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Actualizar Usuario: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Actualizar Usuarios:" + ex);
+
+                //Console.WriteLine("Error al Actualizar Usuario: " + ex.Message);
             }
             finally
             {
@@ -111,7 +124,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Eliminar Usuario: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Eliminar Usuarios:" + ex);
+
+                //Console.WriteLine("Error al Eliminar Usuario: " + ex.Message);
             }
             finally
             {
@@ -155,7 +171,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Intentar Loguearse: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Login:" + ex);
+
+                //Console.WriteLine("Error al Intentar Loguearse: " + ex.Message);
             }
             finally
             {

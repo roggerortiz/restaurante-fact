@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 using Modelo;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Vista
 {
@@ -17,10 +20,14 @@ namespace Vista
         private Boolean crear = false;
         private Boolean editar = false;
         public Boolean cambios = false;
+        private CInitial initial;
+        private CLogDLL log;
 
         public frmUsuarios()
         {
             InitializeComponent();
+            initial = new CInitial();
+            log = new CLogDLL();
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -170,6 +177,9 @@ namespace Vista
 
             if (uc.Registrar(u))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.Applog, "INFO", "Registrar Usuarios");
+
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarUsuarios();
@@ -198,6 +208,9 @@ namespace Vista
 
             if (uc.Actualizar(u))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.Applog, "INFO", "Actualizar Usuarios");
+
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarUsuarios();
@@ -219,6 +232,9 @@ namespace Vista
 
                 if (uc.Eliminar(id))
                 {
+                    if (initial.LogLevel == LogLevel.Normal)
+                        log.WriteLog(LogType.Applog, "INFO", "Eliminar Usuarios");
+
                     MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HabilitarForm(false);
                     ListarUsuarios();
@@ -233,6 +249,11 @@ namespace Vista
             {
                 MessageBox.Show("Porfavor, seleccione un usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

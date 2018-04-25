@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using Modelo;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
@@ -21,7 +24,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Listar Productos: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Productos:" + ex);
+
+                //Console.WriteLine("Error al Listar Productos: " + ex.Message);
             }
             finally
             {
@@ -48,7 +54,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Registrar Producto: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Registrar Productos:" + ex);
+
+                //Console.WriteLine("Error al Registrar Producto: " + ex.Message);
             }
             finally
             {
@@ -76,7 +85,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Actualizar Producto: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Actualizar Productos:" + ex);
+
+                //Console.WriteLine("Error al Actualizar Producto: " + ex.Message);
             }
             finally
             {
@@ -101,7 +113,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Eliminar Producto: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Eliminar Productos:" + ex);
+
+                //Console.WriteLine("Error al Eliminar Producto: " + ex.Message);
             }
             finally
             {

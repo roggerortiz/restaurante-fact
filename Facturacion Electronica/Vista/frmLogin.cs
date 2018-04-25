@@ -13,12 +13,14 @@ namespace Vista
 {
     public partial class frmLogin : Form
     {
-        public Usuario usuario = new Usuario();
-        public DataTable usuarios = new DataTable();
+        public Usuario usuario;
+        public DataTable usuarios;
 
         public frmLogin()
         {
             InitializeComponent();
+            usuario = new Usuario();
+            usuarios = new DataTable();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -99,6 +101,11 @@ namespace Vista
             cboUsuarios.DataSource = usuarios;
             cboUsuarios.DisplayMember = "usuario";
             cboUsuarios.ValueMember = "id";
+        }
+
+        private void imgIngresar_Click(object sender, EventArgs e)
+        {
+            ingresar();
         }
     }
 }

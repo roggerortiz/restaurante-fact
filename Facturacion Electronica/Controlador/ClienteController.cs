@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using Modelo;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
@@ -26,6 +29,9 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Clientes:" + ex);
+
                 Console.WriteLine("Error al Listar Clientes: " + ex.Message);
             }
             finally
@@ -59,7 +65,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Registrar Cliente: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Registrar Clientes:" + ex);
+
+                //Console.WriteLine("Error al Registrar Cliente: " + ex.Message);
             }
             finally
             {
@@ -93,7 +102,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Actualizar Cliente: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Actualizar Clientes:" + ex);
+
+                //Console.WriteLine("Error al Actualizar Cliente: " + ex.Message);
             }
             finally
             {
@@ -118,7 +130,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Eliminar Cliente: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Eliminar Clientes:" + ex);
+
+                //Console.WriteLine("Error al Eliminar Cliente: " + ex.Message);
             }
             finally
             {

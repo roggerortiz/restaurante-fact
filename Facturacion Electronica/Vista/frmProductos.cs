@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using Modelo;
 using Controlador;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Vista
 {
@@ -16,10 +19,14 @@ namespace Vista
         private Boolean crear = false;
         private Boolean editar = false;
         public Boolean cambios = false;
+        private CInitial initial;
+        private CLogDLL log;
 
         public frmProductos()
         {
             InitializeComponent();
+            initial = new CInitial();
+            log = new CLogDLL();
         }
 
         private void frmProductos_Load(object sender, EventArgs e)
@@ -159,6 +166,9 @@ namespace Vista
 
             if (pc.Registrar(p))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.ProductLog, "INFO", "Registrar Productos");
+
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarProductos();
@@ -182,6 +192,9 @@ namespace Vista
 
             if (pc.Actualizar(p))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.ProductLog, "INFO", "Actualizar Productos");
+
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarProductos();
@@ -203,6 +216,9 @@ namespace Vista
 
                 if (pc.Eliminar(id))
                 {
+                    if (initial.LogLevel == LogLevel.Normal)
+                        log.WriteLog(LogType.ProductLog, "INFO", "Eliminar Productos");
+
                     MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HabilitarForm(false);
                     ListarProductos();

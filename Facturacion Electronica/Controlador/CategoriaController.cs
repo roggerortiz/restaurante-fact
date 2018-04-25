@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using Modelo;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Controlador
 {
     public class CategoriaController : Controller
     {
+        private CInitial initial = new CInitial();
+        private CLogDLL log = new CLogDLL();
+
         public DataTable Listar()
         {
             DataTable dt = new DataTable();
@@ -21,7 +27,10 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al Listar Categorias: " + ex.Message);
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Categorias:" + ex);
+
+                //Console.WriteLine("Error al Listar Categorias: " + ex.Message);
             }
             finally
             {

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 using Modelo;
+using InitialDLL;
+using LogDLL;
+using ISGStructures;
 
 namespace Vista
 {
@@ -17,10 +20,14 @@ namespace Vista
         private Boolean crear = false;
         private Boolean editar = false;
         public Boolean cambios = false;
+        private CInitial initial;
+        private CLogDLL log;
 
         public frmClientes()
         {
             InitializeComponent();
+            initial = new CInitial();
+            log = new CLogDLL();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -219,6 +226,9 @@ namespace Vista
 
             if (cc.Registrar(c))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.ClientLog, "INFO", "Registrar Clientes");
+
                 MessageBox.Show("Registro Exitoso", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarClientes();
@@ -256,6 +266,9 @@ namespace Vista
 
             if (cc.Actualizar(c))
             {
+                if (initial.LogLevel == LogLevel.Normal)
+                    log.WriteLog(LogType.ClientLog, "INFO", "Actualizar Clientes");
+
                 MessageBox.Show("Actualización Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HabilitarForm(false);
                 ListarClientes();
@@ -277,6 +290,9 @@ namespace Vista
 
                 if (cc.Eliminar(id))
                 {
+                    if (initial.LogLevel == LogLevel.Normal)
+                        log.WriteLog(LogType.ClientLog, "INFO", "Eliminar Clientes");
+
                     MessageBox.Show("Eliminación Exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HabilitarForm(false);
                     ListarClientes();
@@ -291,6 +307,11 @@ namespace Vista
             {
                 MessageBox.Show("Porfavor, seleccione un cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
