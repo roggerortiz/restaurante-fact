@@ -16,9 +16,12 @@ namespace Vista
     {
         public String mesa;
         public Int32 categoria;
+        public String mozo;
+        public String estado = "Libre";
         public Usuario usuario = new Usuario();
         public DataTable categorias = new DataTable();
         public DataTable productos = new DataTable();
+        public DataTable mozos = new DataTable();
         public DataTable detalles = new DataTable();
         
         TableLayoutPanel panelCategorias = new TableLayoutPanel();
@@ -36,8 +39,9 @@ namespace Vista
             ListarCategorias();
             ListarDetalles();
 
+            ListarMozos();
+
             gbUsuario.Text = (categoria == 0) ? "ADMINISTRADOR" : ((categoria == 1) ? "CAJERO" : "MOZO");
-            txtUsuario.Text = usuario.Apellidos + ", " + usuario.Nombres;
             txtUsuario.Visible = true;
         }
 
@@ -69,6 +73,7 @@ namespace Vista
 
             if (pago.ShowDialog() == DialogResult.OK)
             {
+                estado = "Libre";
                 this.DialogResult = DialogResult.OK;
             }
         }
@@ -350,6 +355,22 @@ namespace Vista
             CalcularTotal();
         }
 
+        private void ListarMozos()
+        {
+            cboMozo.DataSource = mozos;
+            cboMozo.ValueMember = "id";
+            cboMozo.DisplayMember = "nombre";
+
+            if (mozo != null)
+            {
+                cboMozo.Text = mozo;
+            }
+            else
+            {
+                cboMozo.SelectedIndex = 0;
+            }
+        }
+
         private void SeleccionarProducto(Int32 productoId)
         {
             // Se crea una nueva fila de la tabla detalles
@@ -417,7 +438,10 @@ namespace Vista
         private void GuardarComprobante()
         {
             // Se muestra un mensaje y se devuelve un valor OK para agregar el detalle al diccionario (lista) de detalles de mesas
-            MessageBox.Show("Comprobante Guardado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            mozo = cboMozo.Text;
+            estado = (detalles.Rows.Count > 0) ? "Ocupada" : "Libre";
+
             this.DialogResult = DialogResult.OK;
         }
 

@@ -18,7 +18,7 @@ namespace Vista
         public Usuario usuario = new Usuario();
 
         // Lista de los detalles de las mesas
-        public Dictionary<string, DataTable> listaMesas = new Dictionary<string, DataTable>();
+        public Dictionary<string, Mesa> listaMesas = new Dictionary<string, Mesa>();
 
         // Panel de Mesas
         TableLayoutPanel panelMesas = new TableLayoutPanel();
@@ -26,6 +26,7 @@ namespace Vista
         // Lista de las categorias y productos
         DataTable categorias = new DataTable();
         DataTable productos = new DataTable();
+        DataTable mozos = new DataTable();
 
         public frmMenuPrincipal()
         {
@@ -51,6 +52,8 @@ namespace Vista
 
                 // Se listan las categorias y productos
                 ListarCategoriasProductos();
+
+                ListarMozos();
             }
         }
 
@@ -116,28 +119,39 @@ namespace Vista
             // Se envia el usuario logueado
             detaMesa.usuario = usuario;
 
+            // Se envia el mozo
+            detaMesa.mozo = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa].Mozo : null;
+
             // Se cambia el titulo del groupBox principal del formulario
             detaMesa.lbMesa.Text = String.Format("MESA {0:00}", numero);
 
             // Se envia el detalle de la mesa seleccionada, si no tiene detalles se envia una tabla vacia
-            detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa] : TablaDetallesVacia();
+            detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa].Detalles : TablaDetallesVacia();
 
-            // Se envian las tablas categorias y productos
+            // Se envian las tablas categorias, productos y mozos
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
+            detaMesa.mozos = mozos;
 
             // Si el formulario detalle de mesa devuelve OK, se agrega o actualiza los detalles de la mesa
             if (detaMesa.ShowDialog() == DialogResult.OK)
             {
-                // Si la mesa ya ha sido agregada se actualizan sus detalles
-                if (listaMesas.ContainsKey(detaMesa.mesa))
+                if (detaMesa.detalles.Rows.Count > 0 && detaMesa.estado == "Ocupada")
                 {
-                    listaMesas[detaMesa.mesa] = detaMesa.detalles;
+                    Mesa mesa = new Mesa();
+                    mesa.Numero = numero;
+                    mesa.Mozo = detaMesa.mozo;
+                    mesa.Detalles = detaMesa.detalles;
+
+                    listaMesas[detaMesa.mesa] = mesa;
                 }
-                else // Si la mesa no ha sido agregada, se agrega
+                else
                 {
-                    listaMesas.Add(detaMesa.mesa, detaMesa.detalles);
+                    listaMesas.Remove(detaMesa.mesa);
                 }
+
+                String color = (detaMesa.estado == "Libre") ? "#28a745" : "#bd2130";
+                panelPrincipal.Controls.Find("btnMesa" + detaMesa.mesa, true)[0].BackColor = ColorTranslator.FromHtml(color);
             }
         }
 
@@ -183,7 +197,7 @@ namespace Vista
                 // Obtener datos de la mesa
                 Int32 numero = Convert.ToInt32(mesas.Rows[i][1].ToString());
                 String estado = mesas.Rows[i][2].ToString();
-                String color = (estado == "Libre") ? "#28a745" : ((estado == "Reservada") ? "#bd2130" : "#e0a800");
+                String color = listaMesas.ContainsKey(String.Format("{0:00}", numero)) ? "#bd2130" : "#28a745";
 
                 // Crear un nuevo boton
                 Button btn = new Button();
@@ -220,26 +234,32 @@ namespace Vista
             productos = pc.Listar();
         }
 
+        private void ListarMozos()
+        {
+            UsuarioController uc = new UsuarioController();
+            mozos = uc.ListarMozos();
+        }
+
         private void ActualizarDetalles()
         {
-            foreach (KeyValuePair<String, DataTable> mesa in listaMesas)
+            foreach (KeyValuePair<String, Mesa> itemMesa in listaMesas)
             {
-                for (Int32 i = 0; i < mesa.Value.Rows.Count; i++)
+                for (Int32 i = 0; i < itemMesa.Value.Detalles.Rows.Count; i++)
                 {
                     EnumerableRowCollection<DataRow> productoSelec = productos.AsEnumerable()
-                        .Where(row => row[0].ToString() == listaMesas[mesa.Key].Rows[i][5].ToString());
+                        .Where(row => row[0].ToString() == listaMesas[itemMesa.Key].Detalles.Rows[i][5].ToString());
 
                     if (productoSelec.Count() == 0)
                     {
-                        listaMesas[mesa.Key].Rows[i].Delete();
+                        listaMesas[itemMesa.Key].Detalles.Rows[i].Delete();
                     }
                     else
                     {
                         DataRow producto = productoSelec.CopyToDataTable().Rows[0];
 
-                        listaMesas[mesa.Key].Rows[i][1] = producto["nombre"];
-                        listaMesas[mesa.Key].Rows[i][3] = producto["precio_unitario"];
-                        listaMesas[mesa.Key].Rows[i][4] = String.Format("{0:0.00}", Math.Round((Convert.ToInt32(listaMesas[mesa.Key].Rows[i][2]) * Convert.ToDecimal(listaMesas[mesa.Key].Rows[i][3])), 2));
+                        listaMesas[itemMesa.Key].Detalles.Rows[i][1] = producto["nombre"];
+                        listaMesas[itemMesa.Key].Detalles.Rows[i][3] = producto["precio_unitario"];
+                        listaMesas[itemMesa.Key].Detalles.Rows[i][4] = String.Format("{0:0.00}", Math.Round((Convert.ToInt32(listaMesas[itemMesa.Key].Detalles.Rows[i][2]) * Convert.ToDecimal(listaMesas[itemMesa.Key].Detalles.Rows[i][3])), 2));
                     }
                 }
             }

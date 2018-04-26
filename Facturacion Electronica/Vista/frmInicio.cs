@@ -19,7 +19,7 @@ namespace Vista
     {
         private Usuario usuario;
         private DataTable usuarios;
-        private Dictionary<string, DataTable> listaMesas;
+        private Dictionary<string, Mesa> listaMesas;
         private CInitial initial;
         private CDatabase database;
         private CLogDLL log;
@@ -29,7 +29,7 @@ namespace Vista
             InitializeComponent();
             usuario = null;
             usuarios = new DataTable();
-            listaMesas = new Dictionary<string, DataTable>();
+            listaMesas = new Dictionary<string, Mesa>();
             initial = new CInitial("C:\\FactISG\\");
             database = new CDatabase("C:\\FactISG\\");
             log = new CLogDLL();

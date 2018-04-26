@@ -13,9 +13,6 @@ namespace Controlador
 {
     public class CategoriaController : Controller
     {
-        private CInitial initial = new CInitial();
-        private CLogDLL log = new CLogDLL();
-
         public DataTable Listar()
         {
             DataTable dt = new DataTable();

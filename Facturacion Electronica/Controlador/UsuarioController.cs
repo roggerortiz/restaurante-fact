@@ -38,6 +38,30 @@ namespace Controlador
             return dt;
         }
 
+        public DataTable ListarMozos()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.id, CONCAT(usuarios.apellidos, ', ', usuarios.nombres) as nombre FROM usuarios WHERE usuarios.categoria = '2' ORDER BY nombre ASC", this.Conexion);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                if (initial.LogLevel == LogLevel.Desarrollador)
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Mozos:" + ex);
+
+                //Console.WriteLine("Error al Listar Usuarios: " + ex.Message);
+            }
+            finally
+            {
+                this.CerrarConexion();
+            }
+
+            return dt;
+        }
+
         public Boolean Registrar(Usuario usuario)
         {
             Boolean result = false;
