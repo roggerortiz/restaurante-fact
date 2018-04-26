@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Emisor>
+    <RUC>RUC</RUC>
+    <Nombre>Nombre completo</Nombre>
+    <NombreComercial>Nombre Comercial/Razon Social</NombreComercial>
+    <Telefono>Telefono</Telefono>
+    <Username>Nombre de usuario</Username>
+    <Password>Password</Password>
+    <CertificadoDigital>Ruta del Certificado Digital</CertificadoDigital>
+    <email>E-mail del Emisor</email>
+    <Codigo>0000</Codigo>
+    <Calle>Numero y calle</Calle>
+    <Distrito>Distrito</Distrito>
+    <PostalZone>Zonla Postal SUNAT</PostalZone>
+    <Provincia>Provincia</Provincia>
+    <Region>Region</Region>
+    <Sucursal>
+      <NombreSucursal>Nombre Sucursal</NombreSucursal>
+      <NombreComercialSucursal>Nombre Comercial/Razon Social</NombreComercialSucursal>
+      <CodigoSucursal>Codigo</CodigoSucursal>
+      <TelefonoSucursal>Telefono</TelefonoSucursal>
+      <CalleSucursal>Numero y calle</CalleSucursal>
+      <DistritoSucursal>Distrito</DistritoSucursal>
+      <PostalZoneSucursal>Zonla Postal SUNAT</PostalZoneSucursal>
+      <ProvinciaSucursal>Provincia</ProvinciaSucursal>
+      <RegionSucursal>Region</RegionSucursal>
+    </Sucursal>
+  </Emisor>
+</root>

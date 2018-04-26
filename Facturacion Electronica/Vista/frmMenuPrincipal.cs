@@ -14,8 +14,11 @@ namespace Vista
 {
     public partial class frmMenuPrincipal : Form
     {
+        private DataTable usuarios = new DataTable();
         public Int32 categoria = 0;
         public Usuario usuario = new Usuario();
+
+        CInitial initial = new CInitial(Application.StartupPath);
 
         // Lista de los detalles de las mesas
         public Dictionary<string, Mesa> listaMesas = new Dictionary<string, Mesa>();
@@ -35,25 +38,32 @@ namespace Vista
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            int top = Convert.ToInt32(Math.Round(Convert.ToDecimal(this.Height - panelFonseca1.Height), 0));
-            panelFonseca1.Location = new Point(panelFonseca1.Location.X, top);
+            UsuarioController uc = new UsuarioController();
+            usuarios = uc.ListarMozos();
+
+            DataRow dr = usuarios.NewRow();
+            dr["mozo"] = "Seleccionar Mozo";
+            usuarios.Rows.InsertAt(dr, 0);
+
+            int left;
+            left = Convert.ToInt32(Math.Round(Convert.ToDecimal(this.Width - panelFonseca1.Width*2 + 13), 0));
+            panelFonseca1.Location = new Point(left, 5);
 
             mnuMantenedores.Visible = (categoria == 0);
             mnuSistema.Visible = (categoria == 0);
-            mnuMesas.Visible = (categoria != 0);
+            mnuMesas.Visible = (categoria == 0);
+
+            // Se crea el panel de mesas
+            CrearPanelMesas();
 
             if (categoria != 0)
             {
-                // Se crea el panel de mesas
-                CrearPanelMesas();
-
+                gbListadoMesas.Visible = true;
                 // Se Listan las mesas registradas.
                 ListarMesas();
 
                 // Se listan las categorias y productos
                 ListarCategoriasProductos();
-
-                ListarMozos();
             }
         }
 
@@ -63,7 +73,7 @@ namespace Vista
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
 
-            if (frm.cambios && categoria != 0)
+            if (frm.cambios)
             {
                 ListarCategoriasProductos();
                 ActualizarDetalles();
@@ -82,7 +92,7 @@ namespace Vista
             frmNumeroMesas frm = new frmNumeroMesas();
             frm.StartPosition = FormStartPosition.CenterScreen;
 
-            if (frm.ShowDialog() == DialogResult.OK && categoria != 0)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 ListarMesas();
             }
@@ -128,24 +138,32 @@ namespace Vista
             // Se envia el detalle de la mesa seleccionada, si no tiene detalles se envia una tabla vacia
             detaMesa.detalles = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa].Detalles : TablaDetallesVacia();
 
-            // Se envian las tablas categorias, productos y mozos
+            // Se envia el estado de la mesa
+            detaMesa.estado = listaMesas.ContainsKey(detaMesa.mesa) ? listaMesas[detaMesa.mesa].Estado : "Libre";
+
+            detaMesa.usuarios = usuarios;
+
+            // Se envian las tablas categorias y productos
             detaMesa.categorias = categorias;
             detaMesa.productos = productos;
+            detaMesa.categoria = categoria;
             detaMesa.mozos = mozos;
 
             // Si el formulario detalle de mesa devuelve OK, se agrega o actualiza los detalles de la mesa
             if (detaMesa.ShowDialog() == DialogResult.OK)
             {
+                // Si la mesa ya ha sido agregada se actualizan sus detalles
                 if (detaMesa.detalles.Rows.Count > 0 && detaMesa.estado == "Ocupada")
                 {
                     Mesa mesa = new Mesa();
                     mesa.Numero = numero;
                     mesa.Mozo = detaMesa.mozo;
+                    mesa.Estado = detaMesa.estado;
                     mesa.Detalles = detaMesa.detalles;
 
                     listaMesas[detaMesa.mesa] = mesa;
                 }
-                else
+                else // Si la mesa no ha sido agregada, se agrega
                 {
                     listaMesas.Remove(detaMesa.mesa);
                 }
@@ -163,11 +181,11 @@ namespace Vista
             panelMesas.ColumnCount = columnas;
             panelMesas.RowCount = filas;
             panelMesas.Padding = new Padding(10);
+
             panelMesas.Dock = DockStyle.Fill;
 
             // Agregar el Panel como Control del Formulario
             panelPrincipal.Controls.Add(panelMesas);
-            panelPrincipal.Dock = DockStyle.Fill;
 
             // Agregar 10 Columnas a la Tabla
             for (Int32 i = 0; i < columnas; i++)
@@ -232,12 +250,6 @@ namespace Vista
 
             categorias = cc.Listar();
             productos = pc.Listar();
-        }
-
-        private void ListarMozos()
-        {
-            UsuarioController uc = new UsuarioController();
-            mozos = uc.ListarMozos();
         }
 
         private void ActualizarDetalles()

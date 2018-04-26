@@ -10,3 +10,10 @@
 	* Agregue lineas de codigo referente a los logs segun el nivel.
 
 25 de abril del 2018: Version 1.0.0.2
+	Cambios:
+	* Poner titulo al listado de mesas.
+	* Poner titulo y listado de mozos en un combo en frmDetalleMesa.
+	* Poner botones con numeros 5,8 y 10 en frmDetalleMesa y funcionalidad.
+	* Cambio en la base de Datos.
+
+25 de abril del 2018: Version 1.0.0.3

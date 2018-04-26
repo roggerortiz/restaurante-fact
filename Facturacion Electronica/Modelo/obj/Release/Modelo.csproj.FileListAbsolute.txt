@@ -7,3 +7,8 @@ D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\bin\Release\ModeloDLL.dll
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\bin\Release\ModeloDLL.pdb
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\obj\Release\ModeloDLL.dll
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\obj\Release\ModeloDLL.pdb
+D:\desarrollo\desktop\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Release\ModeloDLL.dll
+D:\desarrollo\desktop\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Release\ModeloDLL.pdb
+D:\desarrollo\desktop\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\Modelo.csprojResolveAssemblyReference.cache
+D:\desarrollo\desktop\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\ModeloDLL.dll
+D:\desarrollo\desktop\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Release\ModeloDLL.pdb

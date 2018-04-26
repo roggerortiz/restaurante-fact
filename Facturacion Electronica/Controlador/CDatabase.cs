@@ -11,7 +11,7 @@ namespace Controlador
     {
         public CDatabase()
         {
-            
+
         }
 
         public CDatabase(String path)
@@ -42,3 +42,4 @@ namespace Controlador
         }
     }
 }
+

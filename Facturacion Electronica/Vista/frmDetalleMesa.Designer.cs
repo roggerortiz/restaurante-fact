@@ -30,18 +30,21 @@
         {
             this.gbCategorias = new System.Windows.Forms.GroupBox();
             this.gbProductos = new System.Windows.Forms.GroupBox();
+            this.gbUsuario = new System.Windows.Forms.GroupBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnAumentar = new System.Windows.Forms.Button();
             this.btnDisminuir = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnPagar = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.TableLayoutPanel();
             this.panelDerecho = new System.Windows.Forms.TableLayoutPanel();
             this.panelTotal = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotonesDeta = new System.Windows.Forms.TableLayoutPanel();
             this.btnDiez = new System.Windows.Forms.Button();
@@ -49,13 +52,11 @@
             this.btnOcho = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbMesa = new System.Windows.Forms.Label();
-            this.cboMozo = new System.Windows.Forms.ComboBox();
             this.panelIzquierdo = new System.Windows.Forms.TableLayoutPanel();
-            this.gbUsuario = new System.Windows.Forms.GroupBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cboMozo = new System.Windows.Forms.ComboBox();
             this.gbDetalleMesa = new System.Windows.Forms.GroupBox();
+            this.gbProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.panelDerecho.SuspendLayout();
@@ -65,7 +66,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
-            this.gbUsuario.SuspendLayout();
             this.gbDetalleMesa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,23 +73,48 @@
             // 
             this.gbCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCategorias.Location = new System.Drawing.Point(3, 49);
+            this.gbCategorias.Location = new System.Drawing.Point(3, 72);
             this.gbCategorias.Name = "gbCategorias";
-            this.gbCategorias.Size = new System.Drawing.Size(397, 168);
+            this.gbCategorias.Size = new System.Drawing.Size(397, 172);
             this.gbCategorias.TabIndex = 0;
             this.gbCategorias.TabStop = false;
             this.gbCategorias.Text = "CATEGORÍAS";
             // 
             // gbProductos
             // 
+            this.gbProductos.Controls.Add(this.gbUsuario);
+            this.gbProductos.Controls.Add(this.txtUsuario);
             this.gbProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbProductos.Location = new System.Drawing.Point(3, 223);
+            this.gbProductos.Location = new System.Drawing.Point(3, 250);
             this.gbProductos.Name = "gbProductos";
-            this.gbProductos.Size = new System.Drawing.Size(397, 357);
+            this.gbProductos.Size = new System.Drawing.Size(397, 330);
             this.gbProductos.TabIndex = 1;
             this.gbProductos.TabStop = false;
             this.gbProductos.Text = "PRODUCTOS";
+            // 
+            // gbUsuario
+            // 
+            this.gbUsuario.BackColor = System.Drawing.SystemColors.Control;
+            this.gbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUsuario.Location = new System.Drawing.Point(215, 170);
+            this.gbUsuario.Name = "gbUsuario";
+            this.gbUsuario.Size = new System.Drawing.Size(50, 40);
+            this.gbUsuario.TabIndex = 4;
+            this.gbUsuario.TabStop = false;
+            this.gbUsuario.Text = "Mozo";
+            this.gbUsuario.Visible = false;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(215, 121);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(10);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
+            this.txtUsuario.Size = new System.Drawing.Size(52, 26);
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Visible = false;
             // 
             // dgvDetalles
             // 
@@ -114,7 +139,7 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(602, 10);
+            this.label8.Location = new System.Drawing.Point(594, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 33);
@@ -125,11 +150,11 @@
             // 
             this.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(715, 10);
+            this.txtTotal.Location = new System.Drawing.Point(707, 10);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(10, 10, 1, 10);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(130, 26);
+            this.txtTotal.Size = new System.Drawing.Size(139, 26);
             this.txtTotal.TabIndex = 14;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -178,27 +203,27 @@
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // btnCancelar
+            // btnRegresar
             // 
-            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(10, 10);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(10);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(168, 33);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Location = new System.Drawing.Point(10, 10);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(10);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(126, 33);
+            this.btnRegresar.TabIndex = 19;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(198, 10);
+            this.btnGuardar.Location = new System.Drawing.Point(302, 10);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(10);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(168, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(126, 33);
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -208,10 +233,10 @@
             // 
             this.btnPagar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.Location = new System.Drawing.Point(386, 10);
+            this.btnPagar.Location = new System.Drawing.Point(448, 10);
             this.btnPagar.Margin = new System.Windows.Forms.Padding(10);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(168, 33);
+            this.btnPagar.Size = new System.Drawing.Size(126, 33);
             this.btnPagar.TabIndex = 21;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
@@ -253,18 +278,19 @@
             // 
             this.panelTotal.BackColor = System.Drawing.SystemColors.Control;
             this.panelTotal.ColumnCount = 7;
-            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.5F));
+            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.5F));
+            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.5F));
+            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.5F));
             this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.panelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.panelTotal.Controls.Add(this.btnCancelar, 0, 0);
             this.panelTotal.Controls.Add(this.txtTotal, 5, 0);
             this.panelTotal.Controls.Add(this.label8, 4, 0);
-            this.panelTotal.Controls.Add(this.btnPagar, 2, 0);
-            this.panelTotal.Controls.Add(this.btnCancelar, 0, 0);
-            this.panelTotal.Controls.Add(this.btnGuardar, 1, 0);
+            this.panelTotal.Controls.Add(this.btnRegresar, 0, 0);
+            this.panelTotal.Controls.Add(this.btnPagar, 3, 0);
+            this.panelTotal.Controls.Add(this.btnGuardar, 2, 0);
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTotal.Location = new System.Drawing.Point(3, 527);
             this.panelTotal.Name = "panelTotal";
@@ -272,6 +298,19 @@
             this.panelTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panelTotal.Size = new System.Drawing.Size(943, 53);
             this.panelTotal.TabIndex = 4;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(156, 10);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(10);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(126, 33);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -328,6 +367,7 @@
             this.btnDiez.TabIndex = 21;
             this.btnDiez.Text = "10";
             this.btnDiez.UseVisualStyleBackColor = true;
+            this.btnDiez.Click += new System.EventHandler(this.btnDiez_Click);
             // 
             // btnCinco
             // 
@@ -342,6 +382,7 @@
             this.btnCinco.TabIndex = 19;
             this.btnCinco.Text = "5";
             this.btnCinco.UseVisualStyleBackColor = true;
+            this.btnCinco.Click += new System.EventHandler(this.btnCinco_Click);
             // 
             // btnOcho
             // 
@@ -356,6 +397,7 @@
             this.btnOcho.TabIndex = 20;
             this.btnOcho.Text = "8";
             this.btnOcho.UseVisualStyleBackColor = true;
+            this.btnOcho.Click += new System.EventHandler(this.btnOcho_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -379,9 +421,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbMesa, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cboMozo, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -390,88 +430,48 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(836, 45);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(337, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mozo:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // lbMesa
             // 
             this.lbMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbMesa.AutoSize = true;
+            this.lbMesa.BackColor = System.Drawing.Color.Wheat;
             this.lbMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMesa.Location = new System.Drawing.Point(3, 0);
             this.lbMesa.Name = "lbMesa";
             this.lbMesa.Size = new System.Drawing.Size(328, 45);
             this.lbMesa.TabIndex = 0;
             this.lbMesa.Text = "label1";
-            this.lbMesa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cboMozo
-            // 
-            this.cboMozo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboMozo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMozo.FormattingEnabled = true;
-            this.cboMozo.Location = new System.Drawing.Point(462, 3);
-            this.cboMozo.Name = "cboMozo";
-            this.cboMozo.Size = new System.Drawing.Size(371, 33);
-            this.cboMozo.TabIndex = 2;
+            this.lbMesa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelIzquierdo
             // 
             this.panelIzquierdo.BackColor = System.Drawing.SystemColors.Control;
             this.panelIzquierdo.ColumnCount = 1;
             this.panelIzquierdo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelIzquierdo.Controls.Add(this.gbUsuario, 0, 0);
             this.panelIzquierdo.Controls.Add(this.gbProductos, 0, 2);
             this.panelIzquierdo.Controls.Add(this.gbCategorias, 0, 1);
-            this.panelIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelIzquierdo.Controls.Add(this.cboMozo, 0, 0);
             this.panelIzquierdo.Location = new System.Drawing.Point(3, 3);
             this.panelIzquierdo.Name = "panelIzquierdo";
             this.panelIzquierdo.RowCount = 3;
-            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62F));
+            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.00686F));
+            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.70326F));
+            this.panelIzquierdo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.46141F));
             this.panelIzquierdo.Size = new System.Drawing.Size(403, 583);
             this.panelIzquierdo.TabIndex = 2;
             // 
-            // gbUsuario
+            // cboMozo
             // 
-            this.gbUsuario.BackColor = System.Drawing.SystemColors.Control;
-            this.gbUsuario.Controls.Add(this.txtUsuario);
-            this.gbUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbUsuario.Location = new System.Drawing.Point(3, 3);
-            this.gbUsuario.Name = "gbUsuario";
-            this.gbUsuario.Size = new System.Drawing.Size(397, 40);
-            this.gbUsuario.TabIndex = 4;
-            this.gbUsuario.TabStop = false;
-            this.gbUsuario.Text = "Mozo";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(3, 16);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(10);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(391, 26);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Visible = false;
+            this.cboMozo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMozo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMozo.FormattingEnabled = true;
+            this.cboMozo.Location = new System.Drawing.Point(16, 18);
+            this.cboMozo.Name = "cboMozo";
+            this.cboMozo.Size = new System.Drawing.Size(371, 33);
+            this.cboMozo.TabIndex = 2;
+            this.cboMozo.Text = "Seleccionar Mozo";
             // 
             // gbDetalleMesa
             // 
@@ -501,6 +501,8 @@
             this.Text = "frmDetalleMesa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDetalleMesa_Load);
+            this.gbProductos.ResumeLayout(false);
+            this.gbProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelDerecho.ResumeLayout(false);
@@ -512,8 +514,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panelIzquierdo.ResumeLayout(false);
-            this.gbUsuario.ResumeLayout(false);
-            this.gbUsuario.PerformLayout();
             this.gbDetalleMesa.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -529,7 +529,7 @@
         private System.Windows.Forms.Button btnAumentar;
         private System.Windows.Forms.Button btnDisminuir;
         private System.Windows.Forms.Button btnQuitar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.TableLayoutPanel panelPrincipal;
@@ -543,12 +543,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboMozo;
         public System.Windows.Forms.Label lbMesa;
         private System.Windows.Forms.Button btnDiez;
         private System.Windows.Forms.Button btnCinco;
         private System.Windows.Forms.Button btnOcho;
+        public System.Windows.Forms.ComboBox cboMozo;
+        private System.Windows.Forms.Button btnCancelar;
 
 
     }

@@ -8,12 +8,12 @@ D:\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.dll
 D:\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.pdb
 D:\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Modelo.dll
 D:\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Modelo.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\Modelo.pdb
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.dll
+D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.pdb
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\bin\Debug\ModeloDLL.dll
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\bin\Debug\ModeloDLL.pdb
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\obj\Debug\ModeloDLL.dll
 D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\obj\Debug\ModeloDLL.pdb
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\ModeloDLL.dll
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\bin\Debug\ModeloDLL.pdb
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\ModeloDLL.dll
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\ModeloDLL.pdb
-D:\proyectos\facturacion\facturacion\Facturacion Electronica\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+D:\PRUEBAFACTURA\Facturacion Electronica\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

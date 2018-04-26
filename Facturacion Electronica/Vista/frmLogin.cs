@@ -101,6 +101,11 @@ namespace Vista
             cboUsuarios.DataSource = usuarios;
             cboUsuarios.DisplayMember = "usuario";
             cboUsuarios.ValueMember = "id";
+
+#if DEBUG
+            cboUsuarios.SelectedIndex = 0;
+            txtClave.Text = "ltorres";
+#endif
         }
 
         private void imgIngresar_Click(object sender, EventArgs e)
