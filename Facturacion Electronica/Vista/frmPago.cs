@@ -96,51 +96,5 @@ namespace Vista
         {
             this.Close();
         }
-
-        private void btnBoleta_Click_1(object sender, EventArgs e)
-        {
-            MostrarComprobante();
-        }
-
-        private void btnFactura_Click_1(object sender, EventArgs e)
-        {
-            MostrarComprobante();
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtPago_TextChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                Decimal pago = Convert.ToDecimal(txtPago.Text);
-                Decimal vuelto = (pago >= total) ? (pago - total) : 0;
-
-                txtVuelto.Text = String.Format("{0:0.00}", vuelto);
-            }
-            catch (Exception ex)
-            {
-                txtVuelto.Text = String.Format("{0:0.00}", 0);
-                Console.WriteLine("Error al obtener monto de pago: " + ex.Message);
-            }
-        }
-
-        private void cboTipoPago_SelectedIndexChanged_2(object sender, EventArgs e)
-        {
-            switch (cboTipoPago.Text)
-            {
-                case "Efectivo":
-                    txtPago.Enabled = true;
-                    break;
-                default:
-                    txtPago.Enabled = false;
-                    txtPago.Text = txtTotal.Text;
-                    txtVuelto.Text = "0.00";
-                    break;
-            }
-        }
     }
 }

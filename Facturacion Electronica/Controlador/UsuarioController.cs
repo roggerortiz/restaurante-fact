@@ -20,7 +20,7 @@ namespace Controlador
 
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.*, CASE WHEN usuarios.categoria = 1 THEN 'Administrador' WHEN usuarios.categoria = 2 THEN 'Cajero' ELSE 'Mozo' END as categoria_nombre FROM usuarios ORDER BY usuarios.usuario ASC", this.Conexion);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.*, CASE WHEN usuarios.categoria = 0 THEN 'Administrador' WHEN usuarios.categoria = 1 THEN 'Cajero' ELSE 'Mozo' END as categoria_nombre FROM usuarios ORDER BY usuarios.usuario ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)
@@ -44,13 +44,13 @@ namespace Controlador
 
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.*, CONCAT(apellidos,', ',nombres) as mozo, CASE WHEN usuarios.categoria = 1 THEN 'Administrador' WHEN usuarios.categoria = 2 THEN 'Cajero' ELSE 'Mozo' END as categoria_nombre FROM usuarios where categoria = 3  ORDER BY usuarios.usuario ASC", this.Conexion);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT usuarios.id, CONCAT(usuarios.apellidos, ', ', usuarios.nombres) as nombre FROM usuarios WHERE usuarios.categoria = '2' ORDER BY nombre ASC", this.Conexion);
                 adapter.Fill(dt);
             }
             catch (Exception ex)
             {
                 if (initial.LogLevel == LogLevel.Desarrollador)
-                    log.WriteLog(LogType.Applog, "ERROR", "Listar Usuarios:" + ex);
+                    log.WriteLog(LogType.Applog, "ERROR", "Listar Mozos:" + ex);
 
                 //Console.WriteLine("Error al Listar Usuarios: " + ex.Message);
             }

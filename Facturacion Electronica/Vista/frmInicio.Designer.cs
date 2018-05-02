@@ -33,8 +33,8 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCajero = new System.Windows.Forms.Button();
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panelPlatos1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -65,9 +65,9 @@
             // 
             this.btnMozo.Enabled = false;
             this.btnMozo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMozo.Location = new System.Drawing.Point(43, 164);
+            this.btnMozo.Location = new System.Drawing.Point(94, 175);
             this.btnMozo.Name = "btnMozo";
-            this.btnMozo.Size = new System.Drawing.Size(475, 58);
+            this.btnMozo.Size = new System.Drawing.Size(362, 47);
             this.btnMozo.TabIndex = 1;
             this.btnMozo.Text = "Operaciones Mozo";
             this.btnMozo.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             this.btnSistema.Enabled = false;
             this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSistema.Location = new System.Drawing.Point(43, 310);
+            this.btnSistema.Location = new System.Drawing.Point(94, 292);
             this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(475, 58);
+            this.btnSistema.Size = new System.Drawing.Size(362, 47);
             this.btnSistema.TabIndex = 2;
             this.btnSistema.Text = "Opciones del Sistema";
             this.btnSistema.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(43, 87);
+            this.btnIngresar.Location = new System.Drawing.Point(94, 117);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(475, 58);
+            this.btnIngresar.Size = new System.Drawing.Size(362, 47);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Iniciar Sesion";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -100,9 +100,9 @@
             // 
             this.btnCajero.Enabled = false;
             this.btnCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCajero.Location = new System.Drawing.Point(43, 234);
+            this.btnCajero.Location = new System.Drawing.Point(94, 234);
             this.btnCajero.Name = "btnCajero";
-            this.btnCajero.Size = new System.Drawing.Size(475, 58);
+            this.btnCajero.Size = new System.Drawing.Size(362, 47);
             this.btnCajero.TabIndex = 3;
             this.btnCajero.Text = "Operaciones Cajero";
             this.btnCajero.UseVisualStyleBackColor = true;
@@ -120,18 +120,6 @@
             this.panelBotones.Size = new System.Drawing.Size(559, 454);
             this.panelBotones.TabIndex = 3;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Enabled = false;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(180, 388);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(191, 61);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.LogoFonseca;
@@ -141,6 +129,18 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Enabled = false;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(180, 406);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(191, 43);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // panelPlatos1
             // 
@@ -226,11 +226,10 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox8.Image = global::Vista.Properties.Resources.LogoISG;
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Location = new System.Drawing.Point(3, 3);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(159, 53);
+            this.pictureBox8.Size = new System.Drawing.Size(139, 46);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
@@ -238,9 +237,9 @@
             // panelISG
             // 
             this.panelISG.Controls.Add(this.pictureBox8);
-            this.panelISG.Location = new System.Drawing.Point(789, 543);
+            this.panelISG.Location = new System.Drawing.Point(803, 543);
             this.panelISG.Name = "panelISG";
-            this.panelISG.Size = new System.Drawing.Size(159, 53);
+            this.panelISG.Size = new System.Drawing.Size(145, 53);
             this.panelISG.TabIndex = 15;
             // 
             // panelFonseca

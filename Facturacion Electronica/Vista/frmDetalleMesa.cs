@@ -16,15 +16,13 @@ namespace Vista
     {
         public String mesa;
         public Int32 categoria;
+        public String mozo;
+        public String estado = "Libre";
         public Usuario usuario = new Usuario();
         public DataTable categorias = new DataTable();
         public DataTable productos = new DataTable();
-        public DataTable detalles = new DataTable();
-        public DataTable usuarios = new DataTable();
-
-        public String mozo;
-        public String estado = "Libre";
         public DataTable mozos = new DataTable();
+        public DataTable detalles = new DataTable();
         
         TableLayoutPanel panelCategorias = new TableLayoutPanel();
         TableLayoutPanel panelProductos = new TableLayoutPanel();
@@ -36,16 +34,15 @@ namespace Vista
 
         private void frmDetalleMesa_Load(object sender, EventArgs e)
         {
-            cboMozo.DataSource = usuarios;
-            cboMozo.DisplayMember = "mozo";
-            cboMozo.ValueMember = "id";
-
             CrearPanelCategorias();
             CrearPanelProductos();
             ListarCategorias();
             ListarDetalles();
 
-            btnCancelar.Enabled = (estado == "Ocupada");
+            ListarMozos();
+
+            gbUsuario.Text = (categoria == 0) ? "ADMINISTRADOR" : ((categoria == 1) ? "CAJERO" : "MOZO");
+            txtUsuario.Visible = true;
         }
 
         private void btnCategoria_Click(object sender, EventArgs e, Int32 categoriaId)
@@ -58,27 +55,14 @@ namespace Vista
             SeleccionarProducto(productoId);
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            GuardarComprobante();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Se Liberará la Mesa " + mesa, "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                estado = "Libre";
-                this.DialogResult = DialogResult.OK;
-            }
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(cboMozo.SelectedValue.ToString());
-            if(cboMozo.Text == "Seleccionar Mozo")
-                MessageBox.Show("Tiene que seleccionar mozo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            else
-                GuardarComprobante();
+            this.Close();
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
@@ -371,6 +355,22 @@ namespace Vista
             CalcularTotal();
         }
 
+        private void ListarMozos()
+        {
+            cboMozo.DataSource = mozos;
+            cboMozo.ValueMember = "id";
+            cboMozo.DisplayMember = "nombre";
+
+            if (mozo != null)
+            {
+                cboMozo.Text = mozo;
+            }
+            else
+            {
+                cboMozo.SelectedIndex = 0;
+            }
+        }
+
         private void SeleccionarProducto(Int32 productoId)
         {
             // Se crea una nueva fila de la tabla detalles
@@ -438,7 +438,6 @@ namespace Vista
         private void GuardarComprobante()
         {
             // Se muestra un mensaje y se devuelve un valor OK para agregar el detalle al diccionario (lista) de detalles de mesas
-            //MessageBox.Show("Comprobante Guardado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             mozo = cboMozo.Text;
             estado = (detalles.Rows.Count > 0) ? "Ocupada" : "Libre";
@@ -449,67 +448,7 @@ namespace Vista
         private void HabilitarGuardado()
         {
             // Se habilitan el boton para pagar si tiene filas la tabla detalles
-            btnPagar.Enabled = (categoria == 1 && detalles.Rows.Count > 0);
-        }
-
-        private void btnCinco_Click(object sender, EventArgs e)
-        {
-            if (dgvDetalles.CurrentRow != null)
-            {
-                // Se obtiene el indice de la fila seleccionada
-                Int32 indice = dgvDetalles.CurrentRow.Index;
-
-                // Se obtiene la cantidad y el precio de la fila seleccionada
-                Int32 cantidad = Convert.ToInt32(detalles.Rows[indice][2]);
-                Decimal precio = Convert.ToDecimal(detalles.Rows[indice][3]);
-
-                // Se aumenta en uno la cantidad y se calcula el nuevo valor de venta
-                cantidad = 5;
-                detalles.Rows[indice][2] = cantidad;
-                detalles.Rows[indice][4] = Math.Round((cantidad * precio), 2);
-
-                CalcularTotal();
-            }
-        }
-
-        private void btnOcho_Click(object sender, EventArgs e)
-        {
-            if (dgvDetalles.CurrentRow != null)
-            {
-                // Se obtiene el indice de la fila seleccionada
-                Int32 indice = dgvDetalles.CurrentRow.Index;
-
-                // Se obtiene la cantidad y el precio de la fila seleccionada
-                Int32 cantidad = Convert.ToInt32(detalles.Rows[indice][2]);
-                Decimal precio = Convert.ToDecimal(detalles.Rows[indice][3]);
-
-                // Se aumenta en uno la cantidad y se calcula el nuevo valor de venta
-                cantidad = 8;
-                detalles.Rows[indice][2] = cantidad;
-                detalles.Rows[indice][4] = Math.Round((cantidad * precio), 2);
-
-                CalcularTotal();
-            }
-        }
-
-        private void btnDiez_Click(object sender, EventArgs e)
-        {
-            if (dgvDetalles.CurrentRow != null)
-            {
-                // Se obtiene el indice de la fila seleccionada
-                Int32 indice = dgvDetalles.CurrentRow.Index;
-
-                // Se obtiene la cantidad y el precio de la fila seleccionada
-                Int32 cantidad = Convert.ToInt32(detalles.Rows[indice][2]);
-                Decimal precio = Convert.ToDecimal(detalles.Rows[indice][3]);
-
-                // Se aumenta en uno la cantidad y se calcula el nuevo valor de venta
-                cantidad = 10;
-                detalles.Rows[indice][2] = cantidad;
-                detalles.Rows[indice][4] = Math.Round((cantidad * precio), 2);
-
-                CalcularTotal();
-            }
+            btnPagar.Enabled = (categoria == 0 && detalles.Rows.Count > 0);
         }
     }    
 }

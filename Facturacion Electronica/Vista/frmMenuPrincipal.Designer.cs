@@ -42,15 +42,14 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panelFonseca1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gbListadoMesas = new System.Windows.Forms.GroupBox();
             this.msIzquierda.SuspendLayout();
             this.panelFonseca1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.gbListadoMesas.SuspendLayout();
             this.SuspendLayout();
             // 
             // msIzquierda
             // 
+            this.msIzquierda.AutoSize = false;
             this.msIzquierda.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.msIzquierda.Dock = System.Windows.Forms.DockStyle.Left;
             this.msIzquierda.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -153,51 +152,36 @@
             // panelPrincipal
             // 
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Location = new System.Drawing.Point(3, 26);
+            this.panelPrincipal.Location = new System.Drawing.Point(101, 0);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(550, 441);
+            this.panelPrincipal.Size = new System.Drawing.Size(556, 470);
             this.panelPrincipal.TabIndex = 2;
             // 
             // panelFonseca1
             // 
             this.panelFonseca1.Controls.Add(this.pictureBox1);
-            this.panelFonseca1.Location = new System.Drawing.Point(450, 0);
+            this.panelFonseca1.Location = new System.Drawing.Point(0, 424);
             this.panelFonseca1.Name = "panelFonseca1";
-            this.panelFonseca1.Size = new System.Drawing.Size(106, 37);
+            this.panelFonseca1.Size = new System.Drawing.Size(101, 43);
             this.panelFonseca1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Vista.Properties.Resources.LogoFonseca;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(101, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // gbListadoMesas
-            // 
-            this.gbListadoMesas.BackColor = System.Drawing.Color.White;
-            this.gbListadoMesas.Controls.Add(this.panelFonseca1);
-            this.gbListadoMesas.Controls.Add(this.panelPrincipal);
-            this.gbListadoMesas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbListadoMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbListadoMesas.Location = new System.Drawing.Point(101, 0);
-            this.gbListadoMesas.Name = "gbListadoMesas";
-            this.gbListadoMesas.Size = new System.Drawing.Size(556, 470);
-            this.gbListadoMesas.TabIndex = 4;
-            this.gbListadoMesas.TabStop = false;
-            this.gbListadoMesas.Text = "LISTADO DE MESAS";
-            this.gbListadoMesas.Visible = false;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 470);
-            this.Controls.Add(this.gbListadoMesas);
+            this.Controls.Add(this.panelFonseca1);
+            this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.msIzquierda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -210,9 +194,7 @@
             this.msIzquierda.PerformLayout();
             this.panelFonseca1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.gbListadoMesas.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -232,6 +214,5 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
         private System.Windows.Forms.Panel panelFonseca1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox gbListadoMesas;
     }
 }

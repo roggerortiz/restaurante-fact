@@ -15,17 +15,20 @@ using ISGStructures;
 
 namespace Controlador
 {
-    public class Controller
+    public abstract class Controller
     {
+        private MySqlConnection conexion;
         protected CInitial initial;
+        protected CDatabase database;
         protected CLogDLL log;
-        private MySqlConnection conexion = new MySqlConnection();
 
         public Controller()
         {
             initial = new CInitial();
+            database = new CDatabase();
             log = new CLogDLL();
-            this.conexion.ConnectionString = this.CadenaConexion();
+            conexion = new MySqlConnection();
+            conexion.ConnectionString = this.CadenaConexion();
         }
 
         protected MySqlConnection Conexion
@@ -39,10 +42,10 @@ namespace Controlador
 
             try
             {
-               // String strMainFolder = String.Format("{0}/Config/ConexionBD.xml", initial.ClientsFolder);
+               //String strMainFolder = String.Format("{0}/Config/ConexionBD.xml", m_ini.MainDirectory);
 
                 XmlDocument xml = new XmlDocument();
-                string sConn = "Config/ConexionBD.xml";
+                string sConn = "C:\\FactISG\\Config\\CDatabase.xml";
               //  MessageBox.Show(strMainFolder);
                 xml.Load(sConn);
 

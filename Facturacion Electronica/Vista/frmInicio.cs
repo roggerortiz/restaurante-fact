@@ -12,8 +12,6 @@ using Modelo;
 using InitialDLL;
 using LogDLL;
 using ISGStructures;
-using System.Threading;
-using System.Diagnostics;
 
 namespace Vista
 {
@@ -23,6 +21,7 @@ namespace Vista
         private DataTable usuarios;
         private Dictionary<string, Mesa> listaMesas;
         private CInitial initial;
+        private CDatabase database;
         private CLogDLL log;
 
         public frmInicio()
@@ -31,7 +30,8 @@ namespace Vista
             usuario = null;
             usuarios = new DataTable();
             listaMesas = new Dictionary<string, Mesa>();
-            initial = new CInitial();
+            initial = new CInitial("C:\\FactISG\\");
+            database = new CDatabase("C:\\FactISG\\");
             log = new CLogDLL();
         }
 
@@ -68,11 +68,11 @@ namespace Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.usuarios = usuarios;
-
-            if (btnIngresar.Text == "Iniciar Sesion")
+            if (usuario == null)
             {
+                frmLogin login = new frmLogin();
+                login.usuarios = usuarios;
+
                 if (login.ShowDialog() == DialogResult.OK)
                 {
                     if (initial.LogLevel == LogLevel.Normal)
@@ -83,20 +83,17 @@ namespace Vista
 
                     switch (usuario.Categoria)
                     {
-                        case 1:
-                            btnMozo.Enabled = true;
+                        case 0: btnMozo.Enabled = true;
                             btnCajero.Enabled = true;
                             btnSistema.Enabled = true;
                             btnSalir.Enabled = true;
                             break;
-                        case 2:
-                            btnMozo.Enabled = true;
+                        case 1: btnMozo.Enabled = true;
                             btnCajero.Enabled = true;
                             btnSistema.Enabled = false;
                             btnSalir.Enabled = true;
                             break;
-                        case 3:
-                            btnMozo.Enabled = true;
+                        case 2: btnMozo.Enabled = true;
                             btnCajero.Enabled = false;
                             btnSistema.Enabled = false;
                             btnSalir.Enabled = false;
@@ -123,18 +120,7 @@ namespace Vista
         {
             if (initial.LogLevel == LogLevel.Normal)
                 log.WriteLog(LogType.Applog, "INFO", "Salir del sistema.");
-
-            if(MessageBox.Show("Está Saliendo de la Aplicación. ¿Desea continuar?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Application.Exit();
-
-                Keys keysMod = Control.ModifierKeys;
-
-                if (keysMod == Keys.Shift)
-                {
-                    ApagarPC();
-                }
-            }
+            Application.Exit();
         }
 
         private void btnMozo_Click(object sender, EventArgs e)
@@ -149,10 +135,7 @@ namespace Vista
 
         private void btnSistema_Click(object sender, EventArgs e)
         {
-          //  MostrarMenu(0);
-            frmSistema dlg = new frmSistema();
-            dlg.Usuario = usuario;
-            dlg.ShowDialog();
+            MostrarMenu(0);
         }
 
         private void MostrarMenu(Int32 categoria)
@@ -164,16 +147,6 @@ namespace Vista
             menu.ShowDialog();
 
             this.listaMesas = menu.listaMesas;
-        }
-
-        private void ApagarPC()
-        {
-            Process proceso = new Process();
-            proceso.StartInfo.UseShellExecute = false;
-            proceso.StartInfo.RedirectStandardOutput = true;
-            proceso.StartInfo.FileName = "shutdown.exe";
-            proceso.StartInfo.Arguments = "/s /t 0";
-            proceso.Start();
         }
     }
 }
